@@ -1,289 +1,185 @@
-# 🧪 Skenario Testing — Phase 1 (Layout Global & Beranda)
+# 🧪 Skenario Testing — Phase 1 (Project Setup & Foundation)
 
-> **Cakupan:** Layout publik (navbar, footer, WA button, toast, breadcrumb) dan halaman Beranda dengan 11 section
+> **Cakupan:** Environment config, Tailwind CSS, Alpine.js, Database, Models, Seeders, Helper, Routes
 > **Tanggal:** 11 Maret 2026
 
 ---
 
-## T1.1 — Layout: Navbar
+## T0.1 — Environment & Config
 
-### TC-1.1.1: Tampilan Desktop (≥1024px)
+### TC-0.1.1: Verifikasi `.env`
 | # | Langkah | Expected Result | Status |
 |---|---|---|---|
-| 1 | Buka halaman utama di desktop | Navbar tampil fixed di atas | ☐ |
-| 2 | Cek logo / nama lembaga | `LKP/LPK Yuwita` tampil di kiri | ☐ |
-| 3 | Cek menu navigasi | Beranda, Program Pelatihan, Layanan Salon, Galeri, Tentang Kami, FAQ, Kontak | ☐ |
-| 4 | Cek CTA button | Tombol "Daftar Sekarang" di kanan (rose gold, rounded) | ☐ |
-| 5 | Cek hamburger menu | Tidak tampil di desktop | ☐ |
+| 1 | Buka file `.env` | File ada dan bisa dibaca | ☐ |
+| 2 | Cek `APP_NAME` | Bernilai `"LKP Yuwita"` | ☐ |
+| 3 | Cek `APP_LOCALE` | Bernilai `id` | ☐ |
+| 4 | Cek `APP_FALLBACK_LOCALE` | Bernilai `id` | ☐ |
+| 5 | Cek `APP_FAKER_LOCALE` | Bernilai `id_ID` | ☐ |
+| 6 | Cek `DB_DATABASE` | Bernilai `lkp-yuwita-db` | ☐ |
+| 7 | Cek `DB_CONNECTION` | Bernilai `mysql` | ☐ |
 
-### TC-1.1.2: Sticky Scroll Effect
+### TC-0.1.2: Verifikasi Config
 | # | Langkah | Expected Result | Status |
 |---|---|---|---|
-| 1 | Posisi di atas halaman | Navbar tanpa shadow | ☐ |
-| 2 | Scroll ke bawah > 20px | Navbar mendapat shadow dan efek `backdrop-blur` | ☐ |
-| 3 | Scroll kembali ke atas | Shadow hilang kembali | ☐ |
-
-### TC-1.1.3: Dropdown Menu
-| # | Langkah | Expected Result | Status |
-|---|---|---|---|
-| 1 | Hover "Program Pelatihan" | Dropdown muncul dengan animasi fade | ☐ |
-| 2 | Cek isi dropdown Program | Ada section "Kelas Reguler" (4 item) dan "Kelas Khusus" (4 item) | ☐ |
-| 3 | Mouse keluar dari dropdown | Dropdown hilang | ☐ |
-| 4 | Hover "Tentang Kami" | Dropdown muncul: Profil & Sejarah, Visi & Misi, Legalitas, Testimoni, Blog | ☐ |
-
-### TC-1.1.4: Active State
-| # | Langkah | Expected Result | Status |
-|---|---|---|---|
-| 1 | Di halaman Beranda | Menu "Beranda" berwarna rose gold | ☐ |
-| 2 | Navigasi ke halaman lain (jika ada) | Menu yang sesuai aktif | ☐ |
-
-### TC-1.1.5: Mobile Responsive (< 1024px)
-| # | Langkah | Expected Result | Status |
-|---|---|---|---|
-| 1 | Resize browser ke < 1024px | Menu desktop hilang, hamburger icon muncul | ☐ |
-| 2 | Klik hamburger icon | Mobile menu slide down dengan animasi | ☐ |
-| 3 | Cek isi mobile menu | Semua link navigasi + CTA "Daftar Sekarang" | ☐ |
-| 4 | Klik hamburger lagi (X icon) | Mobile menu closes | ☐ |
-| 5 | Klik link di mobile menu | Navigasi berfungsi | ☐ |
+| 1 | Jalankan `php artisan tinker` → `config('app.timezone')` | Output: `Asia/Jakarta` | ☐ |
+| 2 | Cek `config('roles.superadmin')` | Output: `superadmin` | ☐ |
+| 3 | Cek `config('roles.staff')` | Output: `staff` | ☐ |
+| 4 | Cek `config('roles.available')` | Output: `['superadmin', 'staff']` | ☐ |
 
 ---
 
-## T1.2 — Layout: Footer
+## T0.2 — Frontend Setup
 
-### TC-1.2.1: Struktur Footer
+### TC-0.2.1: Tailwind CSS v4
 | # | Langkah | Expected Result | Status |
 |---|---|---|---|
-| 1 | Scroll ke bawah halaman | Footer tampil dengan background charcoal | ☐ |
-| 2 | Cek kolom 1 | Logo/nama + deskripsi + icon sosial media | ☐ |
-| 3 | Cek kolom 2 (Navigasi) | 7 link: Beranda, Program, Layanan, Galeri, Tentang, Blog, FAQ | ☐ |
-| 4 | Cek kolom 3 (Program) | Link: Kelas Reguler, Kelas Khusus, Pendaftaran, Hubungi Kami | ☐ |
-| 5 | Cek kolom 4 (Kontak) | Alamat, telepon, email, jam operasional (dengan icon) | ☐ |
-| 6 | Cek bottom bar | Copyright `© 2026 LKP/LPK Yuwita` + link Kebijakan Privasi | ☐ |
+| 1 | Jalankan `npm run build` | Build berhasil tanpa error | ☐ |
+| 2 | Cek file `resources/css/app.css` | Berisi `@import 'tailwindcss'` | ☐ |
+| 3 | Cek `@theme` section | Berisi variabel `--color-rose-gold: #B76E79` | ☐ |
+| 4 | Cek `@theme` section | Berisi `--color-dusty-pink: #E8B4BC` | ☐ |
+| 5 | Cek `@theme` section | Berisi `--color-soft-cream: #FDF6F0` | ☐ |
+| 6 | Cek `@theme` section | Berisi `--color-charcoal: #2D2D2D` | ☐ |
+| 7 | Cek `@theme` section | Berisi `--font-heading` (Playfair Display) | ☐ |
+| 8 | Cek `@theme` section | Berisi `--font-body` (DM Sans) | ☐ |
+| 9 | Cek `@theme` section | Berisi `--font-accent` (Italiana) | ☐ |
+| 10 | Cek import Google Fonts | URL fonts.googleapis.com ada di CSS | ☐ |
 
-### TC-1.2.2: Footer Links
+### TC-0.2.2: Alpine.js
 | # | Langkah | Expected Result | Status |
 |---|---|---|---|
-| 1 | Klik link navigasi di footer | Mengarah ke URL yang benar | ☐ |
-| 2 | Hover link | Warna berubah ke `rose-gold-light` | ☐ |
-| 3 | Hover icon sosmed | Background berubah ke `rose-gold` | ☐ |
+| 1 | Cek `package.json` | `alpinejs` ada di dependencies | ☐ |
+| 2 | Cek `package.json` | `@alpinejs/intersect` ada di dependencies | ☐ |
+| 3 | Cek `resources/js/app.js` | Import `Alpine` dan `intersect` plugin | ☐ |
+| 4 | Cek `resources/js/app.js` | `Alpine.start()` dipanggil | ☐ |
+| 5 | Buka browser → console | Tidak ada error Alpine.js | ☐ |
 
 ---
 
-## T1.3 — Layout: WhatsApp Floating Button
+## T0.3 — Database Migrations
 
-### TC-1.3.1: Tampilan & Interaksi
+### TC-0.3.1: Jalankan Migrasi
 | # | Langkah | Expected Result | Status |
 |---|---|---|---|
-| 1 | Buka halaman mana saja | Button WA muncul di kanan bawah (fixed) | ☐ |
-| 2 | Hover button (desktop) | Tooltip "Chat via WhatsApp" muncul + button scale up | ☐ |
-| 3 | Klik button | Buka `wa.me/6285223506611` di tab baru | ☐ |
-| 4 | Cek pre-filled message | Pesan terisi: "Halo, saya ingin bertanya tentang LKP/LPK Yuwita." | ☐ |
-| 5 | Jika `contact_wa_admin` kosong di settings | Button TIDAK tampil | ☐ |
+| 1 | Jalankan `php artisan migrate:fresh` | Semua migration berhasil, tidak ada error | ☐ |
+| 2 | Jalankan `php artisan migrate:status` | 13 migration files terdaftar (3 default + 10 custom) | ☐ |
+
+### TC-0.3.2: Verifikasi Struktur Tabel
+| # | Tabel | Kolom Penting yang Dicek | Status |
+|---|---|---|---|
+| 1 | `users` | `role` (enum: superadmin/staff), `avatar`, `is_active`, `last_login_at` | ☐ |
+| 2 | `program_categories` | `name`, `slug` (unique), `type` (enum: reguler/khusus) | ☐ |
+| 3 | `programs` | `category_id` (FK), `slug` (unique), `price`, `is_free`, `status` (enum) | ☐ |
+| 4 | `registrations` | `ref_code` (unique), `type` (enum), `program_id` (nullable FK), `status` (enum) | ☐ |
+| 5 | `gallery` | `title`, `image`, `category`, `order`, `is_active` | ☐ |
+| 6 | `posts` | `user_id` (FK), `slug` (unique), `is_published`, `published_at` | ☐ |
+| 7 | `testimonials` | `type` (enum), `program_id` (nullable FK), `rating`, `is_active` | ☐ |
+| 8 | `faqs` | `question`, `answer`, `category`, `order`, `is_active` | ☐ |
+| 9 | `service_categories` | `name`, `slug` (unique), `icon`, `order` | ☐ |
+| 10 | `services` | `category_id` (FK), `price_start`, `price_end` (nullable), `is_active` | ☐ |
+| 11 | `settings` | `key` (unique), `value`, `type` (enum), `group` | ☐ |
+
+### TC-0.3.3: Verifikasi Foreign Keys
+| # | Langkah | Expected Result | Status |
+|---|---|---|---|
+| 1 | Hapus `program_category` yang punya program | Cascade delete: program ikut terhapus | ☐ |
+| 2 | Hapus `program` yang punya registration | Registration `program_id` → NULL | ☐ |
+| 3 | Hapus `user` yang punya post | Cascade delete: post ikut terhapus | ☐ |
+| 4 | Hapus `service_category` yang punya service | Cascade delete: service ikut terhapus | ☐ |
 
 ---
 
-## T1.4 — Layout: Toast Notification
+## T0.4 — Eloquent Models
 
-### TC-1.4.1: Tampilan Toast
-| # | Langkah | Expected Result | Status |
+### TC-0.4.1: Model User
+| # | Langkah (Tinker) | Expected Result | Status |
 |---|---|---|---|
-| 1 | Set session `success` → refresh halaman | Toast hijau muncul dengan icon ✓ dan pesan | ☐ |
-| 2 | Set session `error` → refresh halaman | Toast merah muncul dengan icon ✕ dan pesan | ☐ |
-| 3 | Set session `info` → refresh halaman | Toast biru muncul dengan icon ℹ dan pesan | ☐ |
-| 4 | Tunggu 5 detik | Toast hilang otomatis dengan animasi | ☐ |
-| 5 | Klik tombol close (X) sebelum 5 detik | Toast langsung hilang | ☐ |
+| 1 | `User::first()->isSuperadmin()` | `true` (akun admin pertama) | ☐ |
+| 2 | `User::first()->isStaff()` | `false` | ☐ |
+| 3 | `User::where('role','staff')->first()->isStaff()` | `true` | ☐ |
+| 4 | `User::first()->posts` | Return Collection (kosong) | ☐ |
+
+### TC-0.4.2: Model Program & ProgramCategory
+| # | Langkah (Tinker) | Expected Result | Status |
+|---|---|---|---|
+| 1 | `Program::count()` | `8` | ☐ |
+| 2 | `Program::active()->count()` | `8` (semua aktif) | ☐ |
+| 3 | `Program::ordered()->first()->order` | `1` | ☐ |
+| 4 | `Program::first()->category` | Return ProgramCategory model | ☐ |
+| 5 | `ProgramCategory::first()->programs->count()` | `4` (reguler punya 4) | ☐ |
+
+### TC-0.4.3: Model Registration
+| # | Langkah (Tinker) | Expected Result | Status |
+|---|---|---|---|
+| 1 | `Registration::generateRefCode()` | Format `YWT-YYYYMMDD-00001` | ☐ |
+| 2 | Buat 2 registration di hari sama | Ref code increment: `00001`, `00002` | ☐ |
+
+### TC-0.4.4: Model Service & ServiceCategory
+| # | Langkah (Tinker) | Expected Result | Status |
+|---|---|---|---|
+| 1 | `ServiceCategory::count()` | `2` (Rambut, Wajah & Tubuh) | ☐ |
+| 2 | `Service::count()` | `16` | ☐ |
+| 3 | `Service::first()->formatted_price` | Format `Rp XX.XXX` | ☐ |
+| 4 | `Service::first()->category` | Return ServiceCategory model | ☐ |
+
+### TC-0.4.5: Model Setting
+| # | Langkah (Tinker) | Expected Result | Status |
+|---|---|---|---|
+| 1 | `Setting::getValue('site_name')` | `LKP/LPK Yuwita` | ☐ |
+| 2 | `Setting::getValue('nonexistent', 'default')` | `default` | ☐ |
+| 3 | `setting('contact_email')` (helper) | `lpkyuwita1@gmail.com` | ☐ |
+| 4 | `setting('nonexistent', 'fallback')` | `fallback` | ☐ |
 
 ---
 
-## T1.5 — Beranda: Section 1 (Hero)
+## T0.5 — Seeders
 
-### TC-1.5.1: Konten Hero
+### TC-0.5.1: Jalankan Seeder
 | # | Langkah | Expected Result | Status |
 |---|---|---|---|
-| 1 | Buka halaman utama | Hero section tampil pertama | ☐ |
-| 2 | Cek background | Gradient dari charcoal ke rose-gold-dark | ☐ |
-| 3 | Cek trust badges | 3 badge: "Berdiri sejak 2006", "Ribuan Alumni", "Bersertifikat Resmi" | ☐ |
-| 4 | Cek headline | Teks dari `setting('home_hero_headline')` | ☐ |
-| 5 | Cek subheadline | Teks dari `setting('home_hero_subheadline')` | ☐ |
-| 6 | Cek CTA primary | "Lihat Program Pelatihan" → link ke `/program` | ☐ |
-| 7 | Cek CTA secondary | "Konsultasi Gratis" → link ke `wa.me/...` | ☐ |
+| 1 | `php artisan migrate:fresh --seed` | Semua seeder berhasil tanpa error | ☐ |
 
-### TC-1.5.2: Responsif
+### TC-0.5.2: Verifikasi Data Seed
+| # | Tabel | Expected Count | Verifikasi Data | Status |
+|---|---|---|---|---|
+| 1 | `users` | 2 | Superadmin: `admin@lkp-yuwita.com`, Staff: `staff@lkp-yuwita.com` | ☐ |
+| 2 | `program_categories` | 2 | `Kelas Reguler` (reguler), `Kelas Khusus` (khusus) | ☐ |
+| 3 | `programs` | 8 | 4 reguler (MUA, Rambut, Kulit, Hand Bouquet) + 4 khusus (MUA, Rias Pengantin, Rambut, Kulit) | ☐ |
+| 4 | `service_categories` | 2 | `Rambut`, `Wajah & Tubuh` | ☐ |
+| 5 | `services` | 16 | 8 layanan rambut + 8 layanan wajah & tubuh | ☐ |
+| 6 | `settings` | 26 | Group: identitas (5), kontak (5), sosial (4), seo (4), beranda (8) | ☐ |
+| 7 | `faqs` | 11 | Kategori: Pendaftaran, Sertifikasi, Biaya, Program, Layanan Salon | ☐ |
+
+### TC-0.5.3: Verifikasi Password Hashing
 | # | Langkah | Expected Result | Status |
 |---|---|---|---|
-| 1 | Mobile (< 640px) | Headline font-size mengecil, CTA buttons stack vertikal | ☐ |
-| 2 | Desktop (≥ 1024px) | Headline besar, padding lebih luas | ☐ |
+| 1 | `User::first()->password` | Bukan plain text, sudah di-hash (bcrypt) | ☐ |
+| 2 | `Hash::check('password', User::first()->password)` | `true` | ☐ |
 
 ---
 
-## T1.6 — Beranda: Section 2 (Statistik)
+## T0.6 — Helper & Routes
 
-### TC-1.6.1: Counter Animasi
+### TC-0.6.1: SettingHelper
 | # | Langkah | Expected Result | Status |
 |---|---|---|---|
-| 1 | Scroll sampai section statistik terlihat | Counter mulai animasi dari 0 ke target | ☐ |
-| 2 | Cek angka Alumni | Animasi ke `5.000+` (dari setting) | ☐ |
-| 3 | Cek angka Tahun | Animasi ke `18+` | ☐ |
-| 4 | Cek angka Program | Animasi ke `8` | ☐ |
-| 5 | Cek angka Mitra | Animasi ke `20+` | ☐ |
-| 6 | Scroll up lalu scroll down lagi | Counter TIDAK mengulang (`.once`) | ☐ |
+| 1 | Panggil `setting('site_name')` dari tinker | Return `LKP/LPK Yuwita` | ☐ |
+| 2 | Panggil `setting('contact_wa_admin')` | Return `6285223506611` | ☐ |
+| 3 | Panggil `setting('key_tidak_ada')` | Return `null` | ☐ |
+| 4 | Panggil `setting('key_tidak_ada', 'default')` | Return `default` | ☐ |
 
-### TC-1.6.2: Layout
+### TC-0.6.2: Routes
 | # | Langkah | Expected Result | Status |
 |---|---|---|---|
-| 1 | Card statistik | Overlap hero section (-mt-8), bg white, shadow | ☐ |
-| 2 | Grid | 2 kolom (mobile), 4 kolom (desktop) | ☐ |
+| 1 | Akses `http://localhost:8000/` | Halaman Beranda tampil (200 OK) | ☐ |
+| 2 | Akses `http://localhost:8000/admin` | Halaman admin placeholder tampil (200 OK) | ☐ |
+| 3 | Jalankan `php artisan route:list` | Route `/` dan `/admin` terdaftar | ☐ |
+
+### TC-0.6.3: Storage Link
+| # | Langkah | Expected Result | Status |
+|---|---|---|---|
+| 1 | Cek folder `public/storage` | Symlink exists, mengarah ke `storage/app/public` | ☐ |
 
 ---
 
-## T1.7 — Beranda: Section 3 (Tentang Singkat)
-
-### TC-1.7.1: Konten
-| # | Langkah | Expected Result | Status |
-|---|---|---|---|
-| 1 | Cek kiri | Placeholder image/gedung dengan gradient background | ☐ |
-| 2 | Cek floating card | Badge "Terakreditasi - Resmi & Terpercaya" | ☐ |
-| 3 | Cek kanan | Label "Tentang Kami" + heading + deskripsi | ☐ |
-| 4 | Cek 3 highlights | Tenaga Pengajar, Fasilitas Modern, Bersertifikat Nasional | ☐ |
-| 5 | Klik "Selengkapnya" | Mengarah ke `/tentang` | ☐ |
-
----
-
-## T1.8 — Beranda: Section 4 (Program Unggulan)
-
-### TC-1.8.1: Tab Filter
-| # | Langkah | Expected Result | Status |
-|---|---|---|---|
-| 1 | Default state | Tab "Semua" aktif (rose gold), semua program tampil | ☐ |
-| 2 | Klik tab "Kelas Reguler" | Hanya 4 program reguler yang tampil | ☐ |
-| 3 | Klik tab "Kelas Khusus" | Hanya 4 program khusus yang tampil | ☐ |
-| 4 | Klik tab "Semua" lagi | Kembali ke semua 8 program | ☐ |
-| 5 | Cek animasi filter | Card muncul/hilang dengan fade + scale transition | ☐ |
-
-### TC-1.8.2: Program Card
-| # | Langkah | Expected Result | Status |
-|---|---|---|---|
-| 1 | Cek badge | "Kelas Reguler" (hijau) atau "Kelas Khusus" (rose gold) | ☐ |
-| 2 | Cek konten card | Nama program, deskripsi singkat (2 baris), harga | ☐ |
-| 3 | Cek harga reguler | `Rp 100.000` | ☐ |
-| 4 | Hover card | Shadow + translate-y (-1) | ☐ |
-| 5 | Klik "Detail" | Mengarah ke `/program/{slug}` | ☐ |
-| 6 | Cek tombol bawah | "Lihat Semua Program" → link ke `/program` | ☐ |
-
----
-
-## T1.9 — Beranda: Section 5 (Layanan Salon)
-
-### TC-1.9.1: Daftar Layanan
-| # | Langkah | Expected Result | Status |
-|---|---|---|---|
-| 1 | Cek 2 kolom | "Rambut" (kiri) dan "Wajah & Tubuh" (kanan) | ☐ |
-| 2 | Cek layanan Rambut | 8 item: Potongan Rambut Rp 20.000, ... | ☐ |
-| 3 | Cek layanan Wajah | 8 item: Facial Rp 35.000, ... | ☐ |
-| 4 | Cek format harga | Format Indonesia: `Rp XX.XXX` | ☐ |
-| 5 | Cek CTA | "Reservasi via WhatsApp" (hijau, link wa.me) | ☐ |
-
----
-
-## T1.10 — Beranda: Section 6 (Mengapa Memilih Kami)
-
-### TC-1.10.1: Feature Cards
-| # | Langkah | Expected Result | Status |
-|---|---|---|---|
-| 1 | Cek jumlah card | 6 kartu fitur | ☐ |
-| 2 | Cek isi | Pengajar, Fasilitas, Sertifikat, Kerja, Kelas, Bimbingan | ☐ |
-| 3 | Hover card | Background berubah ke rose-gold, teks jadi putih | ☐ |
-| 4 | Grid | 1 kolom (mobile), 2 kolom (tablet), 3 kolom (desktop) | ☐ |
-
----
-
-## T1.11 — Beranda: Section 7 (Galeri Preview)
-
-### TC-1.11.1: Grid & Placeholder
-| # | Langkah | Expected Result | Status |
-|---|---|---|---|
-| 1 | Jika tidak ada data galeri | 6 placeholder card dengan icon gambar | ☐ |
-| 2 | Jika ada data galeri | Grid foto 2 kolom (mobile), 3 kolom (desktop) | ☐ |
-| 3 | Hover foto (jika ada data) | Overlay gelap + icon zoom + judul | ☐ |
-| 4 | Cek tombol bawah | "Lihat Semua Galeri" → link ke `/galeri` | ☐ |
-
----
-
-## T1.12 — Beranda: Section 8 (Testimoni)
-
-### TC-1.12.1: Display
-| # | Langkah | Expected Result | Status |
-|---|---|---|---|
-| 1 | Jika tidak ada data testimoni | 3 placeholder card "Testimoni akan tampil di sini" | ☐ |
-| 2 | Jika ada data | Card: foto/inisial, nama, peran, program, rating bintang, kutipan | ☐ |
-| 3 | Cek bintang rating | Bintang kuning (terisi) dan abu-abu (kosong) | ☐ |
-| 4 | Cek link | "Lihat Semua Testimoni" → `/testimoni` | ☐ |
-
----
-
-## T1.13 — Beranda: Section 9 (Blog Terbaru)
-
-### TC-1.13.1: Artikel Cards
-| # | Langkah | Expected Result | Status |
-|---|---|---|---|
-| 1 | Jika tidak ada data | 3 placeholder card "Artikel akan segera hadir" | ☐ |
-| 2 | Jika ada data | Card: thumbnail, badge kategori, judul, excerpt, tanggal | ☐ |
-| 3 | Hover card | Shadow + translate-y | ☐ |
-| 4 | Cek link | "Lihat Semua Artikel" → `/blog` | ☐ |
-
----
-
-## T1.14 — Beranda: Section 10 (CTA Banner)
-
-### TC-1.14.1: CTA Banner
-| # | Langkah | Expected Result | Status |
-|---|---|---|---|
-| 1 | Cek background | Gradient rose-gold + decorative circles | ☐ |
-| 2 | Cek headline | Teks dari `setting('home_cta_text')` | ☐ |
-| 3 | Cek subtext | Teks dari `setting('home_cta_subtext')` | ☐ |
-| 4 | Cek CTA primary | "Daftar Sekarang" (putih) → `/daftar` | ☐ |
-| 5 | Cek CTA secondary | "Hubungi Kami" (outline) → `/kontak` | ☐ |
-
----
-
-## T1.15 — Beranda: Section 11 (Mitra)
-
-### TC-1.15.1: Logo Partner
-| # | Langkah | Expected Result | Status |
-|---|---|---|---|
-| 1 | Cek heading | "Telah Bekerja Sama Dengan" | ☐ |
-| 2 | Cek placeholder | 5 placeholder logo "Mitra 1–5" | ☐ |
-| 3 | Hover logo | Opacity berubah dari 50% ke 100% | ☐ |
-
----
-
-## T1.16 — SEO & Meta Tags
-
-### TC-1.16.1: Head Tags
-| # | Langkah | Expected Result | Status |
-|---|---|---|---|
-| 1 | Cek `<title>` | Berisi setting `seo_meta_title` | ☐ |
-| 2 | Cek `<meta name="description">` | Berisi setting `seo_meta_description` | ☐ |
-| 3 | Cek `<link rel="canonical">` | URL halaman saat ini | ☐ |
-| 4 | Cek `og:title` | Sama dengan title | ☐ |
-| 5 | Cek `og:description` | Sama dengan meta description | ☐ |
-| 6 | Cek `og:url` | URL halaman saat ini | ☐ |
-| 7 | Cek CSRF meta | `<meta name="csrf-token">` ada | ☐ |
-
----
-
-## T1.17 — Cross-Device Responsiveness
-
-### TC-1.17.1: Breakpoints
-| # | Device / Width | Yang Dicek | Status |
-|---|---|---|---|
-| 1 | Mobile (375px) | Navbar hamburger, layout 1 kolom, CTA full-width | ☐ |
-| 2 | Tablet (768px) | Grid 2 kolom untuk program, layanan 1 kolom | ☐ |
-| 3 | Desktop (1280px) | Grid 3 kolom, navbar horizontal, 4-kolom footer | ☐ |
-| 4 | Wide (1536px+) | Max-width container, konten tetap centered | ☐ |
-
----
-
-> **Total Test Cases:** 80+
-> **Metode:** Manual via browser (desktop & responsive mode)
-> **Tools:** Chrome DevTools, browser resize, inspect elements
+> **Total Test Cases:** 60+
+> **Metode:** Manual via `php artisan tinker`, browser, dan terminal

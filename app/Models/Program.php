@@ -63,4 +63,21 @@ class Program extends Model
     {
         return $query->orderBy('order');
     }
+
+    public function scopeByCategory($query, string $type)
+    {
+        return $query->whereHas('category', fn($q) => $q->where('type', $type));
+    }
+
+    /**
+     * Format harga untuk tampilan
+     */
+    public function getFormattedPriceAttribute(): string
+    {
+        if ($this->is_free) {
+            return 'GRATIS';
+        }
+
+        return 'Rp ' . number_format((float) $this->price, 0, ',', '.');
+    }
 }

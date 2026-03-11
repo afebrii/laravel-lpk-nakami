@@ -19,8 +19,8 @@ class SettingSeeder extends Seeder
 
             // === Kontak ===
             ['key' => 'contact_address', 'value' => 'Jl. Leuwianyar No. 107, Kota Tasikmalaya, Jawa Barat', 'type' => 'textarea', 'label' => 'Alamat Lengkap', 'group' => 'kontak'],
-            ['key' => 'contact_phone', 'value' => '+62 852-2350-6611', 'type' => 'text', 'label' => 'No. Telepon / WhatsApp', 'group' => 'kontak'],
-            ['key' => 'contact_wa_admin', 'value' => '6285223506611', 'type' => 'text', 'label' => 'No. WhatsApp Admin (tanpa +)', 'group' => 'kontak'],
+            ['key' => 'contact_phone', 'value' => '+62 822-1679-6892', 'type' => 'text', 'label' => 'No. Telepon / WhatsApp', 'group' => 'kontak'],
+            ['key' => 'contact_wa_admin', 'value' => '6282216796892', 'type' => 'text', 'label' => 'No. WhatsApp Admin (tanpa +)', 'group' => 'kontak'],
             ['key' => 'contact_email', 'value' => 'lpkyuwita1@gmail.com', 'type' => 'text', 'label' => 'Email', 'group' => 'kontak'],
             ['key' => 'contact_hours', 'value' => 'Senin – Sabtu: 08.00 – 17.00 WIB | Minggu: Tutup', 'type' => 'text', 'label' => 'Jam Operasional', 'group' => 'kontak'],
 

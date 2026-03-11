@@ -47,7 +47,9 @@
     @include('layouts.partials.footer')
 
     {{-- WhatsApp Floating Button --}}
-    @include('layouts.partials.whatsapp-button')
+    @if(empty($hide_whatsapp))
+        @include('layouts.partials.whatsapp-button')
+    @endif
 
     @stack('scripts')
 </body>

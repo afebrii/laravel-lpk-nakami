@@ -79,158 +79,158 @@
 
 ---
 
-## Phase 3 — Halaman Program & Layanan Salon (2 hari)
+## Phase 3 — Halaman Program & Layanan Salon ✅ (2 hari)
 
 > Halaman listing program, detail program, dan halaman layanan salon.
 
 ### 3.1 Program Pelatihan `/program`
 
-- [ ] `Public\ProgramController@index` — listing semua program
-- [ ] Page Hero + Breadcrumb
-- [ ] Filter & Pencarian: tab kategori (Alpine.js), search bar, filter harga
-- [ ] Penjelasan singkat tiap kategori (Reguler vs Khusus)
-- [ ] Grid card program dengan badge, deskripsi, durasi, harga, tombol detail
-- [ ] Animasi filter tanpa reload (Alpine.js)
-- [ ] CTA Konsultasi banner
+- [x] `Public\ProgramController@index` — listing semua program
+- [x] Page Hero + Breadcrumb
+- [x] Filter & Pencarian: tab kategori (Alpine.js), search bar, filter harga
+- [x] Penjelasan singkat tiap kategori (Reguler vs Khusus)
+- [x] Grid card program dengan badge, deskripsi, durasi, harga, tombol detail
+- [x] Animasi filter tanpa reload (Alpine.js)
+- [x] CTA Konsultasi banner
 
 ### 3.2 Detail Program `/program/{slug}`
 
-- [ ] `Public\ProgramController@show` — detail satu program
-- [ ] Header: breadcrumb, banner, nama, badge status, harga, durasi
-- [ ] Deskripsi program & tujuan pembelajaran
-- [ ] Kurikulum/Silabus: accordion per modul (Alpine.js)
-- [ ] Informasi program: tabel durasi, jadwal, metode, kuota, fasilitas, syarat
-- [ ] Persyaratan pendaftaran (list dokumen)
-- [ ] Biaya & Pembayaran
-- [ ] Testimoni alumni program ini (2–3 card)
-- [ ] Tombol Daftar (sticky di mobile)
-- [ ] Program Terkait (3 card)
+- [x] `Public\ProgramController@show` — detail satu program
+- [x] Header: breadcrumb, banner, nama, badge status, harga, durasi
+- [x] Deskripsi program & tujuan pembelajaran
+- [x] Kurikulum/Silabus: accordion per modul (Alpine.js)
+- [x] Informasi program: tabel durasi, jadwal, metode, kuota, fasilitas, syarat
+- [x] Persyaratan pendaftaran (list dokumen)
+- [x] Biaya & Pembayaran
+- [x] Testimoni alumni program ini (2–3 card)
+- [x] Tombol Daftar (sticky di mobile)
+- [x] Program Terkait (3 card)
 
 ### 3.3 Layanan Salon `/layanan`
 
-- [ ] `Public\ServiceController@index` — daftar layanan
-- [ ] Page Hero + Breadcrumb
-- [ ] Filter kategori: tab Semua/Rambut/Wajah & Tubuh (Alpine.js)
-- [ ] Daftar layanan per kategori: ikon, nama, deskripsi, harga, hover effect
-- [ ] Info reservasi: cara reservasi, jam operasional, alamat, tombol WA
-- [ ] Galeri hasil layanan (6 foto)
+- [x] `Public\ServiceController@index` — daftar layanan
+- [x] Page Hero + Breadcrumb
+- [x] Filter kategori: tab Semua/Rambut/Wajah & Tubuh (Alpine.js)
+- [x] Daftar layanan per kategori: ikon, nama, deskripsi, harga, hover effect
+- [x] Info reservasi: cara reservasi, jam operasional, alamat, tombol WA
+- [x] Galeri hasil layanan (6 foto)
 
 ---
 
-## Phase 4 — Galeri, Tentang Kami, FAQ, Testimoni (2 hari)
+## Phase 4 — Galeri, Tentang Kami, FAQ, Testimoni ✅ (2 hari)
 
 > Halaman-halaman informasi dan portofolio.
 
 ### 4.1 Galeri `/galeri`
 
-- [ ] `Public\GalleryController@index`
-- [ ] Page Hero + Breadcrumb
-- [ ] Filter kategori: Semua/Kegiatan Pelatihan/Hasil Karya/Rias Pengantin/Salon/Event
-- [ ] Grid foto masonry/Pinterest-style dengan lazy loading
-- [ ] Lightbox saat diklik (Alpine.js)
-- [ ] Load More / Pagination
+- [x] `Public\GalleryController@index`
+- [x] Page Hero + Breadcrumb
+- [x] Filter kategori: Semua/Kegiatan Pelatihan/Hasil Karya/Rias Pengantin/Salon/Event
+- [x] Grid foto masonry/Pinterest-style dengan lazy loading
+- [x] Lightbox saat diklik (Alpine.js)
+- [x] Load More / Pagination
 
 ### 4.2 Tentang Kami `/tentang`
 
-- [ ] `Public\AboutController@index`
-- [ ] Page Hero + Breadcrumb
-- [ ] Latar Belakang & Sejarah: foto, narasi, timeline visual
-- [ ] Visi & Misi: 2 kolom card
-- [ ] Keunggulan Lembaga: 4–6 kartu icon
-- [ ] Struktur Organisasi: bagan visual (foto + nama + jabatan)
-- [ ] Legalitas: daftar izin operasional dengan thumbnail scan
-- [ ] Penghargaan: grid card penghargaan
-- [ ] Link Kebijakan Privasi
+- [x] `Public\AboutController@index`
+- [x] Page Hero + Breadcrumb
+- [x] Latar Belakang & Sejarah: foto, narasi, timeline visual
+- [x] Visi & Misi: 2 kolom card
+- [x] Keunggulan Lembaga: 4–6 kartu icon
+- [x] Struktur Organisasi: bagan visual (foto + nama + jabatan)
+- [x] Legalitas: daftar izin operasional dengan thumbnail scan
+- [x] Penghargaan: grid card penghargaan
+- [x] Link Kebijakan Privasi
 
 ### 4.3 FAQ `/faq`
 
-- [ ] `Public\FaqController@index`
-- [ ] Page Hero + search bar FAQ
-- [ ] Filter kategori FAQ: tab (Pendaftaran/Program/Biaya/Sertifikasi/Salon/Lainnya)
-- [ ] Accordion FAQ (Alpine.js) dengan animasi buka/tutup
-- [ ] CTA "Pertanyaanmu belum ada?" + tombol WA & form
+- [x] `Public\FaqController@index`
+- [x] Page Hero + search bar FAQ
+- [x] Filter kategori FAQ: tab (Pendaftaran/Program/Biaya/Sertifikasi/Salon/Lainnya)
+- [x] Accordion FAQ (Alpine.js) dengan animasi buka/tutup
+- [x] CTA "Pertanyaanmu belum ada?" + tombol WA & form
 
 ### 4.4 Testimoni `/testimoni`
 
-- [ ] `Public\TestimonialController@index`
-- [ ] Page Hero + rating rata-rata
-- [ ] Filter: tab Alumni/Pelanggan + dropdown per program
-- [ ] Grid 3 kolom card: foto, nama, peran, rating bintang, kutipan
-- [ ] Pagination / Load more
+- [x] `Public\TestimonialController@index`
+- [x] Page Hero + rating rata-rata
+- [x] Filter: tab Alumni/Pelanggan + dropdown per program
+- [x] Grid 3 kolom card: foto, nama, peran, rating bintang, kutipan
+- [x] Pagination / Load more
 
 ---
 
-## Phase 5 — Sistem Pendaftaran (2 hari)
+## Phase 5 — Sistem Pendaftaran ✅ (2 hari)
 
 > Form pendaftaran online (konsultasi & pelatihan) dengan validasi dan backend.
 
 ### 5.1 Halaman Pendaftaran `/daftar`
 
-- [ ] `Public\RegistrationController` — store + show success
-- [ ] Page Hero + instruksi cara mendaftar
-- [ ] 2 tab pilihan: Konsultasi Gratis | Daftar Program Pelatihan (Alpine.js)
-- [ ] **Form Konsultasi (Tab 1):**
-  - [ ] Field: Nama, WhatsApp, Email (opsional), Program diminati, Pesan
-  - [ ] Honeypot anti-spam
-  - [ ] Validasi frontend (Alpine.js) + backend (FormRequest)
-  - [ ] Toast sukses setelah submit
-- [ ] **Form Daftar Pelatihan (Tab 2):**
-  - [ ] Field: Program, Nama, WhatsApp, Email, TTL, Gender, Alamat
-  - [ ] Field: Pendidikan, Pekerjaan, No HP Ibu, Motivasi
-  - [ ] Upload Pas Foto 3x4 (max 2MB, jpg/png)
-  - [ ] Checkbox persetujuan syarat & ketentuan
-  - [ ] Honeypot anti-spam
-  - [ ] Validasi frontend + backend (`StoreRegistrationRequest`)
-- [ ] Buat `StoreRegistrationRequest` dengan validasi lengkap
-- [ ] Generate nomor referensi: `YWT-YYYYMMDD-XXXXX`
-- [ ] Redirect ke halaman sukses `/sukses-daftar` dengan nomor referensi
+- [x] `Public\RegistrationController` — store + show success
+- [x] Page Hero + instruksi cara mendaftar
+- [x] 2 tab pilihan: Konsultasi Gratis | Daftar Program Pelatihan (Alpine.js)
+- [x] **Form Konsultasi (Tab 1):**
+  - [x] Field: Nama, WhatsApp, Email (opsional), Program diminati, Pesan
+  - [x] Honeypot anti-spam
+  - [x] Validasi frontend (Alpine.js) + backend (FormRequest)
+  - [x] Toast sukses setelah submit
+- [x] **Form Daftar Pelatihan (Tab 2):**
+  - [x] Field: Program, Nama, WhatsApp, Email, TTL, Gender, Alamat
+  - [x] Field: Pendidikan, Pekerjaan, No HP Ibu, Motivasi
+  - [x] Upload Pas Foto 3x4 (max 2MB, jpg/png)
+  - [x] Checkbox persetujuan syarat & ketentuan
+  - [x] Honeypot anti-spam
+  - [x] Validasi frontend + backend (`StoreRegistrationRequest`)
+- [x] Buat `StoreRegistrationRequest` dengan validasi lengkap
+- [x] Generate nomor referensi: `YWT-YYYYMMDD-XXXXX`
+- [x] Redirect ke halaman sukses `/sukses-daftar` dengan nomor referensi
 
 ### 5.2 Syarat & Dokumen
 
-- [ ] Accordion per program: dokumen yang diperlukan
-- [ ] Info umum persyaratan
+- [x] Accordion per program: dokumen yang diperlukan
+- [x] Info umum persyaratan
 
 ### 5.3 Info Kontak Pendaftaran
 
-- [ ] Nomor WA admin, jam layanan, alamat kantor
+- [x] Nomor WA admin, jam layanan, alamat kantor
 
 ---
 
-## Phase 6 — Blog, Kontak, Halaman Statis (1–2 hari)
+## Phase 6 — Blog, Kontak, Halaman Statis ✅ (1–2 hari)
 
 > Halaman blog, kontak, kebijakan privasi, dan halaman statis lainnya.
 
 ### 6.1 Blog `/blog`
 
-- [ ] `Public\PostController@index` — listing artikel
-- [ ] Page Hero + Breadcrumb
-- [ ] Featured Post (1 artikel unggulan full-width)
-- [ ] Filter & Search: tab kategori (Tips/Info Program/Berita/Tutorial), search bar
-- [ ] Grid artikel 3 kolom: thumbnail, badge, judul, excerpt, tanggal, penulis
-- [ ] Pagination (10 per halaman)
+- [x] `Public\PostController@index` — listing artikel
+- [x] Page Hero + Breadcrumb
+- [x] Featured Post (1 artikel unggulan full-width)
+- [x] Filter & Search: tab kategori (Tips/Info Program/Berita/Tutorial), search bar
+- [x] Grid artikel 3 kolom: thumbnail, badge, judul, excerpt, tanggal, penulis
+- [x] Pagination (10 per halaman)
 
 ### 6.2 Detail Blog `/blog/{slug}`
 
-- [ ] `Public\PostController@show`
-- [ ] Header: breadcrumb, kategori, judul H1, meta (tanggal, penulis, waktu baca)
-- [ ] Konten rich text (dari TinyMCE)
-- [ ] Tombol share: WhatsApp, Facebook, salin link
-- [ ] Artikel terkait (3 card)
+- [x] `Public\PostController@show`
+- [x] Header: breadcrumb, kategori, judul H1, meta (tanggal, penulis, waktu baca)
+- [x] Konten rich text (dari TinyMCE)
+- [x] Tombol share: WhatsApp, Facebook, salin link
+- [x] Artikel terkait (3 card)
 
 ### 6.3 Kontak `/kontak`
 
-- [ ] `Public\ContactController@index` + `store`
-- [ ] Page Hero + Breadcrumb
-- [ ] 2 kolom: Form kontak (kiri) + Info kontak (kanan)
-- [ ] Form: Nama, Email, WhatsApp, Subjek, Pesan
-- [ ] Info: alamat, telepon/WA, email, jam operasional, link sosmed, tombol WA
-- [ ] Google Maps embed + tombol "Buka di Google Maps"
+- [x] `Public\ContactController@index` + `store`
+- [x] Page Hero + Breadcrumb
+- [x] 2 kolom: Form kontak (kiri) + Info kontak (kanan)
+- [x] Form: Nama, Email, WhatsApp, Subjek, Pesan
+- [x] Info: alamat, telepon/WA, email, jam operasional, link sosmed, tombol WA
+- [x] Google Maps embed + tombol "Buka di Google Maps"
 
 ### 6.4 Halaman Statis
 
-- [ ] `/kebijakan-privasi` — halaman kebijakan privasi
-- [ ] `/404` — halaman not found custom & on-brand
-- [ ] `/sukses-daftar` — konfirmasi setelah pendaftaran (nomor referensi + instruksi)
+- [x] `/kebijakan-privasi` — halaman kebijakan privasi
+- [x] `/404` — halaman not found custom & on-brand
+- [x] `/sukses-daftar` — konfirmasi setelah pendaftaran (nomor referensi + instruksi)
 
 ---
 
