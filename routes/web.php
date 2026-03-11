@@ -1,15 +1,15 @@
 <?php
 
-use App\Http\Controllers\Public\AboutController;
-use App\Http\Controllers\Public\ContactController;
-use App\Http\Controllers\Public\FaqController;
-use App\Http\Controllers\Public\GalleryController;
-use App\Http\Controllers\Public\HomeController;
-use App\Http\Controllers\Public\PostController;
-use App\Http\Controllers\Public\ProgramController;
-use App\Http\Controllers\Public\RegistrationController;
-use App\Http\Controllers\Public\ServiceController;
-use App\Http\Controllers\Public\TestimonialController;
+use App\Http\Controllers\Front\AboutController;
+use App\Http\Controllers\Front\ContactController;
+use App\Http\Controllers\Front\FaqController;
+use App\Http\Controllers\Front\GalleryController;
+use App\Http\Controllers\Front\HomeController;
+use App\Http\Controllers\Front\PostController;
+use App\Http\Controllers\Front\ProgramController;
+use App\Http\Controllers\Front\RegistrationController;
+use App\Http\Controllers\Front\ServiceController;
+use App\Http\Controllers\Front\TestimonialController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');

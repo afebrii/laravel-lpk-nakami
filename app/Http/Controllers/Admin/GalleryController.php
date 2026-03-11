@@ -37,7 +37,6 @@ class GalleryController extends Controller
             'title' => 'required|max:255',
             'image' => 'required|image|max:5120',
             'category' => 'nullable|max:100',
-            'description' => 'nullable|max:500',
             'order' => 'nullable|integer',
             'is_active' => 'boolean',
         ]);
@@ -63,7 +62,6 @@ class GalleryController extends Controller
             'title' => 'required|max:255',
             'image' => 'nullable|image|max:5120',
             'category' => 'nullable|max:100',
-            'description' => 'nullable|max:500',
             'order' => 'nullable|integer',
             'is_active' => 'boolean',
         ]);

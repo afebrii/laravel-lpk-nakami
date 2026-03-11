@@ -67,10 +67,10 @@
 
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
-                                <label for="contact_phone" class="block text-sm font-semibold text-charcoal mb-1.5">WhatsApp <span class="text-dark-gray text-xs">(opsional)</span></label>
+                                <label for="contact_phone" class="block text-sm font-semibold text-charcoal mb-1.5">WhatsApp (62) <span class="text-dark-gray text-xs">(opsional)</span></label>
                                 <input type="text" name="phone" id="contact_phone" value="{{ old('phone') }}"
                                        class="w-full px-4 py-3 bg-soft-cream/50 border border-medium-gray rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-rose-gold/30 focus:border-rose-gold transition-all"
-                                       placeholder="082216796892">
+                                       placeholder="Contoh: 6282216796892">
                             </div>
                             <div>
                                 <label for="contact_subject" class="block text-sm font-semibold text-charcoal mb-1.5">Subjek <span class="text-red-500">*</span></label>
@@ -193,7 +193,7 @@
                 <div class="bg-white border border-light-gray rounded-2xl overflow-hidden shadow-sm">
                     <div class="aspect-[4/3] bg-light-gray">
                         @if(setting('seo_google_maps_embed'))
-                            <iframe src="{{ setting('seo_google_maps_embed') }}" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <iframe src="{{ parse_google_maps_url(setting('seo_google_maps_embed')) }}" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         @else
                             <div class="w-full h-full flex flex-col items-center justify-center text-dark-gray">
                                 <svg class="w-12 h-12 text-rose-gold/20 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>

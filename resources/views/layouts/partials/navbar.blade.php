@@ -92,15 +92,17 @@
                     </div>
                 </div>
 
-                <a href="{{ url('/faq') }}"
-                   class="px-3 py-2 text-sm font-medium text-charcoal hover:text-rose-gold transition-colors {{ request()->is('faq*') ? 'text-rose-gold' : '' }}">
-                    FAQ
+                <a href="{{ url('/blog') }}"
+                   class="px-3 py-2 text-sm font-medium text-charcoal hover:text-rose-gold transition-colors {{ request()->is('blog*') ? 'text-rose-gold' : '' }}">
+                    Blog
                 </a>
 
                 <a href="{{ url('/kontak') }}"
                    class="px-3 py-2 text-sm font-medium text-charcoal hover:text-rose-gold transition-colors {{ request()->is('kontak*') ? 'text-rose-gold' : '' }}">
                     Kontak
                 </a>
+
+
             </div>
 
             {{-- CTA Button (Desktop) --}}
@@ -142,8 +144,9 @@
             <a href="{{ url('/layanan') }}" class="block px-4 py-2.5 text-sm font-medium rounded-lg {{ request()->is('layanan*') ? 'bg-soft-cream text-rose-gold' : 'text-charcoal hover:bg-soft-cream' }} transition-colors">Layanan Salon</a>
             <a href="{{ url('/galeri') }}" class="block px-4 py-2.5 text-sm font-medium rounded-lg {{ request()->is('galeri*') ? 'bg-soft-cream text-rose-gold' : 'text-charcoal hover:bg-soft-cream' }} transition-colors">Galeri</a>
             <a href="{{ url('/tentang') }}" class="block px-4 py-2.5 text-sm font-medium rounded-lg {{ request()->is('tentang*') ? 'bg-soft-cream text-rose-gold' : 'text-charcoal hover:bg-soft-cream' }} transition-colors">Tentang Kami</a>
-            <a href="{{ url('/faq') }}" class="block px-4 py-2.5 text-sm font-medium rounded-lg {{ request()->is('faq*') ? 'bg-soft-cream text-rose-gold' : 'text-charcoal hover:bg-soft-cream' }} transition-colors">FAQ</a>
+            <a href="{{ url('/blog') }}" class="block px-4 py-2.5 text-sm font-medium rounded-lg {{ request()->is('blog*') ? 'bg-soft-cream text-rose-gold' : 'text-charcoal hover:bg-soft-cream' }} transition-colors">Blog</a>
             <a href="{{ url('/kontak') }}" class="block px-4 py-2.5 text-sm font-medium rounded-lg {{ request()->is('kontak*') ? 'bg-soft-cream text-rose-gold' : 'text-charcoal hover:bg-soft-cream' }} transition-colors">Kontak</a>
+
 
             <div class="pt-3">
                 <a href="{{ url('/daftar') }}" class="flex items-center justify-center gap-2 w-full px-5 py-3 bg-rose-gold text-white text-sm font-semibold rounded-full hover:bg-rose-gold-dark transition-all">

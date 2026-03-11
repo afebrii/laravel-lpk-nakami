@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+    @extends('layouts.admin')
 
 @section('title', isset($post) ? 'Edit Artikel' : 'Tulis Artikel')
 @section('page_title', isset($post) ? 'Edit Artikel' : 'Tulis Artikel')
@@ -51,12 +51,7 @@
 
                 <div>
                     <label class="block text-sm font-medium text-charcoal mb-1">Kategori *</label>
-                    <select name="category" required class="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-rose-gold/30">
-                        <option value="">— Pilih —</option>
-                        @foreach(['Tips Kecantikan','Berita','Tutorial','Info Program'] as $cat)
-                            <option value="{{ $cat }}" {{ old('category', $post->category ?? '') === $cat ? 'selected' : '' }}>{{ $cat }}</option>
-                        @endforeach
-                    </select>
+                    <input type="text" name="category" value="{{ old('category', $post->category ?? '') }}" required placeholder="contoh: Tips Kecantikan, Berita" class="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-rose-gold/30">
                 </div>
 
                 <label class="flex items-center gap-2 cursor-pointer">
@@ -88,7 +83,7 @@
 @endsection
 
 @push('scripts')
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/6.8.3/tinymce.min.js" referrerpolicy="origin"></script>
 <script>
     tinymce.init({
         selector: '.tinymce-editor',

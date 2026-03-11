@@ -61,6 +61,9 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::resource('services', ServiceController::class)->except('show');
     Route::resource('service-categories', ServiceCategoryController::class)->except('show');
 
+    // Pesan Kontak
+    Route::resource('contacts', App\Http\Controllers\Admin\ContactController::class)->only(['index', 'show', 'destroy']);
+
     // Superadmin only
     Route::middleware('role:superadmin')->group(function () {
         Route::resource('users', UserController::class)->except('show');

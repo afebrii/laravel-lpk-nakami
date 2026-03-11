@@ -129,10 +129,10 @@
 
                     {{-- WhatsApp --}}
                     <div>
-                        <label for="konsul_phone" class="block text-sm font-semibold text-charcoal mb-1.5">Nomor WhatsApp <span class="text-red-500">*</span></label>
+                        <label for="konsul_phone" class="block text-sm font-semibold text-charcoal mb-1.5">Nomor WhatsApp (62) <span class="text-red-500">*</span></label>
                         <input type="text" name="phone" id="konsul_phone" value="{{ old('phone') }}" required
                                class="w-full px-4 py-3 bg-soft-cream/50 border border-medium-gray rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-rose-gold/30 focus:border-rose-gold transition-all"
-                               placeholder="Contoh: 08521234567">
+                               placeholder="Contoh: 6282216796892">
                         @error('phone')<p class="text-xs text-red-500 mt-1">{{ $message }}</p>@enderror
                     </div>
 
@@ -233,10 +233,10 @@
                     {{-- 2 Columns: WhatsApp & Email --}}
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
-                            <label for="training_phone" class="block text-sm font-semibold text-charcoal mb-1.5">Nomor WhatsApp <span class="text-red-500">*</span></label>
+                            <label for="training_phone" class="block text-sm font-semibold text-charcoal mb-1.5">Nomor WhatsApp (62) <span class="text-red-500">*</span></label>
                             <input type="text" name="phone" id="training_phone" value="{{ old('phone') }}" required
                                    class="w-full px-4 py-3 bg-soft-cream/50 border border-medium-gray rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-rose-gold/30 focus:border-rose-gold transition-all"
-                                   placeholder="08521234567">
+                                   placeholder="Contoh: 6282216796892">
                             @error('phone')<p class="text-xs text-red-500 mt-1">{{ $message }}</p>@enderror
                         </div>
                         <div>
@@ -309,12 +309,12 @@
                         </div>
                     </div>
 
-                    {{-- No HP Ibu --}}
+                    {{-- No HP Wali --}}
                     <div>
-                        <label for="training_mother_phone" class="block text-sm font-semibold text-charcoal mb-1.5">Nomor HP Orang Tua / Wali <span class="text-red-500">*</span></label>
+                        <label for="training_mother_phone" class="block text-sm font-semibold text-charcoal mb-1.5">Nomor HP Orang Tua / Wali (62) <span class="text-red-500">*</span></label>
                         <input type="text" name="mother_phone" id="training_mother_phone" value="{{ old('mother_phone') }}" required
                                class="w-full px-4 py-3 bg-soft-cream/50 border border-medium-gray rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-rose-gold/30 focus:border-rose-gold transition-all"
-                               placeholder="Contoh: 08521234567">
+                               placeholder="Contoh: 6282216796892">
                         @error('mother_phone')<p class="text-xs text-red-500 mt-1">{{ $message }}</p>@enderror
                     </div>
 

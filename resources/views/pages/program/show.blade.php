@@ -91,32 +91,8 @@
                         </span>
                         Kurikulum & Silabus
                     </h2>
-                    <div x-data="{ openModule: 0 }" class="space-y-3">
-                        @php
-                            $modules = array_filter(array_map('trim', preg_split('/\n(?=\d+\.|Modul|BAB|Bab)/i', strip_tags($program->curriculum))));
-                            if (count($modules) <= 1) $modules = array_filter(array_map('trim', explode("\n", strip_tags($program->curriculum))));
-                        @endphp
-                        @foreach($modules as $index => $module)
-                        <div class="bg-white border border-light-gray rounded-xl overflow-hidden">
-                            <button @click="openModule = openModule === {{ $index }} ? -1 : {{ $index }}"
-                                    class="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-soft-cream transition-colors">
-                                <span class="text-sm font-semibold text-charcoal">{{ $module }}</span>
-                                <svg class="w-5 h-5 text-rose-gold transition-transform duration-300"
-                                     :class="openModule === {{ $index }} ? 'rotate-180' : ''"
-                                     fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                                </svg>
-                            </button>
-                            <div x-show="openModule === {{ $index }}"
-                                 x-transition:enter="transition ease-out duration-200"
-                                 x-transition:enter-start="opacity-0 -translate-y-2"
-                                 x-transition:enter-end="opacity-100 translate-y-0"
-                                 x-cloak
-                                 class="px-5 pb-4 text-sm text-dark-gray leading-relaxed border-t border-light-gray pt-3">
-                                Materi pembelajaran untuk {{ $module }}
-                            </div>
-                        </div>
-                        @endforeach
+                    <div class="prose prose-sm max-w-none text-dark-gray leading-relaxed">
+                        {!! $program->curriculum !!}
                     </div>
                 </div>
                 @endif

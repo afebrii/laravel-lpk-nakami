@@ -31,7 +31,7 @@ class TestimonialController extends Controller
 
     public function create()
     {
-        $programs = Program::where('is_active', true)->orderBy('name')->get(['id', 'name']);
+        $programs = Program::where('status', 'active')->orderBy('name')->get(['id', 'name']);
         return view('admin.testimonials.form', compact('programs'));
     }
 
@@ -63,7 +63,7 @@ class TestimonialController extends Controller
 
     public function edit(Testimonial $testimonial)
     {
-        $programs = Program::where('is_active', true)->orderBy('name')->get(['id', 'name']);
+        $programs = Program::where('status', 'active')->orderBy('name')->get(['id', 'name']);
         return view('admin.testimonials.form', compact('testimonial', 'programs'));
     }
 

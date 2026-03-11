@@ -1,0 +1,72 @@
+
+  Dropping all tables  153.93ms DONE
+
+   INFO  Preparing database.  
+
+  Creating migration table  16.76ms DONE
+
+   INFO  Running migrations.  
+
+  0001_01_01_000000_create_users_table  84.87ms DONE
+  0001_01_01_000001_create_cache_table  60.42ms DONE
+  0001_01_01_000002_create_jobs_table  83.40ms DONE
+  2026_03_11_000001_create_program_categories_table  40.09ms DONE
+  2026_03_11_000002_create_programs_table  86.63ms DONE
+  2026_03_11_000003_create_registrations_table  76.38ms DONE
+  2026_03_11_000004_create_gallery_table  11.01ms DONE
+  2026_03_11_000005_create_posts_table  69.99ms DONE
+  2026_03_11_000006_create_testimonials_table  54.73ms DONE
+  2026_03_11_000007_create_faqs_table  10.18ms DONE
+  2026_03_11_000008_create_service_categories_table  31.37ms DONE
+  2026_03_11_000009_create_services_table  43.95ms DONE
+  2026_03_11_000010_create_settings_table  30.95ms DONE
+  2026_03_11_000011_create_contacts_table  10.97ms DONE
+  2026_03_11_214119_drop_description_column_from_gallery_table  8.11ms DONE
+
+
+   INFO  Seeding database.  
+
+  Database\Seeders\UserSeeder  RUNNING  
+  Database\Seeders\UserSeeder  574 ms DONE  
+
+  Database\Seeders\ProgramCategorySeeder  RUNNING  
+  Database\Seeders\ProgramCategorySeeder  4 ms DONE  
+
+  Database\Seeders\ProgramSeeder  RUNNING  
+  Database\Seeders\ProgramSeeder  21 ms DONE  
+
+  Database\Seeders\ServiceSeeder  RUNNING  
+  Database\Seeders\ServiceSeeder  39 ms DONE  
+
+  Database\Seeders\SettingSeeder  RUNNING  
+  Database\Seeders\SettingSeeder  40 ms DONE  
+
+  Database\Seeders\FaqSeeder  RUNNING  
+  Database\Seeders\FaqSeeder  15 ms DONE  
+
+  Database\Seeders\GallerySeeder  RUNNING  
+  Database\Seeders\GallerySeeder  8 ms DONE  
+
+  Database\Seeders\TestimonialSeeder  RUNNING  
+
+   Illuminate\Database\QueryException 
+
+  SQLSTATE[01000]: Warning: 1265 Data truncated for column 'type' at row 1 (Connection: mysql, Host: 127.0.0.1, Port: 3306, Database: lkp-yuwita-db, SQL: insert into `testimonials` (`name`, `type`, `program_id`, `content`, `photo`, `rating`, `order`, `is_active`, `updated_at`, `created_at`) values (Rina Nose, public, ?, Sering perawatan wajah dan rambut di salon Yuwita. Pelayanannya sangat memuaskan, tempatnya bersih dan nyaman. Terapisnya juga ramah-ramah., ?, 5, 2, 1, 2026-03-11 23:01:24, 2026-03-11 23:01:24))
+
+  at vendor\laravel\framework\src\Illuminate\Database\Connection.php:838
+    834???             $exceptionType = $this->isUniqueConstraintError($e)
+    835???                 ? UniqueConstraintViolationException::class
+    836???                 : QueryException::class;
+    837??? 
+  ??? 838???             throw new $exceptionType(
+    839???                 $this->getNameWithReadWriteType(),
+    840???                 $query,
+    841???                 $this->prepareBindings($bindings),
+    842???                 $e,
+
+  1   vendor\laravel\framework\src\Illuminate\Database\MySqlConnection.php:53
+      PDOException::("SQLSTATE[01000]: Warning: 1265 Data truncated for column 'type' at row 1")
+
+  2   vendor\laravel\framework\src\Illuminate\Database\MySqlConnection.php:53
+      PDOStatement::execute()
+

@@ -59,7 +59,8 @@ class ProgramController extends Controller
             'order' => 'nullable|integer',
         ]);
 
-        $validated['slug'] = Str::slug($validated['name']);
+        $baseSlug = Str::slug($validated['name']);
+        $validated['slug'] = $baseSlug . '-' . substr(uniqid(), -5);
         $validated['is_free'] = $request->boolean('is_free');
 
         if ($request->hasFile('thumbnail')) {
@@ -100,7 +101,8 @@ class ProgramController extends Controller
             'order' => 'nullable|integer',
         ]);
 
-        $validated['slug'] = Str::slug($validated['name']);
+        $baseSlug = Str::slug($validated['name']);
+        $validated['slug'] = $baseSlug . '-' . substr(uniqid(), -5);
         $validated['is_free'] = $request->boolean('is_free');
 
         if ($request->hasFile('thumbnail')) {

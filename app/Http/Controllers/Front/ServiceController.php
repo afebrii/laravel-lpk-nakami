@@ -1,9 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Public;
+namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
-use App\Models\Gallery;
 use App\Models\ServiceCategory;
 
 class ServiceController extends Controller
@@ -14,12 +13,6 @@ class ServiceController extends Controller
             $q->active()->ordered();
         }])->ordered()->get();
 
-        $galleries = Gallery::active()
-            ->where('category', 'salon')
-            ->ordered()
-            ->take(6)
-            ->get();
-
-        return view('pages.layanan.index', compact('serviceCategories', 'galleries'));
+        return view('pages.layanan.index', compact('serviceCategories'));
     }
 }

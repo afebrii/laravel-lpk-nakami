@@ -31,10 +31,6 @@
                    class="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-rose-gold/30">
         </div>
 
-        <div>
-            <label class="block text-sm font-medium text-charcoal mb-1">Deskripsi</label>
-            <textarea name="description" rows="2" class="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-rose-gold/30">{{ old('description', $gallery->description ?? '') }}</textarea>
-        </div>
 
         <div class="grid grid-cols-2 gap-4">
             <div>

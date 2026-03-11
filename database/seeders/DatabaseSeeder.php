@@ -15,6 +15,11 @@ class DatabaseSeeder extends Seeder
             ServiceSeeder::class,
             SettingSeeder::class,
             FaqSeeder::class,
+            GallerySeeder::class,
+            TestimonialSeeder::class,
+            PostSeeder::class,
+            RegistrationSeeder::class,
+            ContactSeeder::class,
         ]);
     }
 }

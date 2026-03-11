@@ -340,7 +340,12 @@
 {{-- ============================================= --}}
 {{-- SECTION 7: GALERI PREVIEW --}}
 {{-- ============================================= --}}
-<section class="py-16 lg:py-24">
+<section class="py-16 lg:py-24"
+         x-data="{
+             lightbox: false,
+             lightboxSrc: '',
+             lightboxTitle: ''
+         }">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
             <span class="inline-block px-4 py-1.5 bg-rose-gold/10 text-rose-gold text-xs font-semibold rounded-full mb-4 uppercase tracking-wider">Galeri</span>
@@ -350,7 +355,8 @@
         @if($galleries->count() > 0)
         <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
             @foreach($galleries as $gallery)
-            <div class="group relative aspect-square rounded-xl overflow-hidden cursor-pointer">
+            <div class="group relative aspect-square rounded-xl overflow-hidden cursor-pointer"
+                 @click="lightbox = true; lightboxSrc = '{{ asset('storage/' . $gallery->image) }}'; lightboxTitle = '{{ addslashes($gallery->title) }}'">
                 <img src="{{ asset('storage/' . $gallery->image) }}" alt="{{ $gallery->title }}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy">
                 <div class="absolute inset-0 bg-charcoal/0 group-hover:bg-charcoal/50 transition-all duration-300 flex items-center justify-center">
                     <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-center">
@@ -378,6 +384,26 @@
             </a>
         </div>
     </div>
+    {{-- Lightbox Modal --}}
+    <div x-show="lightbox"
+         x-transition:enter="transition ease-out duration-300"
+         x-transition:enter-start="opacity-0"
+         x-transition:enter-end="opacity-100"
+         x-transition:leave="transition ease-in duration-200"
+         x-transition:leave-start="opacity-100"
+         x-transition:leave-end="opacity-0"
+         class="fixed inset-0 z-50 flex items-center justify-center bg-charcoal/90 backdrop-blur-sm p-4"
+         @click.self="lightbox = false"
+         @keydown.escape.window="lightbox = false"
+         x-cloak>
+        <button @click="lightbox = false" class="absolute top-4 right-4 text-white/70 hover:text-white transition-colors">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+        <div class="max-w-4xl w-full" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="scale-95" x-transition:enter-end="scale-100">
+            <img :src="lightboxSrc" :alt="lightboxTitle" class="w-full max-h-[80vh] object-contain rounded-lg">
+            <p class="text-center text-white/80 mt-3 text-sm" x-text="lightboxTitle"></p>
+        </div>
+    </div>
 </section>
 
 {{-- ============================================= --}}
@@ -391,39 +417,83 @@
         </div>
 
         @if($testimonials->count() > 0)
-        <div x-data="{ active: 0 }" class="relative">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                @foreach($testimonials as $index => $testimonial)
-                <div class="bg-soft-cream rounded-2xl p-6">
-                    {{-- Stars --}}
+        @if($testimonials->count() <= 3)
+        {{-- Grid biasa jika testimoni sedikit (≤ 3) --}}
+        <div class="flex flex-wrap justify-center gap-6">
+            @foreach($testimonials as $testimonial)
+            <div class="bg-soft-cream rounded-2xl p-6 w-80">
+                <div class="flex items-center gap-1 mb-3">
+                    @for($i = 1; $i <= 5; $i++)
+                    <svg class="w-4 h-4 {{ $i <= $testimonial->rating ? 'text-amber-400' : 'text-medium-gray' }}" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                    @endfor
+                </div>
+                <p class="text-sm text-dark-gray italic mb-4 line-clamp-4">"{{ $testimonial->content }}"</p>
+                <div class="flex items-center gap-3">
+                    @if($testimonial->photo)
+                    <img src="{{ asset('storage/' . $testimonial->photo) }}" alt="{{ $testimonial->name }}" class="w-10 h-10 rounded-full object-cover">
+                    @else
+                    <div class="w-10 h-10 rounded-full bg-rose-gold/20 flex items-center justify-center text-rose-gold font-bold text-sm shrink-0">{{ strtoupper(substr($testimonial->name, 0, 1)) }}</div>
+                    @endif
+                    <div>
+                        <p class="text-sm font-semibold text-charcoal">{{ $testimonial->name }}</p>
+                        <p class="text-xs text-dark-gray">{{ $testimonial->type === 'alumni' ? 'Alumni' : 'Pelanggan' }}@if($testimonial->program) — {{ $testimonial->program->name }}@endif</p>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+        </div>
+        @else
+        {{-- Infinite auto-scroll marquee jika testimoni banyak (> 3) --}}
+        <div class="relative overflow-hidden marquee-container"
+             style="mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);">
+            <div class="flex gap-6 animate-marquee">
+                {{-- Original cards --}}
+                @foreach($testimonials as $testimonial)
+                <div class="bg-soft-cream rounded-2xl p-6 shrink-0 w-80">
                     <div class="flex items-center gap-1 mb-3">
                         @for($i = 1; $i <= 5; $i++)
                         <svg class="w-4 h-4 {{ $i <= $testimonial->rating ? 'text-amber-400' : 'text-medium-gray' }}" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
                         @endfor
                     </div>
-                    {{-- Quote --}}
-                    <p class="text-sm text-dark-gray italic mb-4 line-clamp-4">"{{ $testimonial->content }}"</p>
-                    {{-- Profile --}}
+                    <p class="text-sm text-dark-gray italic mb-4 line-clamp-3">"{{ $testimonial->content }}"</p>
                     <div class="flex items-center gap-3">
                         @if($testimonial->photo)
-                        <img src="{{ asset('storage/' . $testimonial->photo) }}" alt="{{ $testimonial->name }}" class="w-10 h-10 rounded-full object-cover" loading="lazy">
+                        <img src="{{ asset('storage/' . $testimonial->photo) }}" alt="{{ $testimonial->name }}" class="w-10 h-10 rounded-full object-cover">
                         @else
-                        <div class="w-10 h-10 rounded-full bg-rose-gold/20 flex items-center justify-center text-rose-gold font-bold text-sm">
-                            {{ strtoupper(substr($testimonial->name, 0, 1)) }}
-                        </div>
+                        <div class="w-10 h-10 rounded-full bg-rose-gold/20 flex items-center justify-center text-rose-gold font-bold text-sm shrink-0">{{ strtoupper(substr($testimonial->name, 0, 1)) }}</div>
                         @endif
                         <div>
                             <p class="text-sm font-semibold text-charcoal">{{ $testimonial->name }}</p>
-                            <p class="text-xs text-dark-gray">
-                                {{ $testimonial->type === 'alumni' ? 'Alumni' : 'Pelanggan' }}
-                                @if($testimonial->program) — {{ $testimonial->program->name }} @endif
-                            </p>
+                            <p class="text-xs text-dark-gray">{{ $testimonial->type === 'alumni' ? 'Alumni' : 'Pelanggan' }}@if($testimonial->program) — {{ $testimonial->program->name }}@endif</p>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+                {{-- Duplicated cards for seamless loop --}}
+                @foreach($testimonials as $testimonial)
+                <div class="bg-soft-cream rounded-2xl p-6 shrink-0 w-80">
+                    <div class="flex items-center gap-1 mb-3">
+                        @for($i = 1; $i <= 5; $i++)
+                        <svg class="w-4 h-4 {{ $i <= $testimonial->rating ? 'text-amber-400' : 'text-medium-gray' }}" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                        @endfor
+                    </div>
+                    <p class="text-sm text-dark-gray italic mb-4 line-clamp-3">"{{ $testimonial->content }}"</p>
+                    <div class="flex items-center gap-3">
+                        @if($testimonial->photo)
+                        <img src="{{ asset('storage/' . $testimonial->photo) }}" alt="{{ $testimonial->name }}" class="w-10 h-10 rounded-full object-cover">
+                        @else
+                        <div class="w-10 h-10 rounded-full bg-rose-gold/20 flex items-center justify-center text-rose-gold font-bold text-sm shrink-0">{{ strtoupper(substr($testimonial->name, 0, 1)) }}</div>
+                        @endif
+                        <div>
+                            <p class="text-sm font-semibold text-charcoal">{{ $testimonial->name }}</p>
+                            <p class="text-xs text-dark-gray">{{ $testimonial->type === 'alumni' ? 'Alumni' : 'Pelanggan' }}@if($testimonial->program) — {{ $testimonial->program->name }}@endif</p>
                         </div>
                     </div>
                 </div>
                 @endforeach
             </div>
         </div>
+        @endif
         @else
         {{-- Placeholder --}}
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -543,23 +613,6 @@
     </div>
 </section>
 
-{{-- ============================================= --}}
-{{-- SECTION 11: MITRA / LOGO PARTNER --}}
-{{-- ============================================= --}}
-<section class="py-12 lg:py-16 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-8">
-            <p class="text-sm font-medium text-dark-gray uppercase tracking-wider">Telah Bekerja Sama Dengan</p>
-        </div>
-        <div class="flex flex-wrap items-center justify-center gap-8 lg:gap-12">
-            {{-- Placeholder mitra logos --}}
-            @for($i = 0; $i < 5; $i++)
-            <div class="w-24 h-12 bg-light-gray rounded-lg flex items-center justify-center opacity-50 hover:opacity-100 transition-opacity duration-300">
-                <span class="text-xs text-dark-gray font-medium">Mitra {{ $i + 1 }}</span>
-            </div>
-            @endfor
-        </div>
-    </div>
-</section>
+
 
 @endsection

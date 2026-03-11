@@ -49,11 +49,12 @@
                 <ul class="space-y-2.5">
                     <li><a href="{{ url('/') }}" class="text-sm text-white/70 hover:text-rose-gold-light transition-colors">Beranda</a></li>
                     <li><a href="{{ url('/program') }}" class="text-sm text-white/70 hover:text-rose-gold-light transition-colors">Program Pelatihan</a></li>
-                    <li><a href="{{ url('/layanan') }}" class="text-sm text-white/70 hover:text-rose-gold-light transition-colors">Layanan Salon</a></li>
                     <li><a href="{{ url('/galeri') }}" class="text-sm text-white/70 hover:text-rose-gold-light transition-colors">Galeri</a></li>
                     <li><a href="{{ url('/tentang') }}" class="text-sm text-white/70 hover:text-rose-gold-light transition-colors">Tentang Kami</a></li>
+                    <li><a href="{{ url('/testimoni') }}" class="text-sm text-white/70 hover:text-rose-gold-light transition-colors">Testimoni</a></li>
                     <li><a href="{{ url('/blog') }}" class="text-sm text-white/70 hover:text-rose-gold-light transition-colors">Blog</a></li>
                     <li><a href="{{ url('/faq') }}" class="text-sm text-white/70 hover:text-rose-gold-light transition-colors">FAQ</a></li>
+                    <li><a href="{{ url('/kontak') }}" class="text-sm text-white/70 hover:text-rose-gold-light transition-colors">Kontak</a></li>
                 </ul>
             </div>
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Public;
+namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreRegistrationRequest;
@@ -25,6 +25,12 @@ class RegistrationController extends Controller
 
         // Remove honeypot and agreement fields
         unset($data['website'], $data['agreement']);
+
+        // Sanitize phone numbers (keep only digits)
+        $data['phone'] = preg_replace('/[^0-9]/', '', $data['phone']);
+        if (isset($data['mother_phone'])) {
+            $data['mother_phone'] = preg_replace('/[^0-9]/', '', $data['mother_phone']);
+        }
 
         // Generate ref code
         $data['ref_code'] = Registration::generateRefCode();
