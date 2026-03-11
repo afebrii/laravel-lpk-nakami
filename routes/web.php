@@ -35,7 +35,7 @@ Route::get('/testimoni', [TestimonialController::class, 'index'])->name('testimo
 
 // Pendaftaran
 Route::get('/daftar', [RegistrationController::class, 'index'])->name('daftar');
-Route::post('/daftar', [RegistrationController::class, 'store'])->name('daftar.store');
+Route::post('/daftar', [RegistrationController::class, 'store'])->name('daftar.store')->middleware('throttle:5,1');
 Route::get('/sukses-daftar', [RegistrationController::class, 'success'])->name('sukses-daftar');
 
 // Blog
@@ -44,7 +44,7 @@ Route::get('/blog/{slug}', [PostController::class, 'show'])->name('blog.show');
 
 // Kontak
 Route::get('/kontak', [ContactController::class, 'index'])->name('kontak');
-Route::post('/kontak', [ContactController::class, 'store'])->name('kontak.store');
+Route::post('/kontak', [ContactController::class, 'store'])->name('kontak.store')->middleware('throttle:5,1');
 
 // Halaman Statis
 Route::get('/kebijakan-privasi', fn () => view('pages.kebijakan-privasi.index'))->name('kebijakan-privasi');

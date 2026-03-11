@@ -102,7 +102,7 @@
                 {{-- Profile --}}
                 <div class="flex items-center gap-3 pt-4 border-t border-light-gray">
                     @if($testimonial->photo)
-                    <img src="{{ asset('storage/' . $testimonial->photo) }}" alt="{{ $testimonial->name }}" class="w-11 h-11 rounded-full object-cover">
+                    <img src="{{ asset('storage/' . $testimonial->photo) }}" alt="{{ $testimonial->name }}" class="w-11 h-11 rounded-full object-cover" loading="lazy">
                     @else
                     <div class="w-11 h-11 rounded-full bg-rose-gold/20 flex items-center justify-center text-rose-gold font-bold text-sm">
                         {{ strtoupper(substr($testimonial->name, 0, 1)) }}

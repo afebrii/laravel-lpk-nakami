@@ -16,6 +16,13 @@
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:type" content="website">
     <meta property="og:image" content="@yield('og_image', '')">
+    <meta property="og:locale" content="id_ID">
+    <meta property="og:site_name" content="{{ setting('site_name', 'LKP/LPK Yuwita') }}">
+
+    {{-- Twitter Card --}}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="@yield('title', setting('seo_meta_title', 'LKP/LPK Yuwita'))">
+    <meta name="twitter:description" content="@yield('meta_description', setting('seo_meta_description', ''))">
 
     {{-- CSRF --}}
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -27,6 +34,43 @@
 
     {{-- Vite --}}
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+    {{-- JSON-LD Schema --}}
+    <script type="application/ld+json">
+    {
+        "@@context": "https://schema.org",
+        "@@type": "EducationalOrganization",
+        "name": "{{ setting('site_name', 'LKP/LPK Yuwita') }}",
+        "description": "{{ setting('seo_meta_description', '') }}",
+        "url": "{{ url('/') }}",
+        "telephone": "{{ setting('contact_phone', '') }}",
+        "email": "{{ setting('contact_email', '') }}",
+        "address": {
+            "@@type": "PostalAddress",
+            "streetAddress": "{{ setting('contact_address', '') }}",
+            "addressLocality": "Tasikmalaya",
+            "addressRegion": "Jawa Barat",
+            "addressCountry": "ID"
+        },
+        "sameAs": [
+            "{{ setting('social_facebook', '') }}",
+            "{{ setting('social_instagram', '') }}",
+            "{{ setting('social_youtube', '') }}",
+            "{{ setting('social_tiktok', '') }}"
+        ]
+    }
+    </script>
+
+    {{-- Google Analytics --}}
+    @if(setting('seo_google_analytics'))
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ setting('seo_google_analytics') }}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', '{{ setting('seo_google_analytics') }}');
+    </script>
+    @endif
 
     @stack('styles')
 </head>

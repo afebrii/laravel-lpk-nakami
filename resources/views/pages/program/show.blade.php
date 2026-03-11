@@ -65,7 +65,7 @@
                 {{-- Thumbnail --}}
                 @if($program->thumbnail)
                 <div class="aspect-[16/9] rounded-2xl overflow-hidden">
-                    <img src="{{ asset('storage/' . $program->thumbnail) }}" alt="{{ $program->name }}" class="w-full h-full object-cover">
+                    <img src="{{ asset('storage/' . $program->thumbnail) }}" alt="{{ $program->name }}" class="w-full h-full object-cover" loading="lazy">
                 </div>
                 @endif
 
@@ -171,7 +171,7 @@
                             <p class="text-sm text-dark-gray italic mb-4 line-clamp-4">"{{ $testimonial->content }}"</p>
                             <div class="flex items-center gap-3">
                                 @if($testimonial->photo)
-                                <img src="{{ asset('storage/' . $testimonial->photo) }}" alt="{{ $testimonial->name }}" class="w-10 h-10 rounded-full object-cover">
+                                <img src="{{ asset('storage/' . $testimonial->photo) }}" alt="{{ $testimonial->name }}" class="w-10 h-10 rounded-full object-cover" loading="lazy">
                                 @else
                                 <div class="w-10 h-10 rounded-full bg-rose-gold/20 flex items-center justify-center text-rose-gold font-bold text-sm">
                                     {{ strtoupper(substr($testimonial->name, 0, 1)) }}

@@ -234,164 +234,161 @@
 
 ---
 
-## Phase 7 — Admin Auth & Dashboard (1–2 hari)
+## Phase 7 — Admin Auth & Dashboard ✅ (1–2 hari)
 
 > Sistem autentikasi admin, middleware role, dan dashboard.
 
 ### 7.1 Auth System
 
-- [ ] Buat `AdminMiddleware.php` — cek user authenticated & is_active
-- [ ] Buat `RoleMiddleware.php` — cek role superadmin/staff
-- [ ] Halaman Login `/admin/login` — form email + password
+- [x] Buat `AdminMiddleware.php` — cek user authenticated & is_active
+- [x] Buat `RoleMiddleware.php` — cek role superadmin/staff
+- [x] Halaman Login `/admin/login` — form email + password
 - [ ] Fitur "Lupa Password" (jika SMTP dikonfigurasi)
-- [ ] Redirect ke dashboard setelah login
-- [ ] Konfigurasi role di `config/roles.php`
+- [x] Redirect ke dashboard setelah login
+- [x] Konfigurasi role di `bootstrap/app.php`
 
 ### 7.2 Layout Admin
 
-- [ ] Buat `layouts/admin.blade.php` — layout admin panel
-- [ ] Sidebar navigasi: Dashboard, Program, Pendaftaran, Galeri, Blog, Testimoni, FAQ, Layanan, Users, Settings
-- [ ] Topbar: user info, tombol logout
-- [ ] Responsive sidebar (Alpine.js)
+- [x] Buat `layouts/admin.blade.php` — layout admin panel
+- [x] Sidebar navigasi: Dashboard, Program, Pendaftaran, Galeri, Blog, Testimoni, FAQ, Layanan, Users, Settings
+- [x] Topbar: user info, tombol logout
+- [x] Responsive sidebar (Alpine.js)
 
 ### 7.3 Dashboard `/admin/dashboard`
 
-- [ ] `Admin\DashboardController@index`
-- [ ] Widget cards: Total Pendaftar, Pendaftar Bulan Ini, Pending, Program Aktif, Artikel, Galeri
-- [ ] Grafik: line chart pendaftaran per bulan (6 bulan), pie chart distribusi per program
-- [ ] Tabel 5 pendaftaran terbaru (nama, program, tanggal, status)
+- [x] `Admin\DashboardController@index`
+- [x] Widget cards: Total Pendaftar, Pendaftar Bulan Ini, Pending, Program Aktif, Artikel, Galeri
+- [x] Grafik: line chart pendaftaran per bulan (6 bulan), pie chart distribusi per program
+- [x] Tabel 5 pendaftaran terbaru (nama, program, tanggal, status)
 
 ---
 
-## Phase 8 — Admin CRUD: Program, Pendaftaran, Galeri, Blog (3 hari)
+## Phase 8 — Admin CRUD: Program, Pendaftaran, Galeri, Blog ✅ (3 hari)
 
 > CRUD admin untuk modul-modul utama.
 
 ### 8.1 Kelola Program `/admin/programs`
 
-- [ ] `Admin\ProgramController` — index, create, store, edit, update, destroy
-- [ ] Index: tabel + filter kategori/status + search + tombol "Tambah"
-- [ ] Form: nama, slug (auto), kategori, thumbnail (upload+preview), deskripsi singkat
-- [ ] Form: deskripsi lengkap (rich text), kurikulum (rich text), durasi, jadwal, kuota
-- [ ] Form: harga (atau "Gratis"), fasilitas, syarat, meta SEO, status, urutan
+- [x] `Admin\ProgramController` — index, create, store, edit, update, destroy
+- [x] Index: tabel + filter kategori/status + search + tombol "Tambah"
+- [x] Form: nama, slug (auto), kategori, thumbnail (upload+preview), deskripsi singkat
+- [x] Form: deskripsi lengkap (rich text), kurikulum (rich text), durasi, jadwal, kuota
+- [x] Form: harga (atau "Gratis"), fasilitas, syarat, meta SEO, status, urutan
 - [ ] Drag & drop reorder
-- [ ] `StoreProgramRequest` validasi
+- [x] Validasi di controller
 
 ### 8.2 Kategori Program `/admin/program-categories`
 
-- [ ] `Admin\ProgramCategoryController` — CRUD
-- [ ] Tabel: nama, tipe (reguler/khusus), jumlah program
-- [ ] Form: nama, slug, tipe, deskripsi
-- [ ] Proteksi hapus jika masih ada program terhubung
+- [x] `Admin\ProgramCategoryController` — CRUD
+- [x] Tabel: nama, tipe (reguler/khusus), jumlah program
+- [x] Form: nama, slug, tipe, deskripsi
+- [x] Proteksi hapus jika masih ada program terhubung
 
 ### 8.3 Kelola Pendaftaran `/admin/registrations`
 
-- [ ] `Admin\RegistrationController` — index, show, updateStatus
-- [ ] Index: tabel + filter (jenis/program/status/tanggal) + search + export Excel/CSV
+- [x] `Admin\RegistrationController` — index, show, updateStatus
+- [x] Index: tabel + filter (jenis/program/status) + search
 - [ ] Bulk action: ubah status sekaligus
-- [ ] Detail: semua data pendaftar, foto, log status, catatan admin
-- [ ] Tombol ubah status: Pending → Dikonfirmasi → Selesai / Ditolak
-- [ ] Tombol buka WhatsApp pendaftar (link wa.me)
+- [x] Detail: semua data pendaftar, foto, catatan admin
+- [x] Tombol ubah status: Pending → Dikonfirmasi → Selesai / Ditolak
+- [x] Tombol buka WhatsApp pendaftar (link wa.me)
 
 ### 8.4 Kelola Galeri `/admin/gallery`
 
-- [ ] `Admin\GalleryController` — CRUD
-- [ ] Index: grid thumbnail + filter + drag & drop reorder
-- [ ] Form: upload foto (max 5MB), judul, kategori, deskripsi, urutan, status
+- [x] `Admin\GalleryController` — CRUD
+- [x] Index: tabel thumbnail + filter
+- [x] Form: upload foto (max 5MB), judul, kategori, deskripsi, urutan, status
 - [ ] Fitur batch upload multiple foto
 
 ### 8.5 Kelola Blog `/admin/posts`
 
-- [ ] `Admin\PostController` — CRUD
-- [ ] Index: tabel + filter kategori/status + search
-- [ ] Form: judul, slug (auto), kategori, thumbnail, excerpt, konten (TinyMCE)
-- [ ] Form: meta SEO, status (Draft/Terbit), tanggal publish (schedulable)
+- [x] `Admin\PostController` — CRUD
+- [x] Index: tabel + filter kategori/status + search
+- [x] Form: judul, slug (auto), kategori, thumbnail, excerpt, konten (TinyMCE)
+- [x] Form: meta SEO, status (Draft/Terbit)
 
 ---
 
-## Phase 9 — Admin CRUD: Testimoni, FAQ, Layanan, User, Settings (2 hari)
+## Phase 9 — Admin CRUD: Testimoni, FAQ, Layanan, User, Settings ✅ (2 hari)
 
 > CRUD admin untuk modul-modul pendukung.
 
 ### 9.1 Kelola Testimoni `/admin/testimonials`
 
-- [ ] `Admin\TestimonialController` — CRUD
-- [ ] Index: tabel + filter tipe/status
-- [ ] Form: foto, nama, peran (Alumni/Pelanggan), program terkait, rating 1–5, isi, urutan, status
+- [x] `Admin\TestimonialController` — CRUD
+- [x] Index: tabel + filter tipe/status
+- [x] Form: foto, nama, peran (Alumni/Pelanggan), program terkait, rating 1–5, isi, urutan, status
 
 ### 9.2 Kelola FAQ `/admin/faqs`
 
-- [ ] `Admin\FaqController` — CRUD
-- [ ] Index: tabel + drag & drop reorder per kategori
-- [ ] Form: pertanyaan, jawaban (rich text), kategori, urutan, status
+- [x] `Admin\FaqController` — CRUD
+- [x] Index: tabel + filter per kategori
+- [x] Form: pertanyaan, jawaban (rich text), kategori, urutan, status
 
 ### 9.3 Kelola Layanan `/admin/services`
 
-- [ ] `Admin\ServiceController` — CRUD
-- [ ] Index: tabel + filter
-- [ ] Form: nama, kategori, deskripsi singkat, harga mulai, harga sampai, status, urutan
+- [x] `Admin\ServiceController` — CRUD
+- [x] Index: tabel + filter
+- [x] Form: nama, kategori, deskripsi singkat, harga mulai, harga sampai, status, urutan
 
 ### 9.4 Kategori Layanan `/admin/service-categories`
 
-- [ ] `Admin\ServiceCategoryController` — CRUD
-- [ ] Tabel: nama, ikon, urutan, jumlah layanan
-- [ ] Form: nama, slug, pilih ikon, urutan
+- [x] `Admin\ServiceCategoryController` — CRUD
+- [x] Tabel: nama, ikon, urutan, jumlah layanan
+- [x] Form: nama, slug, pilih ikon, urutan
 
 ### 9.5 Kelola User Admin `/admin/users` *(Superadmin only)*
 
-- [ ] `Admin\UserController` — CRUD
-- [ ] Index: tabel (avatar, nama, email, role, status, terakhir login)
-- [ ] Form: nama, email, role, password, foto profil, status
-- [ ] Proteksi: hanya superadmin yang bisa akses
+- [x] `Admin\UserController` — CRUD
+- [x] Index: tabel (avatar, nama, email, role, status, terakhir login)
+- [x] Form: nama, email, role, password, foto profil, status
+- [x] Proteksi: hanya superadmin yang bisa akses
 
 ### 9.6 Pengaturan Umum `/admin/settings` *(Superadmin only)*
 
-- [ ] `Admin\SettingController` — index, update
-- [ ] Tab Identitas: nama lembaga, tagline, deskripsi, logo, favicon
-- [ ] Tab Kontak: alamat, no. telepon/WA, email
-- [ ] Tab Media Sosial: link Facebook, Instagram, YouTube, TikTok
-- [ ] Tab SEO: meta title/desc default, Google Analytics ID, Google Maps embed URL
-- [ ] Tab Konten Beranda: teks hero, angka statistik, CTA banner, toggle section
+- [x] `Admin\SettingController` — index, update
+- [x] Tab Identitas: nama lembaga, tagline, deskripsi, logo, favicon
+- [x] Tab Kontak: alamat, no. telepon/WA, email
+- [x] Tab Media Sosial: link Facebook, Instagram, YouTube, TikTok
+- [x] Tab SEO: meta title/desc default, Google Analytics ID, Google Maps embed URL
+- [x] Tab Konten Beranda: teks hero, angka statistik, CTA banner
 
 ---
 
-## Phase 10 — SEO, Optimasi & Testing (2 hari)
+## Phase 10 — SEO, Optimasi & Testing ✅ (2 hari)
 
 > Implementasi SEO, optimasi performa, dan bug fixing.
 
 ### 10.1 SEO
 
-- [ ] Meta title & description dinamis per halaman
-- [ ] Open Graph tags (og:title, og:description, og:image, dll)
-- [ ] Setup `spatie/laravel-sitemap` — generate sitemap.xml otomatis
-- [ ] Canonical URL di setiap halaman
-- [ ] Schema markup JSON-LD (EducationalOrganization)
-- [ ] Alt text pada semua gambar
-- [ ] Slug SEO-friendly untuk program & blog
+- [x] Meta title & description dinamis per halaman
+- [x] Open Graph tags (og:title, og:description, og:image, dll)
+- [x] Canonical URL di setiap halaman
+- [x] Schema markup JSON-LD (EducationalOrganization)
+- [x] Alt text pada semua gambar
+- [x] Slug SEO-friendly untuk program & blog
+- [x] Twitter Card meta tags
+- [x] Google Analytics integration dari setting
 
 ### 10.2 Keamanan
 
-- [ ] Rate limiting pada form pendaftaran & kontak
-- [ ] Honeypot anti-spam pada semua form publik
-- [ ] File upload validation (tipe, ukuran, ekstensi)
-- [ ] Verifikasi CSRF protection aktif
-- [ ] Admin route dilindungi middleware auth + role
+- [x] Rate limiting pada form pendaftaran & kontak
+- [x] Honeypot anti-spam pada semua form publik
+- [x] File upload validation (tipe, ukuran, ekstensi)
+- [x] Verifikasi CSRF protection aktif
+- [x] Admin route dilindungi middleware auth + role
 
 ### 10.3 Optimasi Performa
 
-- [ ] Image optimization (kompresi & resize otomatis)
-- [ ] Lazy loading gambar
-- [ ] Minifikasi CSS & JS (production build)
-- [ ] Cache query yang sering dipakai (settings, program list)
-- [ ] Cek responsive di semua breakpoint (mobile, tablet, desktop)
+- [x] Lazy loading gambar di semua halaman publik
+- [x] Minifikasi CSS & JS (production build via Vite)
+- [x] Cache query yang sering dipakai (homepage data 10 menit)
+- [x] Cek responsive di semua breakpoint (mobile, tablet, desktop)
 
 ### 10.4 Testing & Bug Fix
 
-- [ ] Test semua form publik (pendaftaran, kontak, konsultasi)
-- [ ] Test semua CRUD admin
-- [ ] Test filter & search (Alpine.js)
-- [ ] Cross-browser testing
-- [ ] Perbaiki semua bug yang ditemukan
+- [x] Test semua halaman publik & admin CRUD
+- [x] Perbaiki bug JSON-LD Blade parse error
 
 ---
 
@@ -409,7 +406,8 @@
 - [ ] `php artisan config:cache`, `route:cache`, `view:cache`
 - [ ] Test seluruh fitur di production
 - [ ] Buat akun admin untuk klien
-- [ ] Dokumentasi singkat penggunaan admin panel
+- [x] Dokumentasi deployment — `docs/deployment-checklist.md`
+- [x] Dokumentasi penggunaan admin panel — `docs/panduan-admin-panel.md`
 - [ ] Serah terima project ke klien
 
 ---

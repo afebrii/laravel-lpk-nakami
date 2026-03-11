@@ -43,7 +43,7 @@
         {{-- Thumbnail --}}
         @if($post->thumbnail)
         <div class="aspect-[16/9] rounded-2xl overflow-hidden mb-10 -mt-8 relative z-10 shadow-xl">
-            <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="{{ $post->title }}" class="w-full h-full object-cover">
+            <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="{{ $post->title }}" class="w-full h-full object-cover" loading="lazy">
         </div>
         @endif
 
