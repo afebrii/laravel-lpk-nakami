@@ -1,0 +1,61 @@
+﻿
+  Dropping all tables  287.86ms DONE
+
+   INFO  Preparing database.  
+
+  Creating migration table  15.10ms DONE
+
+   INFO  Running migrations.  
+
+  0001_01_01_000000_create_users_table  84.29ms DONE
+  0001_01_01_000001_create_cache_table  57.32ms DONE
+  0001_01_01_000002_create_jobs_table  75.63ms DONE
+  2026_03_11_000001_create_program_categories_table  28.00ms DONE
+  2026_03_11_000002_create_programs_table  93.36ms DONE
+  2026_03_11_000003_create_registrations_table  109.23ms DONE
+  2026_03_11_000004_create_gallery_table  13.31ms DONE
+  2026_03_11_000005_create_posts_table  84.59ms DONE
+  2026_03_11_000006_create_testimonials_table  55.97ms DONE
+  2026_03_11_000007_create_faqs_table  12.63ms DONE
+  2026_03_11_000008_create_service_categories_table  32.79ms DONE
+  2026_03_11_000009_create_services_table  56.51ms DONE
+  2026_03_11_000010_create_settings_table  31.59ms DONE
+  2026_03_11_000011_create_contacts_table  12.91ms DONE
+  2026_03_11_214119_drop_description_column_from_gallery_table  13.07ms DONE
+
+
+   INFO  Seeding database.  
+
+  Database\Seeders\UserSeeder  RUNNING  
+  Database\Seeders\UserSeeder  570 ms DONE  
+
+  Database\Seeders\ProgramCategorySeeder  RUNNING  
+  Database\Seeders\ProgramCategorySeeder  5 ms DONE  
+
+  Database\Seeders\ProgramSeeder  RUNNING  
+  Database\Seeders\ProgramSeeder  25 ms DONE  
+
+  Database\Seeders\ServiceSeeder  RUNNING  
+  Database\Seeders\ServiceSeeder  37 ms DONE  
+
+  Database\Seeders\SettingSeeder  RUNNING  
+  Database\Seeders\SettingSeeder  46 ms DONE  
+
+  Database\Seeders\FaqSeeder  RUNNING  
+  Database\Seeders\FaqSeeder  21 ms DONE  
+
+  Database\Seeders\GallerySeeder  RUNNING  
+  Database\Seeders\GallerySeeder  11 ms DONE  
+
+  Database\Seeders\TestimonialSeeder  RUNNING  
+  Database\Seeders\TestimonialSeeder  9 ms DONE  
+
+  Database\Seeders\PostSeeder  RUNNING  
+  Database\Seeders\PostSeeder  15 ms DONE  
+
+  Database\Seeders\RegistrationSeeder  RUNNING  
+  Database\Seeders\RegistrationSeeder  17 ms DONE  
+
+  Database\Seeders\ContactSeeder  RUNNING  
+  Database\Seeders\ContactSeeder  10 ms DONE  
+
