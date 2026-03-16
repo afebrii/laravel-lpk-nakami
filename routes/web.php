@@ -52,3 +52,14 @@ Route::get('/kebijakan-privasi', fn () => view('pages.kebijakan-privasi.index'))
 // Include admin routes
 require __DIR__ . '/admin.php';
 
+// Bypass Hostinger Image Optimizer for About Image
+Route::get('/about-image-data', function () {
+    $path = public_path('img/yuwita-profile.jpg');
+    if (!file_exists($path)) {
+        abort(404);
+    }
+    return response()->file($path, [
+        'Content-Type' => 'image/jpeg',
+        'Cache-Control' => 'no-cache, no-store, must-revalidate',
+    ]);
+});
