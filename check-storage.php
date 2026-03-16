@@ -41,3 +41,31 @@ foreach ($targets as $label => $relPath) {
     }
     echo "<hr>";
 }
+
+echo "<h1>Database Check</h1>";
+try {
+    define('LARAVEL_START', microtime(true));
+    require $baseDir.'/vendor/autoload.php';
+    $app = require_once $baseDir.'/bootstrap/app.php';
+    $kernel = $app->make(Illuminate\Contracts\Console\Kernel::class);
+    $kernel->bootstrap();
+
+    echo "<h2>Programs Thumbnails in DB:</h2><ul>";
+    $programs = \App\Models\Program::pluck('thumbnail');
+    foreach ($programs as $thumb) {
+        $exists = file_exists(base_path('storage/app/public/' . $thumb)) ? '<span style="color:green">File Found</span>' : '<span style="color:red">File NOT Found</span>';
+        echo "<li>$thumb - $exists</li>";
+    }
+    echo "</ul>";
+
+    echo "<h2>Gallery Images in DB:</h2><ul>";
+    $gallery = \App\Models\Gallery::pluck('image');
+    foreach ($gallery as $img) {
+        $exists = file_exists(base_path('storage/app/public/' . $img)) ? '<span style="color:green">File Found</span>' : '<span style="color:red">File NOT Found</span>';
+        echo "<li>$img - $exists</li>";
+    }
+    echo "</ul>";
+
+} catch (\Exception $e) {
+    echo "Database Check Error: " . $e->getMessage();
+}
