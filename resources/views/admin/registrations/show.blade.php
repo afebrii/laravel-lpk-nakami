@@ -94,16 +94,18 @@
                     Chat WhatsApp
                 </a>
 
-                @if($registration->type === 'pelatihan')
+                @if(strtolower($registration->type) === 'pelatihan')
                     @php
-                        $paymentMessage = "Halo *" . $registration->name . "*, terima kasih telah mendaftar di program *" . ($registration->program?->name ?? 'Pelatihan') . "* (Ref: " . $registration->ref_code . "). \n\n" .
+                        $paymentMessage = "Halo *" . $registration->name . "*,\n\n" .
+                                         "Terima kasih telah mendaftar di program *" . ($registration->program?->name ?? 'Pelatihan') . "* (Ref: " . $registration->ref_code . ").\n\n" .
                                          "Untuk melanjutkan pendaftaran, silakan lakukan pembayaran sebesar *" . ($registration->program?->formatted_price ?? 'pendaftaran') . "* ke rekening berikut:\n\n" .
-                                         "🔹 *BANK* [NAMA BANK]\n" .
+                                         "🔹 *BANK:* [NAMA BANK]\n" .
                                          "🔹 *NO. REK:* [NOMOR REKENING]\n" .
                                          "🔹 *A.N:* [NAMA PEMILIK]\n\n" .
-                                         "Silakan kirimkan bukti pembayaran di sini untuk proses konfirmasi. Terima kasih! 🙏";
+                                         "Setelah melakukan pembayaran, silakan kirimkan bukti pembayaran di sini untuk proses konfirmasi.\n\n" .
+                                         "Terima kasih! 🙏";
                     @endphp
-                    <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $registration->phone) }}?text={{ urlencode($paymentMessage) }}" target="_blank"
+                    <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $registration->phone) }}?text={!! rawurlencode($paymentMessage) !!}" target="_blank"
                        class="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-sky-500 text-white text-sm font-medium rounded-lg hover:bg-sky-600 transition-colors">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
                         Instruksi Pembayaran
