@@ -70,7 +70,7 @@
                                 <label for="contact_phone" class="block text-sm font-semibold text-charcoal mb-1.5">WhatsApp (62) <span class="text-dark-gray text-xs">(opsional)</span></label>
                                 <input type="text" name="phone" id="contact_phone" value="{{ old('phone') }}"
                                        class="w-full px-4 py-3 bg-soft-cream/50 border border-medium-gray rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-rose-gold/30 focus:border-rose-gold transition-all"
-                                       placeholder="Contoh: 6282216796892">
+                                       placeholder="Contoh: 6285223506611">
                             </div>
                             <div>
                                 <label for="contact_subject" class="block text-sm font-semibold text-charcoal mb-1.5">Subjek <span class="text-red-500">*</span></label>

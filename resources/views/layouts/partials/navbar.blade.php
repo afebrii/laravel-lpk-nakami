@@ -107,7 +107,7 @@
 
             {{-- CTA Button (Desktop) --}}
             <div class="hidden lg:block">
-                <a href="{{ url('/daftar') }}"
+                <a href="{{ url('/daftar?type=pelatihan') }}"
                    class="inline-flex items-center gap-2 px-5 py-2.5 bg-rose-gold text-white text-sm font-semibold rounded-full hover:bg-rose-gold-dark transition-all duration-300 hover:shadow-lg hover:shadow-rose-gold/25 active:scale-95">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
@@ -149,7 +149,7 @@
 
 
             <div class="pt-3">
-                <a href="{{ url('/daftar') }}" class="flex items-center justify-center gap-2 w-full px-5 py-3 bg-rose-gold text-white text-sm font-semibold rounded-full hover:bg-rose-gold-dark transition-all">
+                <a href="{{ url('/daftar?type=pelatihan') }}" class="flex items-center justify-center gap-2 w-full px-5 py-3 bg-rose-gold text-white text-sm font-semibold rounded-full hover:bg-rose-gold-dark transition-all">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
                     </svg>

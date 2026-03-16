@@ -224,7 +224,7 @@
                 <h2 class="font-heading text-3xl lg:text-4xl font-bold text-white mb-4">Bergabung Bersama Kami</h2>
                 <p class="text-white/80 text-lg mb-8 max-w-xl mx-auto">Jadilah bagian dari ribuan alumni sukses LKP Yuwita di dunia kecantikan.</p>
                 <div class="flex flex-wrap items-center justify-center gap-4">
-                    <a href="{{ url('/daftar') }}" class="inline-flex items-center gap-2 px-7 py-3.5 bg-white text-rose-gold font-semibold rounded-full hover:bg-soft-cream transition-all duration-300 hover:shadow-lg active:scale-95">
+                    <a href="{{ url('/daftar?type=pelatihan') }}" class="inline-flex items-center gap-2 px-7 py-3.5 bg-white text-rose-gold font-semibold rounded-full hover:bg-soft-cream transition-all duration-300 hover:shadow-lg active:scale-95">
                         Daftar Sekarang
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
                     </a>
