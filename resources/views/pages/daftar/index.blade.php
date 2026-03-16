@@ -66,7 +66,7 @@
 <section class="py-16 lg:py-24">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8"
          x-data="{
-             activeTab: '{{ old('type', 'konsultasi') }}',
+             activeTab: '{{ request('type', old('type', 'pelatihan')) }}',
              submitting: false
          }">
 
@@ -125,7 +125,7 @@
                                 class="w-full px-4 py-3 bg-soft-cream/50 border border-medium-gray rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-rose-gold/30 focus:border-rose-gold transition-all">
                             <option value="">— Pilih Program —</option>
                             @foreach($programs as $program)
-                                <option value="{{ $program->id }}" {{ old('program_id') == $program->id ? 'selected' : '' }}>
+                                <option value="{{ $program->id }}" {{ (old('program_id') ?? request('program_id')) == $program->id ? 'selected' : '' }}>
                                     {{ $program->name }} ({{ $program->category->name }}) — {{ $program->formatted_price }}
                                 </option>
                             @endforeach
