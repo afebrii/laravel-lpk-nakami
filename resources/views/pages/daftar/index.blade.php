@@ -72,17 +72,17 @@
 
         {{-- Tab Selector --}}
         <div class="flex bg-light-gray rounded-2xl p-1.5 mb-8">
-            <button @click="activeTab = 'konsultasi'"
-                    :class="activeTab === 'konsultasi' ? 'bg-white text-charcoal shadow-md' : 'text-dark-gray hover:text-charcoal'"
-                    class="flex-1 flex items-center justify-center gap-2 px-4 py-3 text-sm font-semibold rounded-xl transition-all duration-300">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
-                Konsultasi Gratis
-            </button>
             <button @click="activeTab = 'pelatihan'"
                     :class="activeTab === 'pelatihan' ? 'bg-white text-charcoal shadow-md' : 'text-dark-gray hover:text-charcoal'"
                     class="flex-1 flex items-center justify-center gap-2 px-4 py-3 text-sm font-semibold rounded-xl transition-all duration-300">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
                 Daftar Program Pelatihan
+            </button>
+            <button @click="activeTab = 'konsultasi'"
+                    :class="activeTab === 'konsultasi' ? 'bg-white text-charcoal shadow-md' : 'text-dark-gray hover:text-charcoal'"
+                    class="flex-1 flex items-center justify-center gap-2 px-4 py-3 text-sm font-semibold rounded-xl transition-all duration-300">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+                Konsultasi Gratis
             </button>
         </div>
 
@@ -102,97 +102,9 @@
         @endif
 
         {{-- =============================== --}}
-        {{-- FORM KONSULTASI --}}
-        {{-- =============================== --}}
-        <div x-show="activeTab === 'konsultasi'" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
-            <div class="bg-white border border-light-gray rounded-2xl shadow-sm overflow-hidden">
-                <div class="bg-gradient-to-r from-rose-gold/5 to-dusty-pink/5 px-6 py-5 border-b border-light-gray">
-                    <h2 class="font-heading text-xl font-bold text-charcoal">Konsultasi Gratis</h2>
-                    <p class="text-sm text-dark-gray mt-1">Tanyakan seputar program, biaya, atau jadwal tanpa biaya apapun.</p>
-                </div>
-                <form action="{{ route('daftar.store') }}" method="POST" class="p-6 space-y-5" @submit="submitting = true">
-                    @csrf
-                    <input type="hidden" name="type" value="konsultasi">
-                    {{-- Honeypot --}}
-                    <div class="absolute opacity-0 -z-10" aria-hidden="true">
-                        <input type="text" name="website" tabindex="-1" autocomplete="off" value="">
-                    </div>
-
-                    {{-- Nama --}}
-                    <div>
-                        <label for="konsul_name" class="block text-sm font-semibold text-charcoal mb-1.5">Nama Lengkap <span class="text-red-500">*</span></label>
-                        <input type="text" name="name" id="konsul_name" value="{{ old('name') }}" required
-                               class="w-full px-4 py-3 bg-soft-cream/50 border border-medium-gray rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-rose-gold/30 focus:border-rose-gold transition-all"
-                               placeholder="Masukkan nama lengkap Anda">
-                        @error('name')<p class="text-xs text-red-500 mt-1">{{ $message }}</p>@enderror
-                    </div>
-
-                    {{-- WhatsApp --}}
-                    <div>
-                        <label for="konsul_phone" class="block text-sm font-semibold text-charcoal mb-1.5">Nomor WhatsApp (62) <span class="text-red-500">*</span></label>
-                        <input type="text" name="phone" id="konsul_phone" value="{{ old('phone') }}" required
-                               class="w-full px-4 py-3 bg-soft-cream/50 border border-medium-gray rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-rose-gold/30 focus:border-rose-gold transition-all"
-                               placeholder="Contoh: 6282216796892">
-                        @error('phone')<p class="text-xs text-red-500 mt-1">{{ $message }}</p>@enderror
-                    </div>
-
-                    {{-- Email --}}
-                    <div>
-                        <label for="konsul_email" class="block text-sm font-semibold text-charcoal mb-1.5">Email <span class="text-dark-gray text-xs">(opsional)</span></label>
-                        <input type="email" name="email" id="konsul_email" value="{{ old('email') }}"
-                               class="w-full px-4 py-3 bg-soft-cream/50 border border-medium-gray rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-rose-gold/30 focus:border-rose-gold transition-all"
-                               placeholder="email@contoh.com">
-                        @error('email')<p class="text-xs text-red-500 mt-1">{{ $message }}</p>@enderror
-                    </div>
-
-                    {{-- Program Diminati --}}
-                    <div>
-                        <label for="konsul_program" class="block text-sm font-semibold text-charcoal mb-1.5">Program yang Diminati <span class="text-red-500">*</span></label>
-                        <select name="program_id" id="konsul_program" required
-                                class="w-full px-4 py-3 bg-soft-cream/50 border border-medium-gray rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-rose-gold/30 focus:border-rose-gold transition-all">
-                            <option value="">— Pilih Program —</option>
-                            @foreach($programs as $program)
-                                <option value="{{ $program->id }}" {{ old('program_id') == $program->id ? 'selected' : '' }}>
-                                    {{ $program->name }} ({{ $program->category->name }})
-                                </option>
-                            @endforeach
-                        </select>
-                        @error('program_id')<p class="text-xs text-red-500 mt-1">{{ $message }}</p>@enderror
-                    </div>
-
-                    {{-- Pesan --}}
-                    <div>
-                        <label for="konsul_message" class="block text-sm font-semibold text-charcoal mb-1.5">Pesan <span class="text-dark-gray text-xs">(opsional)</span></label>
-                        <textarea name="message" id="konsul_message" rows="4"
-                                  class="w-full px-4 py-3 bg-soft-cream/50 border border-medium-gray rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-rose-gold/30 focus:border-rose-gold transition-all resize-none"
-                                  placeholder="Tuliskan pertanyaan atau pesan Anda...">{{ old('message') }}</textarea>
-                        @error('message')<p class="text-xs text-red-500 mt-1">{{ $message }}</p>@enderror
-                    </div>
-
-                    {{-- Submit --}}
-                    <button type="submit" :disabled="submitting"
-                            class="w-full flex items-center justify-center gap-2 px-6 py-3.5 bg-rose-gold text-white font-semibold rounded-xl hover:bg-rose-gold-dark transition-all duration-300 hover:shadow-lg hover:shadow-rose-gold/25 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed">
-                        <template x-if="!submitting">
-                            <span class="inline-flex items-center gap-2">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
-                                Kirim Konsultasi
-                            </span>
-                        </template>
-                        <template x-if="submitting">
-                            <span class="inline-flex items-center gap-2">
-                                <svg class="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg>
-                                Mengirim...
-                            </span>
-                        </template>
-                    </button>
-                </form>
-            </div>
-        </div>
-
-        {{-- =============================== --}}
         {{-- FORM PELATIHAN --}}
         {{-- =============================== --}}
-        <div x-show="activeTab === 'pelatihan'" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" x-cloak>
+        <div x-show="activeTab === 'pelatihan'" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
             <div class="bg-white border border-light-gray rounded-2xl shadow-sm overflow-hidden">
                 <div class="bg-gradient-to-r from-rose-gold/5 to-dusty-pink/5 px-6 py-5 border-b border-light-gray">
                     <h2 class="font-heading text-xl font-bold text-charcoal">Pendaftaran Program Pelatihan</h2>
@@ -358,6 +270,94 @@
                             <span class="inline-flex items-center gap-2">
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                                 Kirim Pendaftaran
+                            </span>
+                        </template>
+                        <template x-if="submitting">
+                            <span class="inline-flex items-center gap-2">
+                                <svg class="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"/></svg>
+                                Mengirim...
+                            </span>
+                        </template>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        {{-- =============================== --}}
+        {{-- FORM KONSULTASI --}}
+        {{-- =============================== --}}
+        <div x-show="activeTab === 'konsultasi'" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" x-cloak>
+            <div class="bg-white border border-light-gray rounded-2xl shadow-sm overflow-hidden">
+                <div class="bg-gradient-to-r from-rose-gold/5 to-dusty-pink/5 px-6 py-5 border-b border-light-gray">
+                    <h2 class="font-heading text-xl font-bold text-charcoal">Konsultasi Gratis</h2>
+                    <p class="text-sm text-dark-gray mt-1">Tanyakan seputar program, biaya, atau jadwal tanpa biaya apapun.</p>
+                </div>
+                <form action="{{ route('daftar.store') }}" method="POST" class="p-6 space-y-5" @submit="submitting = true">
+                    @csrf
+                    <input type="hidden" name="type" value="konsultasi">
+                    {{-- Honeypot --}}
+                    <div class="absolute opacity-0 -z-10" aria-hidden="true">
+                        <input type="text" name="website" tabindex="-1" autocomplete="off" value="">
+                    </div>
+
+                    {{-- Nama --}}
+                    <div>
+                        <label for="konsul_name" class="block text-sm font-semibold text-charcoal mb-1.5">Nama Lengkap <span class="text-red-500">*</span></label>
+                        <input type="text" name="name" id="konsul_name" value="{{ old('name') }}" required
+                               class="w-full px-4 py-3 bg-soft-cream/50 border border-medium-gray rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-rose-gold/30 focus:border-rose-gold transition-all"
+                               placeholder="Masukkan nama lengkap Anda">
+                        @error('name')<p class="text-xs text-red-500 mt-1">{{ $message }}</p>@enderror
+                    </div>
+
+                    {{-- WhatsApp --}}
+                    <div>
+                        <label for="konsul_phone" class="block text-sm font-semibold text-charcoal mb-1.5">Nomor WhatsApp (62) <span class="text-red-500">*</span></label>
+                        <input type="text" name="phone" id="konsul_phone" value="{{ old('phone') }}" required
+                               class="w-full px-4 py-3 bg-soft-cream/50 border border-medium-gray rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-rose-gold/30 focus:border-rose-gold transition-all"
+                               placeholder="Contoh: 6282216796892">
+                        @error('phone')<p class="text-xs text-red-500 mt-1">{{ $message }}</p>@enderror
+                    </div>
+
+                    {{-- Email --}}
+                    <div>
+                        <label for="konsul_email" class="block text-sm font-semibold text-charcoal mb-1.5">Email <span class="text-dark-gray text-xs">(opsional)</span></label>
+                        <input type="email" name="email" id="konsul_email" value="{{ old('email') }}"
+                               class="w-full px-4 py-3 bg-soft-cream/50 border border-medium-gray rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-rose-gold/30 focus:border-rose-gold transition-all"
+                               placeholder="email@contoh.com">
+                        @error('email')<p class="text-xs text-red-500 mt-1">{{ $message }}</p>@enderror
+                    </div>
+
+                    {{-- Program Diminati --}}
+                    <div>
+                        <label for="konsul_program" class="block text-sm font-semibold text-charcoal mb-1.5">Program yang Diminati <span class="text-red-500">*</span></label>
+                        <select name="program_id" id="konsul_program" required
+                                class="w-full px-4 py-3 bg-soft-cream/50 border border-medium-gray rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-rose-gold/30 focus:border-rose-gold transition-all">
+                            <option value="">— Pilih Program —</option>
+                            @foreach($programs as $program)
+                                <option value="{{ $program->id }}" {{ old('program_id') == $program->id ? 'selected' : '' }}>
+                                    {{ $program->name }} ({{ $program->category->name }})
+                                </option>
+                            @endforeach
+                        </select>
+                        @error('program_id')<p class="text-xs text-red-500 mt-1">{{ $message }}</p>@enderror
+                    </div>
+
+                    {{-- Pesan --}}
+                    <div>
+                        <label for="konsul_message" class="block text-sm font-semibold text-charcoal mb-1.5">Pesan <span class="text-dark-gray text-xs">(opsional)</span></label>
+                        <textarea name="message" id="konsul_message" rows="4"
+                                  class="w-full px-4 py-3 bg-soft-cream/50 border border-medium-gray rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-rose-gold/30 focus:border-rose-gold transition-all resize-none"
+                                  placeholder="Tuliskan pertanyaan atau pesan Anda...">{{ old('message') }}</textarea>
+                        @error('message')<p class="text-xs text-red-500 mt-1">{{ $message }}</p>@enderror
+                    </div>
+
+                    {{-- Submit --}}
+                    <button type="submit" :disabled="submitting"
+                            class="w-full flex items-center justify-center gap-2 px-6 py-3.5 bg-rose-gold text-white font-semibold rounded-xl hover:bg-rose-gold-dark transition-all duration-300 hover:shadow-lg hover:shadow-rose-gold/25 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed">
+                        <template x-if="!submitting">
+                            <span class="inline-flex items-center gap-2">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/></svg>
+                                Kirim Konsultasi
                             </span>
                         </template>
                         <template x-if="submitting">
