@@ -57,4 +57,11 @@ class RegistrationController extends Controller
 
         return back()->with('success', 'Status pendaftaran berhasil diperbarui.');
     }
+
+    public function destroy(Registration $registration)
+    {
+        $registration->delete();
+
+        return back()->with('success', 'Pendaftaran berhasil dihapus.');
+    }
 }

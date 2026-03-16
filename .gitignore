@@ -18,6 +18,13 @@
 /public/storage
 /storage/*.key
 /storage/pail
+/storage/settings
+/storage/programs
+/storage/gallery
+/storage/testimonials
+/storage/posts
+/hot
+/web_main.php_tmp
 /vendor
 Homestead.json
 Homestead.yaml

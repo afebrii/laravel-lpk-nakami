@@ -16,6 +16,7 @@ class SettingSeeder extends Seeder
             ['key' => 'site_description', 'value' => 'LKP/LPK Yuwita adalah lembaga kursus dan pelatihan kecantikan yang berdiri sejak 2006 di Tasikmalaya. Menyediakan pelatihan tata kecantikan dan layanan salon profesional.', 'type' => 'textarea', 'label' => 'Deskripsi Singkat', 'group' => 'identitas'],
             ['key' => 'site_logo', 'value' => null, 'type' => 'image', 'label' => 'Logo', 'group' => 'identitas'],
             ['key' => 'site_favicon', 'value' => null, 'type' => 'image', 'label' => 'Favicon', 'group' => 'identitas'],
+            ['key' => 'site_about_image', 'value' => null, 'type' => 'image', 'label' => 'Gambar Tentang Kami', 'group' => 'identitas'],
 
             // === Kontak ===
             ['key' => 'contact_address', 'value' => 'Jl. Leuwianyar No. 107, Kota Tasikmalaya, Jawa Barat', 'type' => 'textarea', 'label' => 'Alamat Lengkap', 'group' => 'kontak'],
