@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html lang="id" style="color-scheme: light;">
+<html lang="id" style="color-scheme: only light;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="color-scheme" content="light">
+    <meta name="color-scheme" content="only light">
+    <script>
+        // Safety net to force light mode
+        document.documentElement.classList.remove('dark');
+        localStorage.theme = 'light';
+    </script>
 
     {{-- SEO Meta --}}
     <title>@yield('title', setting('seo_meta_title', 'LKP/LPK Yuwita'))</title>

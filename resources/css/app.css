@@ -28,13 +28,13 @@
 
 /* Force light color scheme at the root level */
 :root {
-    color-scheme: light !important;
+    color-scheme: only light !important;
 }
 
 /* Explicitly override system dark mode media query to keep light scheme */
 @media (prefers-color-scheme: dark) {
     :root {
-        color-scheme: light !important;
+        color-scheme: only light !important;
     }
 }
 
