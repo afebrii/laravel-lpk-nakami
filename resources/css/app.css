@@ -26,6 +26,10 @@
     --color-medium-gray: #E5E5E5;
 }
 
+/* Override Tailwind v4 default dark mode to use a selector instead of media query.
+   Since we never add the .dark class to our HTML, dark mode will be effectively disabled. */
+@variant dark (&:where(.dark, .dark *));
+
 /* Hide scrollbar for IE, Edge and Firefox */
 .scrollbar-hide {
     -ms-overflow-style: none;  /* IE and Edge */

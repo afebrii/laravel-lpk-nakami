@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" style="color-scheme: light;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="color-scheme" content="light">
 
     {{-- SEO Meta --}}
     <title>@yield('title', setting('seo_meta_title', 'LKP/LPK Yuwita'))</title>
