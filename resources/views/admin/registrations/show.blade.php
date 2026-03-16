@@ -123,7 +123,7 @@
 
                         <a href="https://wa.me/{{ preg_replace('/[^0-9]/', '', $registration->phone) }}?text={!! rawurlencode($thankYouMessage) !!}" 
                            target="_blank"
-                           style="background-color: #9333ea;"
+                           style="background-color: #9333ea; margin-top: 8px;"
                            class="w-full flex items-center justify-center gap-2 px-4 py-2.5 text-white text-xs font-bold rounded-lg hover:opacity-90 transition-all shadow-sm">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                             <span>Konfirmasi Pembayaran</span>
