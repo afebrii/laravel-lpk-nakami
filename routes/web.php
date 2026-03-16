@@ -63,3 +63,25 @@ Route::get('/about-image-data', function () {
         'Cache-Control' => 'no-cache, no-store, must-revalidate',
     ]);
 });
+
+// Fix Storage Link for Hosting
+Route::get('/fix-storage', function () {
+    try {
+        if (file_exists(public_path('storage'))) {
+            // Check if it's a directory but not a link (common upload error)
+            if (is_dir(public_path('storage')) && !is_link(public_path('storage'))) {
+                // We can't easily delete a directory with files in it here,
+                // but we can warn the user.
+                return "The 'public/storage' exists as a real folder. Please delete it via File Manager first so a symlink can be created.";
+            }
+            if (is_link(public_path('storage'))) {
+                return "Storage symlink already exists.";
+            }
+        }
+        
+        \Illuminate\Support\Facades\Artisan::call('storage:link');
+        return "Storage link created successfully! Check your images now.";
+    } catch (\Exception $e) {
+        return "Error: " . $e->getMessage();
+    }
+});
