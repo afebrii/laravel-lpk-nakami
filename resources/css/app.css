@@ -26,9 +26,21 @@
     --color-medium-gray: #E5E5E5;
 }
 
-/* Override Tailwind v4 default dark mode to use a selector instead of media query.
-   Since we never add the .dark class to our HTML, dark mode will be effectively disabled. */
-@variant dark (&:where(.dark, .dark *));
+/* Force light color scheme at the root level */
+:root {
+    color-scheme: light !important;
+}
+
+/* Explicitly override system dark mode media query to keep light scheme */
+@media (prefers-color-scheme: dark) {
+    :root {
+        color-scheme: light !important;
+    }
+}
+
+/* Override Tailwind v4 default dark mode to use a selector that never matches.
+   This effectively disables all 'dark:' utility classes project-wide. */
+@variant dark (&:not(*));
 
 /* Hide scrollbar for IE, Edge and Firefox */
 .scrollbar-hide {

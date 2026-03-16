@@ -182,51 +182,6 @@
 </section>
 
 {{-- ============================================= --}}
-{{-- STRUKTUR ORGANISASI --}}
-{{-- ============================================= --}}
-<section class="py-16 lg:py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-12">
-            <span class="inline-block px-4 py-1.5 bg-rose-gold/10 text-rose-gold text-xs font-semibold rounded-full mb-4 uppercase tracking-wider">Organisasi</span>
-            <h2 class="font-heading text-3xl lg:text-4xl font-bold text-charcoal">Struktur Organisasi</h2>
-        </div>
-
-        <div class="max-w-4xl mx-auto">
-            {{-- Pimpinan --}}
-            <div class="text-center mb-8">
-                <div class="inline-block">
-                    <div class="w-24 h-24 bg-gradient-to-br from-dusty-pink/30 to-rose-gold/20 rounded-full mx-auto mb-3 flex items-center justify-center">
-                        <svg class="w-10 h-10 text-rose-gold/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
-                    </div>
-                    <h4 class="font-heading text-lg font-bold text-charcoal">Hj. Yuyun Yunengsih</h4>
-                    <p class="text-sm text-rose-gold font-medium">Pimpinan / Direktur</p>
-                </div>
-            </div>
-
-            {{-- Divisi --}}
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                @php
-                $team = [
-                    ['name' => 'Instruktur MUA', 'role' => 'Kepala Instruktur Make Up'],
-                    ['name' => 'Instruktur Rambut', 'role' => 'Kepala Instruktur Hair Styling'],
-                    ['name' => 'Admin & Keuangan', 'role' => 'Kepala Administrasi'],
-                ];
-                @endphp
-                @foreach($team as $member)
-                <div class="text-center bg-soft-cream rounded-2xl p-6">
-                    <div class="w-16 h-16 bg-gradient-to-br from-dusty-pink/30 to-rose-gold/20 rounded-full mx-auto mb-3 flex items-center justify-center">
-                        <svg class="w-8 h-8 text-rose-gold/40" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
-                    </div>
-                    <h4 class="font-semibold text-charcoal">{{ $member['name'] }}</h4>
-                    <p class="text-xs text-dark-gray">{{ $member['role'] }}</p>
-                </div>
-                @endforeach
-            </div>
-        </div>
-    </div>
-</section>
-
-{{-- ============================================= --}}
 {{-- LEGALITAS --}}
 {{-- ============================================= --}}
 <section id="legalitas" class="py-16 lg:py-24">
