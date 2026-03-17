@@ -65,7 +65,7 @@
                             <div class="flex items-center gap-3">
                                 <div class="w-12 h-9 bg-gray-100 rounded-lg overflow-hidden shrink-0">
                                     @if($post->thumbnail)
-                                        <img src="{{ asset('storage/' . $post->thumbnail) }}" class="w-full h-full object-cover" alt="">
+                                        <img src="{{ asset('media/' . $post->thumbnail) }}" class="w-full h-full object-cover" alt="">
                                     @else
                                         <div class="w-full h-full flex items-center justify-center text-dark-gray/20"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2"/></svg></div>
                                     @endif

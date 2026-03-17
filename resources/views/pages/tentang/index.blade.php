@@ -12,7 +12,7 @@
     {{-- Background & Overlay --}}
     <div class="absolute inset-0">
         @if(setting('site_about_image'))
-            <img src="{{ asset('storage/' . setting('site_about_image')) }}" alt="Hero Background" class="w-full h-full object-cover opacity-30 mix-blend-luminosity">
+            <img src="{{ asset('media/' . setting('site_about_image')) }}" alt="Hero Background" class="w-full h-full object-cover opacity-30 mix-blend-luminosity">
         @endif
         <div class="absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/90 to-[#111111]/50 mix-blend-multiply"></div>
         <div class="absolute inset-0 bg-gradient-to-r from-[#111111] via-[#111111]/80 to-transparent"></div>
@@ -57,7 +57,7 @@
                 <div class="absolute inset-0 translate-x-[-16px] translate-y-[16px] rounded-2xl border-2 border-[#C0001E] -z-10 bg-[#F9F5F2]"></div>
                 <div class="aspect-[4/3] rounded-2xl bg-[#1E1E1E] overflow-hidden shadow-2xl relative z-10">
                     @if(setting('site_about_image'))
-                        <img src="{{ asset('storage/' . setting('site_about_image')) }}" alt="Tentang LPK Nakami" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+                        <img src="{{ asset('media/' . setting('site_about_image')) }}" alt="Tentang LPK Nakami" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
                     @else
                         <div class="w-full h-full flex flex-col items-center justify-center text-[#C0001E]/40">
                             <span class="font-jp text-8xl mb-4">歴史</span>

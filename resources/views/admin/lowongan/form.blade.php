@@ -76,7 +76,7 @@
                         @if(isset($lowongan) && $lowongan->gambar)
                             <div class="mt-3">
                                 <p class="text-xs text-dark-gray mb-1">Gambar saat ini:</p>
-                                <img src="{{ asset('storage/' . $lowongan->gambar) }}" class="h-20 w-auto rounded border border-gray-200" alt="Current Image">
+                                <img src="{{ asset('media/' . $lowongan->gambar) }}" class="h-20 w-auto rounded border border-gray-200" alt="Current Image">
                             </div>
                         @endif
                     </div>

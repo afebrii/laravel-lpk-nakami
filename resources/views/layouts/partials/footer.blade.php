@@ -12,7 +12,7 @@
             <div class="lg:col-span-1">
                 {{-- Logo --}}
                 @if(setting('site_logo'))
-                    <img src="{{ asset('storage/' . setting('site_logo')) }}"
+                    <img src="{{ asset('media/' . setting('site_logo')) }}"
                          alt="{{ setting('site_name') }}"
                          class="h-12 w-auto mb-4">
                 @else

@@ -48,7 +48,7 @@
                 @if($registration->photo)
                 <div class="mt-4 pt-4 border-t border-gray-100">
                     <p class="text-xs text-dark-gray/60 mb-2">Pas Foto</p>
-                    <img src="{{ asset('storage/' . $registration->photo) }}" class="w-32 h-40 object-cover rounded-lg border" alt="Pas foto">
+                    <img src="{{ asset('media/' . $registration->photo) }}" class="w-32 h-40 object-cover rounded-lg border" alt="Pas foto">
                 </div>
                 @endif
             </div>

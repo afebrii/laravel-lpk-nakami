@@ -60,9 +60,12 @@ Route::get('/kebijakan-privasi', fn () => view('pages.kebijakan-privasi.index'))
 // Include admin routes
 require __DIR__ . '/admin.php';
 
-// Storage Proxy Route (Fix for root-is-public path conflict)
-Route::get('/storage/{path}', function ($path) {
-    $path = str_replace('../', '', $path);
+// Media Proxy Route (Fix for storage folder naming conflict in root-as-public setup)
+Route::get('/media/{path}', function ($path) {
+    if (str_contains($path, '../')) {
+        abort(403);
+    }
+    
     $fullPath = storage_path('app/public/' . $path);
 
     if (!Illuminate\Support\Facades\File::exists($fullPath)) {

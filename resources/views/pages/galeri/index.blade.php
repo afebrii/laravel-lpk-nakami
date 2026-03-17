@@ -76,12 +76,12 @@
                  x-transition:enter-start="opacity-0 scale-95"
                  x-transition:enter-end="opacity-100 scale-100"
                  class="group relative aspect-square bg-[#1E1E1E] rounded-xl overflow-hidden cursor-pointer shadow-sm hover:shadow-xl hover:shadow-red-900/10 transition-shadow duration-300"
-                 @click="lightbox = true; lightboxSrc = '{{ asset('storage/' . $gallery->image) }}'; lightboxTitle = '{{ addslashes($gallery->title) }}'">
+                 @click="lightbox = true; lightboxSrc = '{{ asset('media/' . $gallery->image) }}'; lightboxTitle = '{{ addslashes($gallery->title) }}'">
                  
                 {{-- Decorative frame line --}}
                 <div class="absolute inset-2 border border-white/0 group-hover:border-white/20 z-10 pointer-events-none transition-colors duration-500"></div>
 
-                <img src="{{ asset('storage/' . $gallery->image) }}"
+                <img src="{{ asset('media/' . $gallery->image) }}"
                      alt="{{ $gallery->title }}"
                      class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                      loading="lazy">

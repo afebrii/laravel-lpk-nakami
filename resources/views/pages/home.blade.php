@@ -11,7 +11,7 @@
     {{-- Background Image & Overlay --}}
     <div class="absolute inset-0">
         @if(setting('home_hero_image'))
-            <img src="{{ asset('storage/' . setting('home_hero_image')) }}" alt="Hero Background" class="w-full h-full object-cover opacity-30 mix-blend-luminosity">
+            <img src="{{ asset('media/' . setting('home_hero_image')) }}" alt="Hero Background" class="w-full h-full object-cover opacity-30 mix-blend-luminosity">
         @else
             {{-- Fallback pattern --}}
             <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%220%200%2040%2040%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M20%2020.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20h2V0h2v20h2V0h2v20h2V0h2v20h2V0h2v20h2v2H20v-1.5zM0%2020h2v20H0V20zm4%200h2v20H4V20zm4%200h2v20H8V20zm4%200h2v20h-2V20zm4%200h2v20h-2V20zm4%204h20v2H20v-2zm0%204h20v2H20v-2zm0%204h20v2H20v-2zm0%204h20v2H20v-2z%22%20fill%3D%22%23C0001E%22%20fill-opacity%3D%220.05%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E')] opacity-30"></div>
@@ -164,7 +164,7 @@
                 <div class="absolute inset-0 translate-x-4 translate-y-4 rounded-2xl border-2 border-[#C0001E] -z-10 bg-[#F9F5F2]"></div>
                 <div class="aspect-[4/5] sm:aspect-square rounded-2xl bg-white overflow-hidden shadow-2xl relative z-10">
                     @if(setting('site_about_image'))
-                        <img src="{{ asset('storage/' . setting('site_about_image')) }}" alt="Tentang LPK Nakami" class="w-full h-full object-cover">
+                        <img src="{{ asset('media/' . setting('site_about_image')) }}" alt="Tentang LPK Nakami" class="w-full h-full object-cover">
                     @else
                         {{-- Fallback --}}
                         <div class="w-full h-full bg-[#1E1E1E] flex flex-col items-center justify-center p-8 text-center">
@@ -211,7 +211,7 @@
                 {{-- Thumbnail --}}
                 <div class="aspect-[4/3] bg-[#1E1E1E] relative overflow-hidden">
                     @if($program->thumbnail)
-                        <img src="{{ asset('storage/' . $program->thumbnail) }}" alt="{{ $program->name }}" class="w-full h-full object-cover group-hover:scale-105 group-hover:opacity-90 transition-all duration-500" loading="lazy">
+                        <img src="{{ asset('media/' . $program->thumbnail) }}" alt="{{ $program->name }}" class="w-full h-full object-cover group-hover:scale-105 group-hover:opacity-90 transition-all duration-500" loading="lazy">
                     @else
                         <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#1E1E1E] to-[#111111]">
                             @php
@@ -412,7 +412,7 @@
                     <p class="text-sm text-[#111111] leading-relaxed italic mb-6 line-clamp-4">"{{ $testimonial->content }}"</p>
                     <div class="flex items-center gap-3 pt-4 border-t border-[#F3F4F6]">
                         @if($testimonial->photo)
-                        <img src="{{ asset('storage/' . $testimonial->photo) }}" alt="{{ $testimonial->name }}" class="w-12 h-12 rounded-full object-cover border-2 border-[#C0001E]">
+                        <img src="{{ asset('media/' . $testimonial->photo) }}" alt="{{ $testimonial->name }}" class="w-12 h-12 rounded-full object-cover border-2 border-[#C0001E]">
                         @else
                         <div class="w-12 h-12 rounded-full bg-[#111111] flex items-center justify-center text-white font-bold text-lg shrink-0 border-2 border-[#C0001E]">{{ strtoupper(substr($testimonial->name, 0, 1)) }}</div>
                         @endif
@@ -438,7 +438,7 @@
                     <p class="text-sm text-[#111111] leading-relaxed italic mb-6 line-clamp-4">"{{ $testimonial->content }}"</p>
                     <div class="flex items-center gap-3 pt-4 border-t border-[#F3F4F6]">
                         @if($testimonial->photo)
-                        <img src="{{ asset('storage/' . $testimonial->photo) }}" alt="{{ $testimonial->name }}" class="w-12 h-12 rounded-full object-cover border-2 border-[#C0001E]">
+                        <img src="{{ asset('media/' . $testimonial->photo) }}" alt="{{ $testimonial->name }}" class="w-12 h-12 rounded-full object-cover border-2 border-[#C0001E]">
                         @else
                         <div class="w-12 h-12 rounded-full bg-[#111111] flex items-center justify-center text-white font-bold text-lg shrink-0 border-2 border-[#C0001E]">{{ strtoupper(substr($testimonial->name, 0, 1)) }}</div>
                         @endif

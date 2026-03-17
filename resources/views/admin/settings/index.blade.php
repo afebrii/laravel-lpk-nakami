@@ -57,7 +57,7 @@
                 @elseif($setting['type'] === 'image')
                     @if($setting['value'])
                         <div class="mb-2">
-                            <img src="{{ asset('storage/' . $setting['value']) }}" class="h-16 object-contain rounded-lg border" alt="">
+                            <img src="{{ asset('media/' . $setting['value']) }}" class="h-16 object-contain rounded-lg border" alt="">
                         </div>
                     @endif
                     <input type="file" name="settings[{{ $setting['key'] }}]" accept="image/*"

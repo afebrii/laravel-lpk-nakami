@@ -93,7 +93,7 @@
             <div class="bg-white rounded-xl border border-gray-200 p-6 space-y-4">
                 <h3 class="font-heading text-sm font-bold text-charcoal">Thumbnail</h3>
                 @if(isset($program) && $program->thumbnail)
-                    <img src="{{ asset('storage/' . $program->thumbnail) }}" class="w-full aspect-video object-cover rounded-lg" alt="">
+                    <img src="{{ asset('media/' . $program->thumbnail) }}" class="w-full aspect-video object-cover rounded-lg" alt="">
                 @endif
                 <input type="file" name="thumbnail" accept="image/*" class="w-full text-sm text-dark-gray file:mr-3 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-#C0001E/10 file:text-#C0001E hover:file:bg-#C0001E/20">
                 <p class="text-xs text-dark-gray/50">JPG/PNG, maks 2MB</p>

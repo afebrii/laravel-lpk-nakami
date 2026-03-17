@@ -26,7 +26,7 @@
         <div class="bg-white rounded-2xl border border-[#E5E7EB] overflow-hidden shadow-sm">
             @if($lowongan->gambar)
             <div class="w-full aspect-[21/9] md:aspect-[3/1] bg-[#1E1E1E]">
-                <img src="{{ asset('storage/' . $lowongan->gambar) }}" alt="{{ $lowongan->judul }}" class="w-full h-full object-cover">
+                <img src="{{ asset('media/' . $lowongan->gambar) }}" alt="{{ $lowongan->judul }}" class="w-full h-full object-cover">
             </div>
             @endif
 

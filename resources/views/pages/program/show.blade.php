@@ -12,7 +12,7 @@
     {{-- Background & Overlay --}}
     <div class="absolute inset-0">
         @if($program->thumbnail)
-            <img src="{{ asset('storage/' . $program->thumbnail) }}" alt="{{ $program->name }}" class="w-full h-full object-cover opacity-20 mix-blend-luminosity">
+            <img src="{{ asset('media/' . $program->thumbnail) }}" alt="{{ $program->name }}" class="w-full h-full object-cover opacity-20 mix-blend-luminosity">
         @endif
         <div class="absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/90 to-[#111111]/50 mix-blend-multiply"></div>
         <div class="absolute inset-0 bg-gradient-to-r from-[#111111] via-[#111111]/80 to-transparent"></div>
@@ -105,7 +105,7 @@
                 @if($program->thumbnail)
                 <div class="aspect-[16/9] rounded-2xl overflow-hidden shadow-xl border-2 border-white relative group">
                     <div class="absolute inset-0 bg-[#C0001E]/0 group-hover:bg-[#C0001E]/10 transition-colors duration-500 z-10 pointer-events-none"></div>
-                    <img src="{{ asset('storage/' . $program->thumbnail) }}" alt="{{ $program->name }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
+                    <img src="{{ asset('media/' . $program->thumbnail) }}" alt="{{ $program->name }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
                 </div>
                 @endif
 
@@ -189,7 +189,7 @@
                             <p class="text-sm text-[#111111] italic mb-6 leading-relaxed relative z-10">"{{ $testimonial->content }}"</p>
                             <div class="flex items-center gap-3 pt-4 border-t border-[#F3F4F6] relative z-10">
                                 @if($testimonial->photo)
-                                <img src="{{ asset('storage/' . $testimonial->photo) }}" alt="{{ $testimonial->name }}" class="w-10 h-10 rounded-full object-cover border border-[#E5E7EB]">
+                                <img src="{{ asset('media/' . $testimonial->photo) }}" alt="{{ $testimonial->name }}" class="w-10 h-10 rounded-full object-cover border border-[#E5E7EB]">
                                 @else
                                 <div class="w-10 h-10 rounded-full bg-[#111111] flex items-center justify-center text-white font-bold text-sm">
                                     {{ strtoupper(substr($testimonial->name, 0, 1)) }}

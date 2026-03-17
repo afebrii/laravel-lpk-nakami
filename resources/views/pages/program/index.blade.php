@@ -83,7 +83,7 @@
                 {{-- Thumbnail --}}
                 <div class="aspect-[16/10] bg-[#1E1E1E] relative overflow-hidden">
                     @if($program->thumbnail)
-                        <img src="{{ asset('storage/' . $program->thumbnail) }}" alt="{{ $program->name }}" class="w-full h-full object-cover group-hover:scale-105 group-hover:opacity-90 transition-all duration-500" loading="lazy">
+                        <img src="{{ asset('media/' . $program->thumbnail) }}" alt="{{ $program->name }}" class="w-full h-full object-cover group-hover:scale-105 group-hover:opacity-90 transition-all duration-500" loading="lazy">
                     @else
                         <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-[#1E1E1E] to-[#111111]">
                             @php

@@ -55,7 +55,7 @@
                         <td class="px-4 py-3">
                             <div class="w-16 h-12 bg-gray-100 rounded-lg overflow-hidden">
                                 @if($item->image)
-                                    <img src="{{ asset('storage/' . $item->image) }}" class="w-full h-full object-cover" alt="">
+                                    <img src="{{ asset('media/' . $item->image) }}" class="w-full h-full object-cover" alt="">
                                 @endif
                             </div>
                         </td>

@@ -47,7 +47,7 @@
                 {{-- Featured Image --}}
                 <div class="aspect-[16/10] lg:aspect-auto bg-[#1E1E1E] relative overflow-hidden">
                     @if($featured->thumbnail)
-                        <img src="{{ asset('storage/' . $featured->thumbnail) }}" alt="{{ $featured->title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
+                        <img src="{{ asset('media/' . $featured->thumbnail) }}" alt="{{ $featured->title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
                     @else
                         <div class="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-[#1E1E1E] to-[#111111] min-h-[240px]">
                             <span class="font-jp text-6xl text-[#C0001E]/30 mb-2">特</span>
@@ -142,7 +142,7 @@
                     {{-- Thumbnail --}}
                     <div class="aspect-[16/10] bg-[#1E1E1E] relative overflow-hidden shrink-0">
                         @if($post->thumbnail)
-                            <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="{{ $post->title }}" class="w-full h-full object-cover group-hover:scale-105 group-hover:opacity-90 transition-all duration-500" loading="lazy">
+                            <img src="{{ asset('media/' . $post->thumbnail) }}" alt="{{ $post->title }}" class="w-full h-full object-cover group-hover:scale-105 group-hover:opacity-90 transition-all duration-500" loading="lazy">
                         @else
                             <div class="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-[#1E1E1E] to-[#111111]">
                                 <span class="font-jp text-4xl text-[#C0001E]/30 mb-2">文</span>

@@ -9,7 +9,7 @@
             {{-- Logo --}}
             <a href="{{ url('/') }}" class="flex items-center gap-3 shrink-0">
                 @if(setting('site_logo'))
-                    <img src="{{ asset('storage/' . setting('site_logo')) }}"
+                    <img src="{{ asset('media/' . setting('site_logo')) }}"
                          alt="{{ setting('site_name', 'LPK Nakami Indonesia') }}"
                          class="h-10 lg:h-12 w-auto">
                 @else

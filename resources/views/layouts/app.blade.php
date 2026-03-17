@@ -30,7 +30,7 @@
 
     {{-- Favicon --}}
     @if(setting('site_favicon'))
-        <link rel="icon" href="{{ asset('storage/' . setting('site_favicon')) }}">
+        <link rel="icon" href="{{ asset('media/' . setting('site_favicon')) }}">
     @endif
 
     {{-- Vite --}}

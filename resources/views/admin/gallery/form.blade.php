@@ -18,7 +18,7 @@
         <div>
             <label class="block text-sm font-medium text-charcoal mb-1">Foto {{ isset($gallery) ? '' : '*' }}</label>
             @if(isset($gallery) && $gallery->image)
-                <img src="{{ asset('storage/' . $gallery->image) }}" class="w-full aspect-video object-cover rounded-lg mb-2" alt="">
+                <img src="{{ asset('media/' . $gallery->image) }}" class="w-full aspect-video object-cover rounded-lg mb-2" alt="">
             @endif
             <input type="file" name="image" accept="image/*" {{ isset($gallery) ? '' : 'required' }} class="w-full text-sm text-dark-gray file:mr-3 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-#C0001E/10 file:text-#C0001E">
             <p class="text-xs text-dark-gray/50 mt-1">JPG/PNG, maksimal 5MB</p>

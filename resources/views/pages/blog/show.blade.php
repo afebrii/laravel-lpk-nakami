@@ -12,7 +12,7 @@
     {{-- Background & Overlay --}}
     <div class="absolute inset-0">
         @if($post->thumbnail)
-            <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="{{ $post->title }}" class="w-full h-full object-cover opacity-20 mix-blend-luminosity">
+            <img src="{{ asset('media/' . $post->thumbnail) }}" alt="{{ $post->title }}" class="w-full h-full object-cover opacity-20 mix-blend-luminosity">
         @endif
         <div class="absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/90 to-[#111111]/50 mix-blend-multiply"></div>
         <div class="absolute inset-0 bg-gradient-to-r from-[#111111] via-[#111111]/80 to-transparent"></div>
@@ -71,7 +71,7 @@
         {{-- Thumbnail --}}
         @if($post->thumbnail)
         <div class="aspect-[16/9] rounded-2xl overflow-hidden mb-12 -mt-10 lg:-mt-16 relative z-10 shadow-2xl border-4 border-white">
-            <img src="{{ asset('storage/' . $post->thumbnail) }}" alt="{{ $post->title }}" class="w-full h-full object-cover">
+            <img src="{{ asset('media/' . $post->thumbnail) }}" alt="{{ $post->title }}" class="w-full h-full object-cover">
         </div>
         @endif
 

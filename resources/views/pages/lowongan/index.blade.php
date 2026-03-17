@@ -70,7 +70,7 @@
                 {{-- Banner/Images --}}
                 <div class="aspect-[16/10] bg-[#1E1E1E] relative overflow-hidden">
                     @if($lowongan->gambar)
-                        <img src="{{ asset('storage/' . $lowongan->gambar) }}" alt="{{ $lowongan->judul }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <img src="{{ asset('media/' . $lowongan->gambar) }}" alt="{{ $lowongan->judul }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     @else
                         <div class="w-full h-full flex items-center justify-center">
                             <span class="font-jp text-[80px] text-[#C0001E]/20 select-none">働</span>
