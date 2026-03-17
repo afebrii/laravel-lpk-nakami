@@ -60,6 +60,18 @@ Route::get('/kebijakan-privasi', fn () => view('pages.kebijakan-privasi.index'))
 // Include admin routes
 require __DIR__ . '/admin.php';
 
+// Storage Proxy Route (Fix for root-is-public path conflict)
+Route::get('/storage/{path}', function ($path) {
+    $path = str_replace('../', '', $path);
+    $fullPath = storage_path('app/public/' . $path);
+
+    if (!Illuminate\Support\Facades\File::exists($fullPath)) {
+        abort(404);
+    }
+
+    return response()->file($fullPath);
+})->where('path', '.*');
+
 // Bypass Hostinger Image Optimizer for About Image
 Route::get('/about-image-data', function () {
     $path = public_path('img/yuwita-profile.jpg');
