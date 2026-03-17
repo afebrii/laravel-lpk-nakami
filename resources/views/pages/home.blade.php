@@ -72,30 +72,33 @@
 <section class="relative bg-white pt-16 pb-12 lg:pt-20 lg:pb-16 -mt-6 z-10 rounded-t-3xl border-t-4 border-[#C0001E]">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12" x-data="{ shown: false }" x-intersect.once="shown = true">
-            <div class="text-center group">
+            <div class="text-center group" x-data="{ count: 0, target: {{ setting('home_stat_alumni', '500') }} }" x-init="$watch('shown', val => { if(val) { let c=0; let step=Math.max(1, Math.ceil(target/40)); let i=setInterval(()=>{ c+=step; if(c>=target){count=target; clearInterval(i);}else{count=c;} }, 50); } })">
                 <div class="text-4xl lg:text-5xl font-heading font-black text-[#111111] mb-2 counter-animate" x-show="shown">
-                    {{ setting('home_stat_alumni', '500') }}<span class="text-[#C0001E]">+</span>
+                    <span x-text="count">0</span><span class="text-[#C0001E]">+</span>
                 </div>
                 <p class="text-sm font-semibold text-[#6B7280] uppercase tracking-wider">Siswa Berangkat</p>
                 <div class="h-1 w-12 bg-[#C0001E] mx-auto mt-4 rounded-full scale-0 group-hover:scale-100 transition-transform"></div>
             </div>
-            <div class="text-center group">
+            
+            <div class="text-center group" x-data="{ count: 0, target: {{ setting('home_stat_years', '5') }} }" x-init="$watch('shown', val => { if(val) { setTimeout(() => { let c=0; let step=Math.max(1, Math.ceil(target/40)); let i=setInterval(()=>{ c+=step; if(c>=target){count=target; clearInterval(i);}else{count=c;} }, 50); }, 200); } })">
                 <div class="text-4xl lg:text-5xl font-heading font-black text-[#111111] mb-2 counter-animate" x-show="shown" style="animation-delay: 100ms">
-                    {{ setting('home_stat_years', '5') }}<span class="text-[#C0001E]">+</span>
+                    <span x-text="count">0</span><span class="text-[#C0001E]">+</span>
                 </div>
                 <p class="text-sm font-semibold text-[#6B7280] uppercase tracking-wider">Tahun Pengalaman</p>
                 <div class="h-1 w-12 bg-[#C0001E] mx-auto mt-4 rounded-full scale-0 group-hover:scale-100 transition-transform"></div>
             </div>
-            <div class="text-center group">
+            
+            <div class="text-center group" x-data="{ count: 0, target: {{ setting('home_stat_programs', '4') }} }" x-init="$watch('shown', val => { if(val) { setTimeout(() => { let c=0; let step=Math.max(1, Math.ceil(target/40)); let i=setInterval(()=>{ c+=step; if(c>=target){count=target; clearInterval(i);}else{count=c;} }, 50); }, 400); } })">
                 <div class="text-4xl lg:text-5xl font-heading font-black text-[#111111] mb-2 counter-animate" x-show="shown" style="animation-delay: 200ms">
-                    {{ setting('home_stat_programs', '4') }}
+                    <span x-text="count">0</span>
                 </div>
                 <p class="text-sm font-semibold text-[#6B7280] uppercase tracking-wider">Pilihan Program</p>
                 <div class="h-1 w-12 bg-[#C0001E] mx-auto mt-4 rounded-full scale-0 group-hover:scale-100 transition-transform"></div>
             </div>
-            <div class="text-center group">
+            
+            <div class="text-center group" x-data="{ count: 0, target: {{ setting('home_stat_partners', '50') }} }" x-init="$watch('shown', val => { if(val) { setTimeout(() => { let c=0; let step=Math.max(1, Math.ceil(target/40)); let i=setInterval(()=>{ c+=step; if(c>=target){count=target; clearInterval(i);}else{count=c;} }, 50); }, 600); } })">
                 <div class="text-4xl lg:text-5xl font-heading font-black text-[#111111] mb-2 counter-animate" x-show="shown" style="animation-delay: 300ms">
-                    {{ setting('home_stat_partners', '50') }}<span class="text-[#C0001E]">+</span>
+                    <span x-text="count">0</span><span class="text-[#C0001E]">+</span>
                 </div>
                 <p class="text-sm font-semibold text-[#6B7280] uppercase tracking-wider">Mitra Perusahaan (JP)</p>
                 <div class="h-1 w-12 bg-[#C0001E] mx-auto mt-4 rounded-full scale-0 group-hover:scale-100 transition-transform"></div>

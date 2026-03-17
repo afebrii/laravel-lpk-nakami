@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\TestimonialController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\LowonganController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -61,6 +62,9 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     // Services
     Route::resource('services', ServiceController::class)->except('show');
     Route::resource('service-categories', ServiceCategoryController::class)->except('show');
+
+    // Lowongan
+    Route::resource('lowongan', LowonganController::class)->except('show');
 
     // Pesan Kontak
     Route::resource('contacts', App\Http\Controllers\Admin\ContactController::class)->only(['index', 'show', 'destroy']);

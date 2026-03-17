@@ -10,6 +10,9 @@ use App\Http\Controllers\Front\ProgramController;
 use App\Http\Controllers\Front\RegistrationController;
 use App\Http\Controllers\Front\ServiceController;
 use App\Http\Controllers\Front\TestimonialController;
+use App\Http\Controllers\Front\LowonganController;
+use App\Http\Controllers\Front\JepangInfoController;
+use App\Http\Controllers\Front\JlptController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -18,7 +21,13 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/program', [ProgramController::class, 'index'])->name('program.index');
 Route::get('/program/{slug}', [ProgramController::class, 'show'])->name('program.show');
 
-// Layanan Salon (Dihapus karena ini adalah LPK Nakami, bukan Salon)
+// Lowongan
+Route::get('/lowongan', [LowonganController::class, 'index'])->name('lowongan.index');
+Route::get('/lowongan/{slug}', [LowonganController::class, 'show'])->name('lowongan.show');
+
+// Info Jepang & JLPT
+Route::get('/jepang-info', [JepangInfoController::class, 'index'])->name('jepang-info.index');
+Route::get('/jlpt', [JlptController::class, 'index'])->name('jlpt.index');
 
 // Galeri
 Route::get('/galeri', [GalleryController::class, 'index'])->name('galeri.index');

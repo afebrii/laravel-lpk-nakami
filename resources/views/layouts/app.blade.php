@@ -91,10 +91,8 @@
     {{-- Footer --}}
     @include('layouts.partials.footer')
 
-    {{-- WhatsApp Floating Button --}}
-    @if(empty($hide_whatsapp))
-        @include('layouts.partials.whatsapp-button')
-    @endif
+    {{-- Floating WhatsApp --}}
+    @include('components.wa-floating')
 
     @stack('scripts')
 </body>

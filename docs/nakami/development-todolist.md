@@ -66,21 +66,21 @@
   - [ ] Ganti `<title>` dan meta description ke LPK Nakami Indonesia
   - [ ] Import font baru
   - [ ] Load CSS/JS yang diperbarui
-- [ ] **Navbar** (`resources/views/components/navbar.blade.php`):
-  - [ ] Ganti logo LKP Yuwita → logo LPK Nakami
-  - [ ] Update warna: background `#111111`, aksen merah `#C0001E`
-  - [ ] Update menu navigasi sesuai sitemap Nakami:
-    - [ ] Beranda, Tentang Kami, Program, Info Jepang, Materi JLPT, Lowongan, Alumni, Pendaftaran, Kontak
-  - [ ] Tombol CTA "Daftar Sekarang" dengan warna merah
-  - [ ] Sticky navbar dengan scroll effect
-- [ ] **Footer** (`resources/views/components/footer.blade.php`):
-  - [ ] Update brand name, tagline "Japanese Learning Center"
-  - [ ] Update alamat: Citra Graha Residence Blok H26, Tasikmalaya 46153
-  - [ ] Update WhatsApp: +62 819-3164-6314
-  - [ ] Update email: lpknakamiindonesia@gmail.com
-  - [ ] Update Instagram: @lpknakami.id
-  - [ ] Multi-column footer: Logo & deskripsi | Menu | Program | Kontak
-  - [ ] Warna: background `#111111`, teks putih, aksen merah
+- [x] **Navbar** (`resources/views/components/navbar.blade.php`):
+  - [x] Ganti logo LKP Yuwita → logo LPK Nakami
+  - [x] Update warna: background `#111111`, aksen merah `#C0001E`
+  - [x] Update menu navigasi sesuai sitemap Nakami:
+    - [x] Beranda, Tentang Kami, Program, Info Jepang, Materi JLPT, Lowongan, Alumni, Pendaftaran, Kontak
+  - [x] Tombol CTA "Daftar Sekarang" dengan warna merah
+  - [x] Sticky navbar dengan scroll effect
+- [x] **Footer** (`resources/views/components/footer.blade.php`):
+  - [x] Update brand name, tagline "Japanese Learning Center"
+  - [x] Update alamat: Citra Graha Residence Blok H26, Tasikmalaya 46153
+  - [x] Update WhatsApp: +62 819-3164-6314
+  - [x] Update email: lpknakamiindonesia@gmail.com
+  - [x] Update Instagram: @lpknakami.id
+  - [x] Multi-column footer: Logo & deskripsi | Menu | Program | Kontak
+  - [x] Warna: background `#111111`, teks putih, aksen merah
 - [ ] **Tombol WhatsApp Floating**:
   - [ ] Buat komponen `resources/views/components/wa-floating.blade.php`
   - [ ] Icon WA + label "Konsultasi Gratis"
@@ -259,17 +259,17 @@
 - [ ] Tambahkan route `GET /jlpt`
 
 ### 4.7 Counter Alumni Animasi
-- [ ] Implementasi counter animasi di beranda:
-  - [ ] Gunakan Alpine.js dengan Intersection Observer
-  - [ ] Counter: alumni berangkat, tahun berdiri, tingkat keberhasilan, mitra Jepang
-  - [ ] Animasi angka menghitung dari 0 ke target saat section terlihat
-  - [ ] Update angka counter di seeder/setting admin
+- [x] Implementasi counter animasi di beranda:
+  - [x] Gunakan Alpine.js dengan Intersection Observer
+  - [x] Counter: alumni berangkat, tahun berdiri, tingkat keberhasilan, mitra Jepang
+  - [x] Animasi angka menghitung dari 0 ke target saat section terlihat
+  - [x] Update angka counter di seeder/setting admin
 
 ### 4.8 WhatsApp Floating Button
-- [ ] Buat komponen `resources/views/components/wa-floating.blade.php`
-- [ ] Styling: bulat, animasi pulse, icon WA hijau
-- [ ] Nomor WA dari `Setting` (dinamis dari admin)
-- [ ] Include di `layouts/app.blade.php`
+- [x] Buat komponen `resources/views/components/wa-floating.blade.php`
+- [x] Styling: bulat, animasi pulse, icon WA hijau
+- [x] Nomor WA dari `Setting` (dinamis dari admin)
+- [x] Include di `layouts/app.blade.php`
 
 ---
 
