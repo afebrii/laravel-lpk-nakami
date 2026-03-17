@@ -7,6 +7,7 @@ use App\Models\Gallery;
 use App\Models\Post;
 use App\Models\Program;
 use App\Models\Testimonial;
+use App\Models\Lowongan;
 use Illuminate\Support\Facades\Cache;
 
 class HomeController extends Controller
@@ -35,11 +36,17 @@ class HomeController extends Controller
             ->take(3)
             ->get();
 
+        $lowongans = Lowongan::where('status', 'Buka')
+            ->latest()
+            ->take(4)
+            ->get();
+
         return view('pages.home', compact(
             'programs',
             'galleries',
             'testimonials',
-            'posts'
+            'posts',
+            'lowongans'
         ));
     }
 }

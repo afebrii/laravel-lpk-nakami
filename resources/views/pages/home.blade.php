@@ -265,6 +265,78 @@
 </section>
 
 {{-- ============================================= --}}
+{{-- SECTION 5: LOWONGAN TERBARU --}}
+{{-- ============================================= --}}
+@if($lowongans->count() > 0)
+<section class="py-16 lg:py-24 bg-[#F9F5F2] relative overflow-hidden">
+    {{-- Kanji Accent --}}
+    <div class="absolute right-[-5%] bottom-[10%] text-[250px] leading-none font-jp text-white select-none pointer-events-none -z-0">
+        職
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+            <div class="max-w-2xl">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="h-px w-12 bg-[#C0001E]"></span>
+                    <span class="text-[#C0001E] text-sm font-bold uppercase tracking-widest">Peluang Karir</span>
+                </div>
+                <h2 class="font-heading text-3xl lg:text-4xl font-bold text-[#111111] leading-tight">
+                    Lowongan Kerja Terbaru di Jepang
+                </h2>
+                <p class="text-[#6B7280] mt-4">Ambil langkah pertama menuju karir impian Anda dengan berbagai lowongan pekerjaan menarik dari mitra perusahaan kami di Jepang.</p>
+            </div>
+            <a href="{{ url('/lowongan') }}" class="btn-nakami-outline shrink-0 hidden md:inline-flex">
+                Lihat Semua Lowongan
+            </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            @foreach($lowongans as $job)
+            <div class="group bg-white rounded-2xl p-6 border border-[#E5E7EB] hover:border-[#C0001E]/30 hover:shadow-xl transition-all duration-300 flex flex-col h-full">
+                <div class="mb-5 flex items-center justify-between">
+                    <span class="px-2.5 py-1 rounded-lg bg-[#C0001E]/10 text-[#C0001E] text-[10px] font-bold uppercase tracking-wider">
+                        {{ $job->program }}
+                    </span>
+                    <div class="flex items-center gap-1 text-[#6B7280]">
+                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/></svg>
+                        <span class="text-xs font-medium">{{ $job->lokasi }}</span>
+                    </div>
+                </div>
+
+                <h3 class="font-heading text-lg font-bold text-[#111111] mb-4 group-hover:text-[#C0001E] transition-colors leading-tight min-h-[44px]">
+                    {{ $job->judul }}
+                </h3>
+
+                <div class="space-y-3 mb-6 flex-1">
+                    <div class="text-xs text-[#6B7280] flex items-start gap-2">
+                        <span class="text-[#C0001E]">•</span>
+                        <span class="line-clamp-3">{{ Str::limit(strip_tags($job->persyaratan), 100) }}</span>
+                    </div>
+                </div>
+
+                <div class="pt-5 border-t border-[#F3F4F6]">
+                    <a href="https://wa.me/{{ setting('contact_wa_admin') }}?text=Halo%20Admin%20LPK%20Nakami%2C%20saya%20tertarik%20dengan%20lowongan%20{{ urlencode($job->judul) }}" 
+                       target="_blank"
+                       class="flex items-center justify-center gap-2 w-full py-2.5 bg-[#111111] text-white text-xs font-bold rounded-xl hover:bg-[#C0001E] transition-colors">
+                        <svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/></svg>
+                        Lamar via WA
+                    </a>
+                </div>
+            </div>
+            @endforeach
+        </div>
+
+        <div class="text-center mt-10 md:hidden">
+            <a href="{{ url('/lowongan') }}" class="btn-nakami-outline w-full justify-center">
+                Lihat Semua Lowongan
+            </a>
+        </div>
+    </div>
+</section>
+@endif
+
+{{-- ============================================= --}}
 {{-- SECTION 6: MENGAPA MEMILIH NAKAMI --}}
 {{-- ============================================= --}}
 <section class="py-16 lg:py-24 bg-[#111111] text-white relative">
