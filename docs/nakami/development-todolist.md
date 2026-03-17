@@ -181,10 +181,10 @@
 - [x] Buat `UserSeeder` (admin default Nakami)
 
 ### 3.2 Konten Statis
-- [ ] Tulis teks profil LPK Nakami untuk halaman Tentang Kami
-- [ ] Tulis deskripsi lengkap 4 program
-- [ ] Tulis FAQ umum (min. 8 pertanyaan)
-- [ ] Upload foto-foto aset branding (jika ada dari klien)
+- [x] Tulis teks profil LPK Nakami untuk halaman Tentang Kami
+- [x] Tulis deskripsi lengkap 4 program
+- [x] Tulis FAQ umum (min. 8 pertanyaan)
+- [x] Upload foto-foto aset branding (jika ada dari klien)
 
 ---
 
