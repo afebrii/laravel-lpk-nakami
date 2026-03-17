@@ -7,22 +7,22 @@
     <meta name="color-scheme" content="light">
 
     {{-- SEO Meta --}}
-    <title>@yield('title', setting('seo_meta_title', 'LKP/LPK Yuwita'))</title>
+    <title>@yield('title', setting('seo_meta_title', 'LPK Nakami Indonesia — Japanese Learning Center'))</title>
     <meta name="description" content="@yield('meta_description', setting('seo_meta_description', ''))">
     <link rel="canonical" href="{{ url()->current() }}">
 
     {{-- Open Graph --}}
-    <meta property="og:title" content="@yield('title', setting('seo_meta_title', 'LKP/LPK Yuwita'))">
+    <meta property="og:title" content="@yield('title', setting('seo_meta_title', 'LPK Nakami Indonesia — Japanese Learning Center'))">
     <meta property="og:description" content="@yield('meta_description', setting('seo_meta_description', ''))">
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:type" content="website">
     <meta property="og:image" content="@yield('og_image', '')">
     <meta property="og:locale" content="id_ID">
-    <meta property="og:site_name" content="{{ setting('site_name', 'LKP/LPK Yuwita') }}">
+    <meta property="og:site_name" content="{{ setting('site_name', 'LPK Nakami Indonesia') }}">
 
     {{-- Twitter Card --}}
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="@yield('title', setting('seo_meta_title', 'LKP/LPK Yuwita'))">
+    <meta name="twitter:title" content="@yield('title', setting('seo_meta_title', 'LPK Nakami Indonesia — Japanese Learning Center'))">
     <meta name="twitter:description" content="@yield('meta_description', setting('seo_meta_description', ''))">
 
     {{-- CSRF --}}
@@ -41,7 +41,7 @@
     {
         "@@context": "https://schema.org",
         "@@type": "EducationalOrganization",
-        "name": "{{ setting('site_name', 'LKP/LPK Yuwita') }}",
+        "name": "{{ setting('site_name', 'LPK Nakami Indonesia') }}",
         "description": "{{ setting('seo_meta_description', '') }}",
         "url": "{{ url('/') }}",
         "telephone": "{{ setting('contact_phone', '') }}",
@@ -75,7 +75,7 @@
 
     @stack('styles')
 </head>
-<body class="bg-soft-cream text-dark-gray font-body min-h-screen flex flex-col antialiased">
+<body class="bg-[#F9F5F2] text-[#111111] font-body min-h-screen flex flex-col antialiased">
 
     {{-- Navbar --}}
     @include('layouts.partials.navbar')

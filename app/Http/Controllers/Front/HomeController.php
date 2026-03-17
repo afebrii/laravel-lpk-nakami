@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Models\Gallery;
 use App\Models\Post;
 use App\Models\Program;
-use App\Models\ServiceCategory;
 use App\Models\Testimonial;
 use Illuminate\Support\Facades\Cache;
 
@@ -19,10 +18,6 @@ class HomeController extends Controller
             ->ordered()
             ->take(6)
             ->get();
-
-        $serviceCategories = ServiceCategory::with(['services' => function ($q) {
-            $q->active()->ordered();
-        }])->ordered()->get();
 
         $galleries = Gallery::active()
             ->ordered()
@@ -42,7 +37,6 @@ class HomeController extends Controller
 
         return view('pages.home', compact(
             'programs',
-            'serviceCategories',
             'galleries',
             'testimonials',
             'posts'

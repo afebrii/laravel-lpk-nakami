@@ -10,127 +10,157 @@ class ProgramSeeder extends Seeder
 {
     public function run(): void
     {
-        $reguler = ProgramCategory::where('type', 'reguler')->first();
-        $khusus = ProgramCategory::where('type', 'khusus')->first();
+        $ginou    = ProgramCategory::where('type', 'ginou-jisshusei')->first();
+        $tokutei  = ProgramCategory::where('type', 'tokutei-ginou')->first();
+        $engineer = ProgramCategory::where('type', 'engineering')->first();
+        $nihongo  = ProgramCategory::where('type', 'nihongo-gakkou')->first();
 
-        // === Kelas Reguler ===
-        $regulerPrograms = [
+        // === Ginou Jisshusei (技能実習) ===
+        $ginouPrograms = [
             [
-                'name' => 'Make Up Artist (MUA)',
-                'slug' => 'mua-reguler',
-                'short_description' => 'Pelajari teknik dasar make up profesional untuk berbagai kebutuhan.',
-                'description' => '<p>Program pelatihan Make Up Artist (MUA) reguler dirancang untuk pemula yang ingin menguasai teknik dasar tata rias wajah. Peserta akan belajar dari dasar skincare, penggunaan alat make up, hingga teknik make up natural dan formal.</p>',
-                'duration' => '3 Bulan',
-                'schedule' => 'Senin - Rabu, 09.00 - 12.00 WIB',
-                'quota' => 20,
-                'price' => 100000,
-                'is_free' => false,
-                'status' => 'active',
-                'order' => 1,
+                'name'              => 'Ginou Jisshusei — Manufaktur',
+                'slug'              => 'ginou-manufaktur',
+                'short_description' => 'Program pemagangan di sektor manufaktur Jepang. Bekerja di pabrik pengolahan logam, plastik, tekstil, dan elektronik.',
+                'description'       => '<p>Program Ginou Jisshusei (技能実習) sektor manufaktur mempersiapkan peserta untuk bekerja di berbagai pabrik di Jepang. Peserta akan mendapatkan pelatihan bahasa Jepang intensif, pelatihan fisik, dan pembekalan budaya kerja Jepang sebelum diberangkatkan.</p><ul><li>Usia: 18–30 tahun</li><li>Pendidikan: min. SMA/SMK</li><li>Bebas buta warna & tidak bertato</li><li>Kesehatan prima (bebas narkoba)</li></ul>',
+                'duration'          => '3 Tahun',
+                'schedule'          => 'Sesuai jadwal keberangkatan',
+                'quota'             => 20,
+                'price'             => 0,
+                'is_free'           => true,
+                'status'            => 'active',
+                'order'             => 1,
             ],
             [
-                'name' => 'Tata Kecantikan Rambut',
-                'slug' => 'kecantikan-rambut-reguler',
-                'short_description' => 'Kuasai teknik dasar perawatan dan penataan rambut profesional.',
-                'description' => '<p>Program pelatihan tata kecantikan rambut reguler mencakup teknik dasar potong rambut, penataan, pewarnaan, dan perawatan rambut. Cocok untuk pemula yang ingin memulai karir di dunia hair styling.</p>',
-                'duration' => '3 Bulan',
-                'schedule' => 'Kamis - Sabtu, 09.00 - 12.00 WIB',
-                'quota' => 20,
-                'price' => 100000,
-                'is_free' => false,
-                'status' => 'active',
-                'order' => 2,
-            ],
-            [
-                'name' => 'Kecantikan Kulit',
-                'slug' => 'kecantikan-kulit-reguler',
-                'short_description' => 'Pelajari perawatan kulit wajah dan tubuh secara profesional.',
-                'description' => '<p>Program pelatihan kecantikan kulit reguler mengajarkan teknik dasar facial, perawatan kulit wajah, dan body treatment. Peserta akan memahami jenis-jenis kulit dan perawatan yang tepat.</p>',
-                'duration' => '3 Bulan',
-                'schedule' => 'Senin - Rabu, 13.00 - 16.00 WIB',
-                'quota' => 20,
-                'price' => 100000,
-                'is_free' => false,
-                'status' => 'active',
-                'order' => 3,
-            ],
-            [
-                'name' => 'Hand Bouquet',
-                'slug' => 'hand-bouquet-reguler',
-                'short_description' => 'Belajar merangkai hand bouquet dan dekorasi bunga profesional.',
-                'description' => '<p>Program pelatihan hand bouquet reguler mengajarkan teknik merangkai bunga untuk hand bouquet pernikahan, dekorasi meja, dan berbagai kebutuhan acara. Peserta akan belajar memilih bunga, teknik wrapping, dan desain kreatif.</p>',
-                'duration' => '2 Bulan',
-                'schedule' => 'Kamis - Sabtu, 13.00 - 16.00 WIB',
-                'quota' => 15,
-                'price' => 100000,
-                'is_free' => false,
-                'status' => 'active',
-                'order' => 4,
+                'name'              => 'Ginou Jisshusei — Perikanan',
+                'slug'              => 'ginou-perikanan',
+                'short_description' => 'Program pemagangan di sektor perikanan dan pengolahan hasil laut di Jepang.',
+                'description'       => '<p>Program Ginou Jisshusei (技能実習) sektor perikanan membuka peluang bagi peserta untuk bekerja di industri perikanan tangkap dan pengolahan hasil laut di Jepang. Peserta akan mendapatkan pembekalan bahasa Jepang dan budaya kerja.</p><ul><li>Usia: 18–30 tahun</li><li>Pendidikan: min. SMA/SMK</li><li>Tidak mabuk laut</li><li>Fisik kuat & sehat</li></ul>',
+                'duration'          => '3 Tahun',
+                'schedule'          => 'Sesuai jadwal keberangkatan',
+                'quota'             => 15,
+                'price'             => 0,
+                'is_free'           => true,
+                'status'            => 'active',
+                'order'             => 2,
             ],
         ];
 
-        foreach ($regulerPrograms as $program) {
-            Program::create(array_merge($program, ['category_id' => $reguler->id]));
+        foreach ($ginouPrograms as $program) {
+            Program::updateOrCreate(
+                ['slug' => $program['slug']],
+                array_merge($program, ['category_id' => $ginou?->id])
+            );
         }
 
-        // === Kelas Khusus ===
-        $khususPrograms = [
+        // === Tokutei Ginou (特定技能) ===
+        $tokuteiPrograms = [
             [
-                'name' => 'Make Up Artist (MUA)',
-                'slug' => 'mua-khusus',
-                'short_description' => 'Pelatihan intensif MUA profesional dengan sertifikasi resmi.',
-                'description' => '<p>Program pelatihan MUA khusus adalah program intensif yang dirancang untuk menghasilkan make up artist profesional. Materi mencakup teknik advanced make up, bridal make up, editorial make up, dan special effects. Dilengkapi dengan sertifikat resmi yang diakui nasional.</p>',
-                'duration' => '6 Bulan',
-                'schedule' => 'Senin - Jumat, 09.00 - 15.00 WIB',
-                'quota' => 15,
-                'price' => 3500000,
-                'is_free' => false,
-                'status' => 'active',
-                'order' => 5,
+                'name'              => 'Tokutei Ginou — Industri Makanan & Minuman',
+                'slug'              => 'tokutei-makanan-minuman',
+                'short_description' => 'Bekerja di industri pengolahan makanan dan minuman di Jepang dengan penghasilan setara pekerja lokal.',
+                'description'       => '<p>Program Tokutei Ginou (特定技能) sektor makanan & minuman memberikan hak bekerja yang setara dengan pekerja lokal Jepang. Peserta wajib memiliki sertifikat keahlian dan kemampuan bahasa Jepang min. N4.</p><ul><li>Usia: 18–35 tahun</li><li>Pendidikan: min. SMA/SMK</li><li>JLPT min. N4 / lulus tes bahasa Jepang</li><li>Lulus tes keterampilan sektor makanan</li></ul>',
+                'duration'          => '5 Tahun (dapat diperpanjang)',
+                'schedule'          => 'Sesuai jadwal keberangkatan',
+                'quota'             => 15,
+                'price'             => 0,
+                'is_free'           => true,
+                'status'            => 'active',
+                'order'             => 3,
             ],
             [
-                'name' => 'Rias Pengantin',
-                'slug' => 'rias-pengantin-khusus',
-                'short_description' => 'Kuasai seni rias pengantin tradisional dan modern.',
-                'description' => '<p>Program pelatihan rias pengantin khusus mengajarkan teknik tata rias pengantin tradisional Sunda, Jawa, dan modern. Peserta juga akan belajar penataan sanggul, hantaran, dan dekorasi pelaminan. Sertifikat resmi diberikan setelah lulus.</p>',
-                'duration' => '6 Bulan',
-                'schedule' => 'Senin - Jumat, 09.00 - 15.00 WIB',
-                'quota' => 10,
-                'price' => 5000000,
-                'is_free' => false,
-                'status' => 'active',
-                'order' => 6,
-            ],
-            [
-                'name' => 'Tata Kecantikan Rambut',
-                'slug' => 'kecantikan-rambut-khusus',
-                'short_description' => 'Pelatihan intensif hair styling profesional bersertifikasi.',
-                'description' => '<p>Program tata kecantikan rambut khusus adalah pelatihan intensif mencakup teknik advanced cutting, coloring, perming, hair extension, dan bridal hair styling. Dilengkapi praktik langsung dengan klien salon.</p>',
-                'duration' => '6 Bulan',
-                'schedule' => 'Senin - Jumat, 09.00 - 15.00 WIB',
-                'quota' => 15,
-                'price' => 3500000,
-                'is_free' => false,
-                'status' => 'active',
-                'order' => 7,
-            ],
-            [
-                'name' => 'Kecantikan Kulit',
-                'slug' => 'kecantikan-kulit-khusus',
-                'short_description' => 'Pelatihan intensif skin care dan body treatment profesional.',
-                'description' => '<p>Program kecantikan kulit khusus mengajarkan teknik advanced facial, chemical peeling, microdermabrasion, body spa, dan aromatherapy. Peserta akan mendapatkan sertifikat resmi dan siap bekerja di salon atau klinik kecantikan.</p>',
-                'duration' => '6 Bulan',
-                'schedule' => 'Senin - Jumat, 09.00 - 15.00 WIB',
-                'quota' => 15,
-                'price' => 3500000,
-                'is_free' => false,
-                'status' => 'active',
-                'order' => 8,
+                'name'              => 'Tokutei Ginou — Perawatan Lansia',
+                'slug'              => 'tokutei-perawatan-lansia',
+                'short_description' => 'Berkarir sebagai caregiver profesional merawat lansia di fasilitas kesehatan Jepang.',
+                'description'       => '<p>Program Tokutei Ginou (特定技能) sektor perawatan lansia (介護) sangat diminati di Jepang. Peserta akan dilatih sebagai caregiver profesional dan bekerja di panti jompo atau fasilitas perawatan di Jepang.</p><ul><li>Usia: 18–35 tahun</li><li>Pendidikan: min. SMA/SMK</li><li>JLPT min. N4</li><li>Memiliki empati tinggi & sabar</li></ul>',
+                'duration'          => '5 Tahun (dapat diperpanjang)',
+                'schedule'          => 'Sesuai jadwal keberangkatan',
+                'quota'             => 10,
+                'price'             => 0,
+                'is_free'           => true,
+                'status'            => 'active',
+                'order'             => 4,
             ],
         ];
 
-        foreach ($khususPrograms as $program) {
-            Program::create(array_merge($program, ['category_id' => $khusus->id]));
+        foreach ($tokuteiPrograms as $program) {
+            Program::updateOrCreate(
+                ['slug' => $program['slug']],
+                array_merge($program, ['category_id' => $tokutei?->id])
+            );
+        }
+
+        // === Engineering (エンジニアリング) ===
+        $engineeringPrograms = [
+            [
+                'name'              => 'Engineering — Teknik Mesin & Manufaktur',
+                'slug'              => 'engineering-mesin',
+                'short_description' => 'Jalur visa engineeering (Tokkou) untuk lulusan D3/S1 teknik mesin ke perusahaan manufaktur Jepang.',
+                'description'       => '<p>Program Engineer (エンジニアリング) membuka jalur kerja di Jepang untuk lulusan D3/S1 jurusan teknik. Peserta dengan gelar teknik mesin/industri bisa bekerja di perusahaan manufaktur di Jepang dengan visa Tokkou (Engineer/Specialist in Humanities).</p><ul><li>Pendidikan: min. D3/S1 Teknik Mesin/Industri</li><li>JLPT min. N3 (direkomendasikan)</li><li>Usia: maks. 35 tahun</li></ul>',
+                'duration'          => 'Kontrak 3–5 Tahun',
+                'schedule'          => 'Sesuai jadwal keberangkatan',
+                'quota'             => 10,
+                'price'             => 0,
+                'is_free'           => true,
+                'status'            => 'active',
+                'order'             => 5,
+            ],
+            [
+                'name'              => 'Engineering — IT & Software',
+                'slug'              => 'engineering-it',
+                'short_description' => 'Karir sebagai software engineer / IT specialist di perusahaan teknologi Jepang.',
+                'description'       => '<p>Program Engineer (エンジニアリング) jalur IT membuka peluang berkarir sebagai developer, programmer, atau IT specialist di perusahaan teknologi Jepang. Permintaan tenaga IT di Jepang terus meningkat setiap tahunnya.</p><ul><li>Pendidikan: min. D3/S1 Informatika/Sistem Informasi/Komputer</li><li>JLPT min. N3 (N2 lebih diutamakan)</li><li>Kemampuan coding: Python, Java, atau web dev</li></ul>',
+                'duration'          => 'Kontrak 3–5 Tahun',
+                'schedule'          => 'Sesuai jadwal keberangkatan',
+                'quota'             => 10,
+                'price'             => 0,
+                'is_free'           => true,
+                'status'            => 'active',
+                'order'             => 6,
+            ],
+        ];
+
+        foreach ($engineeringPrograms as $program) {
+            Program::updateOrCreate(
+                ['slug' => $program['slug']],
+                array_merge($program, ['category_id' => $engineer?->id])
+            );
+        }
+
+        // === Nihongo Gakkou (日本語学校) ===
+        $nihongoPrograms = [
+            [
+                'name'              => 'Nihongo Gakkou — Kelas Intensif N5–N4',
+                'slug'              => 'nihongo-n5-n4',
+                'short_description' => 'Belajar bahasa Jepang dari nol hingga level N4. Cocok untuk pemula yang ingin mempersiapkan diri ke Jepang.',
+                'description'       => '<p>Kelas Nihongo Gakkou (日本語学校) level N5–N4 adalah kelas bahasa Jepang intensif untuk pemula. Materi mencakup huruf hiragana, katakana, kosakata dasar, tata bahasa dasar, dan percakapan sehari-hari. Target lulusan siap ikut ujian JLPT N4.</p><ul><li>Tidak ada persyaratan bahasa sebelumnya</li><li>Usia: min. 17 tahun</li><li>Kelas pagi dan sore tersedia</li></ul>',
+                'duration'          => '6 Bulan',
+                'schedule'          => 'Senin – Jumat, 08.00–11.00 / 13.00–16.00 WIB',
+                'quota'             => 25,
+                'price'             => 2500000,
+                'is_free'           => false,
+                'status'            => 'active',
+                'order'             => 7,
+            ],
+            [
+                'name'              => 'Nihongo Gakkou — Kelas Persiapan Wawancara',
+                'slug'              => 'nihongo-wawancara',
+                'short_description' => 'Kelas khusus bahasa Jepang fokus persiapan wawancara kerja dan kehidupan di Jepang.',
+                'description'       => '<p>Kelas persiapan wawancara dirancang untuk peserta yang sudah memiliki dasar bahasa Jepang dan ingin mempersiapkan diri menghadapi wawancara kerja dengan perusahaan Jepang. Materi mencakup simulasi wawancara, etika kerja Jepang, dan kehidupan sehari-hari di Jepang.</p><ul><li>Sudah memiliki dasar bahasa Jepang (N5)</li><li>Usia: min. 17 tahun</li></ul>',
+                'duration'          => '3 Bulan',
+                'schedule'          => 'Senin – Jumat, 09.00–12.00 WIB',
+                'quota'             => 20,
+                'price'             => 1500000,
+                'is_free'           => false,
+                'status'            => 'active',
+                'order'             => 8,
+            ],
+        ];
+
+        foreach ($nihongoPrograms as $program) {
+            Program::updateOrCreate(
+                ['slug' => $program['slug']],
+                array_merge($program, ['category_id' => $nihongo?->id])
+            );
         }
     }
 }

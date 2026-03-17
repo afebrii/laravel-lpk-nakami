@@ -1,5 +1,5 @@
 @import 'tailwindcss';
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Italiana&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Serif+JP:wght@200..900&display=swap');
 
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
@@ -8,22 +8,30 @@
 
 @theme {
     /* Fonts */
-    --font-heading: 'Playfair Display', ui-serif, Georgia, serif;
-    --font-body: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
-    --font-accent: 'Italiana', ui-serif, Georgia, serif;
-    --font-sans: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+    --font-heading: 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
+    --font-body:    'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-accent:  'Noto Serif JP', ui-serif, serif;
+    --font-sans:    'Inter', ui-sans-serif, system-ui, sans-serif;
 
-    /* Color Palette - LKP Yuwita */
-    --color-rose-gold: #B76E79;
-    --color-rose-gold-dark: #9E5A64;
-    --color-rose-gold-light: #C98A93;
-    --color-dusty-pink: #E8B4BC;
-    --color-dusty-pink-light: #F0CCD2;
-    --color-soft-cream: #FDF6F0;
-    --color-charcoal: #2D2D2D;
-    --color-dark-gray: #555555;
-    --color-light-gray: #F5F5F5;
-    --color-medium-gray: #E5E5E5;
+    /* Color Palette — LPK Nakami Indonesia */
+    --color-nakami-red:         #C0001E;   /* Primary Red — CTA, aksen, highlight */
+    --color-nakami-red-hover:   #E8001F;   /* Red Vibrant — hover, icon aktif */
+    --color-nakami-dark:        #111111;   /* Deep Black — background gelap, navbar */
+    --color-nakami-charcoal:    #1E1E1E;   /* Charcoal — card gelap, section dark */
+    --color-nakami-off-white:   #F9F5F2;   /* Off White — background terang */
+    --color-nakami-gold:        #FFD700;   /* Gold Accent — bintang rating, badge */
+    --color-nakami-gray:        #6B7280;   /* Medium Gray — teks sekunder */
+    --color-nakami-light-gray:  #F3F4F6;   /* Light Gray — border, divider */
+    --color-nakami-border:      #E5E7EB;   /* Border warna */
+
+    /* Backwards-compat aliases for any legacy classes still in use */
+    --color-rose-gold:          #C0001E;
+    --color-rose-gold-dark:     #9E0018;
+    --color-soft-cream:         #F9F5F2;
+    --color-charcoal:           #111111;
+    --color-dark-gray:          #6B7280;
+    --color-light-gray:         #F3F4F6;
+    --color-medium-gray:        #E5E7EB;
 }
 
 /* Force light color scheme at the root level */
@@ -35,6 +43,8 @@
 @media (prefers-color-scheme: dark) {
     :root {
         color-scheme: light !important;
+        background-color: #F9F5F2;
+        color: #111111;
     }
 }
 
@@ -42,28 +52,146 @@
    This effectively disables all 'dark:' utility classes project-wide. */
 @variant dark (&:not(*));
 
-/* Hide scrollbar for IE, Edge and Firefox */
-.scrollbar-hide {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+/* ===== GLOBAL BASE STYLES ===== */
+body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: #F9F5F2;
+    color: #111111;
 }
 
-/* Marquee animation for testimonials */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    font-weight: 700;
+}
+
+/* ===== KANJI DECORATIVE TEXT ===== */
+.font-jp {
+    font-family: 'Noto Serif JP', serif;
+}
+
+/* ===== NAKAMI BUTTONS ===== */
+.btn-nakami-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1.5rem;
+    background-color: #C0001E;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.875rem;
+    border-radius: 9999px;
+    transition: all 0.3s;
+}
+.btn-nakami-primary:hover {
+    background-color: #E8001F;
+    box-shadow: 0 10px 25px -5px rgba(192, 0, 30, 0.35);
+    transform: translateY(-1px);
+}
+.btn-nakami-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1.5rem;
+    border: 2px solid #C0001E;
+    color: #C0001E;
+    font-weight: 600;
+    font-size: 0.875rem;
+    border-radius: 9999px;
+    transition: all 0.3s;
+    background: transparent;
+}
+.btn-nakami-outline:hover {
+    background-color: #C0001E;
+    color: #ffffff;
+}
+.btn-nakami-outline-white {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1.5rem;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.875rem;
+    border-radius: 9999px;
+    transition: all 0.3s;
+    background: transparent;
+}
+.btn-nakami-outline-white:hover {
+    background-color: #ffffff;
+    color: #C0001E;
+}
+
+/* ===== SECTION UTILITY ===== */
+.section-dark {
+    background-color: #111111;
+    color: #ffffff;
+}
+.section-charcoal {
+    background-color: #1E1E1E;
+    color: #ffffff;
+}
+.section-light {
+    background-color: #F9F5F2;
+}
+
+/* ===== NAKAMI BADGE ===== */
+.badge-nakami {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem 0.75rem;
+    background-color: rgba(192, 0, 30, 0.1);
+    color: #C0001E;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 9999px;
+    border: 1px solid rgba(192, 0, 30, 0.2);
+}
+
+/* ===== JAPAN PATTERN ACCENTS (optional decorative) ===== */
+.jp-accent-text {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 6rem;
+    font-weight: 900;
+    color: rgba(192, 0, 30, 0.06);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* ===== COUNTER ANIMATION ===== */
+@keyframes countUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+.counter-animate {
+    animation: countUp 0.6s ease-out forwards;
+}
+
+/* ===== MARQUEE ===== */
 @keyframes marquee {
-    0% { transform: translateX(0); }
+    0%   { transform: translateX(0); }
     100% { transform: translateX(-50%); }
 }
-
 .animate-marquee {
-    animation: marquee 25s linear infinite;
+    animation: marquee 30s linear infinite;
     width: max-content;
 }
-
 .marquee-container:hover .animate-marquee {
     animation-play-state: paused;
 }
 
-/* Custom Prose Styles for Editor Content */
+/* ===== SCROLLBAR HIDE ===== */
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+/* ===== PROSE ===== */
 .prose ul {
     list-style-type: disc !important;
     padding-left: 1.5rem !important;
@@ -79,4 +207,19 @@
 .prose li {
     margin-top: 0.25rem;
     margin-bottom: 0.25rem;
+}
+
+/* ===== CARD HOVER ===== */
+.card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== RED GRADIENT LINE ===== */
+.nakami-divider {
+    height: 3px;
+    background: linear-gradient(90deg, #C0001E, #E8001F, #C0001E);
 }

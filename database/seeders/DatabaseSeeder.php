@@ -12,14 +12,10 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             ProgramCategorySeeder::class,
             ProgramSeeder::class,
-            ServiceSeeder::class,
             SettingSeeder::class,
             FaqSeeder::class,
             GallerySeeder::class,
             TestimonialSeeder::class,
-            PostSeeder::class,
-            RegistrationSeeder::class,
-            ContactSeeder::class,
         ]);
     }
 }
