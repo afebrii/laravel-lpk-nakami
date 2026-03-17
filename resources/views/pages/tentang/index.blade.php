@@ -179,15 +179,17 @@
             ];
             @endphp
             @foreach($coreValues as $item)
-            <div class="group bg-white border border-[#E5E7EB] rounded-2xl p-8 hover:shadow-xl hover:border-[#111111] transition-all duration-300 relative overflow-hidden text-center">
+            <div class="group bg-white border border-[#E5E7EB] rounded-[2rem] p-8 lg:p-10 hover:shadow-2xl hover:shadow-[#C0001E]/10 hover:border-[#C0001E]/30 transition-all duration-500 relative overflow-hidden flex flex-col items-center">
                 {{-- Decorative Kanji bg --}}
-                <div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-8xl font-jp text-[#F9F5F2] group-hover:text-[#F3F4F6] transition-colors -z-10 select-none">{{ $item['jp'] }}</div>
+                <div class="absolute -right-4 -bottom-4 text-9xl font-jp text-[#F9F5F2] group-hover:text-[#C0001E]/5 transition-colors duration-700 -z-0 select-none pointer-events-none">{{ $item['jp'] }}</div>
                 
-                <div class="w-14 h-14 bg-[#111111] text-white rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:-translate-y-2 transition-transform duration-500 shadow-lg">
-                    <span class="font-jp text-2xl text-[#C0001E]">{{ $item['jp'] }}</span>
+                <div class="relative z-10 w-full flex flex-col items-center">
+                    <div class="w-20 h-20 bg-[#F9F5F2] group-hover:bg-[#C0001E] rounded-2xl flex items-center justify-center mb-8 transition-all duration-500 shadow-sm group-hover:shadow-lg group-hover:shadow-red-500/30 group-hover:-translate-y-1">
+                        <span class="font-jp text-3xl text-[#C0001E] group-hover:text-white transition-colors duration-500">{{ $item['jp'] }}</span>
+                    </div>
+                    <h3 class="font-heading text-xl font-bold text-[#111111] mb-4 group-hover:text-[#C0001E] transition-colors duration-300">{{ $item['title'] }}</h3>
+                    <p class="text-[15px] text-[#6B7280] leading-relaxed group-hover:text-[#4B5563] transition-colors">{{ $item['desc'] }}</p>
                 </div>
-                <h3 class="font-heading text-xl font-bold text-[#111111] mb-3 group-hover:text-[#C0001E] transition-colors">{{ $item['title'] }}</h3>
-                <p class="text-sm text-[#6B7280] leading-relaxed">{{ $item['desc'] }}</p>
             </div>
             @endforeach
         </div>
