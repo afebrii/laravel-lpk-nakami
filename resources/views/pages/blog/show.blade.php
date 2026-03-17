@@ -32,7 +32,11 @@
             ['label' => Str::limit($post->title, 40)]
         ]])
         
-        <div class="flex flex-wrap items-center gap-3 mb-6 mt-4">
+        <div class="flex items-center gap-3 mb-2 mt-4">
+            <span class="w-8 h-px bg-[#C0001E]"></span>
+            <span class="text-[#C0001E] text-[10px] font-bold uppercase tracking-widest">Nakami Indonesia</span>
+        </div>
+        <div class="flex flex-wrap items-center gap-3 mb-6 mt-2">
             <span class="px-3 py-1 text-[11px] font-bold uppercase tracking-wider rounded border border-white/20 bg-white/10 backdrop-blur-sm text-white flex items-center gap-2">
                 <span class="w-2 h-2 rounded-full bg-[#C0001E]"></span>
                 {{ $post->category }}

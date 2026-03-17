@@ -18,6 +18,10 @@
             ['label' => 'Beranda', 'url' => '/'],
             ['label' => 'Info Jepang']
         ]])
+        <div class="flex items-center gap-3 mb-4 mt-4">
+            <span class="w-12 h-px bg-[#C0001E]"></span>
+            <span class="text-[#C0001E] text-xs font-bold uppercase tracking-widest">Nakami Indonesia</span>
+        </div>
         <h1 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4 mt-4">
             Panduan Hidup di Jepang
         </h1>

@@ -39,6 +39,12 @@
                 </span>
             </div>
 
+            {{-- Branding --}}
+            <div class="flex items-center gap-3 mb-4">
+                <span class="w-12 h-px bg-[#C0001E]"></span>
+                <span class="text-[#C0001E] text-xs font-bold uppercase tracking-widest">Nakami Indonesia</span>
+            </div>
+
             {{-- Headline --}}
             <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.15] mb-6">
                 {{ setting('home_hero_headline', 'Wujudkan Mimpimu Bekerja & Belajar di Jepang') }}

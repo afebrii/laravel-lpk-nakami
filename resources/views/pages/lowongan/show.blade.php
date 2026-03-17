@@ -11,6 +11,10 @@
         働
     </div>
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="flex items-center gap-3 mb-4">
+            <span class="w-12 h-px bg-[#C0001E]"></span>
+            <span class="text-[#C0001E] text-xs font-bold uppercase tracking-widest">Nakami Indonesia</span>
+        </div>
         @include('components.breadcrumb', ['items' => [
             ['label' => 'Beranda', 'url' => '/'],
             ['label' => 'Lowongan', 'url' => route('lowongan.index')],

@@ -33,7 +33,7 @@
         
         <div class="flex items-center gap-3 mb-4 mt-4">
             <span class="w-12 h-px bg-[#C0001E]"></span>
-            <span class="text-[#C0001E] text-xs font-bold uppercase tracking-widest">Profil Lembaga</span>
+            <span class="text-[#C0001E] text-xs font-bold uppercase tracking-widest">Nakami Indonesia • Profil</span>
         </div>
 
         <h1 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
