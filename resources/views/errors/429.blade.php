@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', '429 — Terlalu Banyak Permintaan — ' . setting('site_name', 'LKP Yuwita'))
+@section('title', '429 — Terlalu Banyak Permintaan — ' . setting('site_name', 'LPK Nakami Indonesia'))
 
 @section('content')
 

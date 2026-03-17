@@ -27,7 +27,7 @@
                     </svg>
                 </div>
                 <h1 class="font-heading text-2xl font-bold text-white">Admin Panel</h1>
-                <p class="text-sm text-white/60 mt-1">{{ setting('site_name', 'LKP/LPK Yuwita') }}</p>
+                <p class="text-sm text-white/60 mt-1">{{ setting('site_name', 'LPK Nakami Indonesia') }}</p>
             </div>
 
             {{-- Form --}}

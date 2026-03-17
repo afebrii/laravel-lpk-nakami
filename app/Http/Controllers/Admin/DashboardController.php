@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Gallery;
+use App\Models\Lowongan;
 use App\Models\Post;
 use App\Models\Program;
 use App\Models\Registration;
@@ -20,6 +21,7 @@ class DashboardController extends Controller
             'active_programs' => Program::where('status', 'active')->count(),
             'total_posts' => Post::published()->count(),
             'total_galleries' => Gallery::count(),
+            'total_lowongan' => Lowongan::where('status', 'Buka')->count(),
         ];
 
         // Line chart — pendaftaran 6 bulan terakhir

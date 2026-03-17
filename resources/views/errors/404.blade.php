@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', '404 — Halaman Tidak Ditemukan — ' . setting('site_name', 'LKP Yuwita'))
+@section('title', '404 — Halaman Tidak Ditemukan — ' . setting('site_name', 'LPK Nakami Indonesia'))
 
 @section('content')
 

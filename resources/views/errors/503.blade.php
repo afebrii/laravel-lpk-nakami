@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', '503 — Layanan Tidak Tersedia — ' . setting('site_name', 'LKP Yuwita'))
+@section('title', '503 — Layanan Tidak Tersedia — ' . setting('site_name', 'LPK Nakami Indonesia'))
 
 @section('content')
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'Admin') — {{ setting('site_name', 'LKP Yuwita') }}</title>
+    <title>@yield('title', 'Admin') — {{ setting('site_name', 'LPK Nakami Indonesia') }}</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @if(setting('site_favicon'))
         <link rel="icon" href="{{ asset('storage/' . setting('site_favicon')) }}">
@@ -44,7 +44,7 @@
 
             {{-- Footer --}}
             <footer class="border-t border-gray-200 px-4 lg:px-8 py-4">
-                <p class="text-xs text-dark-gray/50 text-center">© {{ date('Y') }} {{ setting('site_name', 'LKP/LPK Yuwita') }}. Admin Panel.</p>
+                <p class="text-xs text-dark-gray/50 text-center">© {{ date('Y') }} {{ setting('site_name', 'LPK Nakami Indonesia') }}. Admin Panel.</p>
             </footer>
         </div>
     </div>

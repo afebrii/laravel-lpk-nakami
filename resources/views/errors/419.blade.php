@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', '419 — Halaman Kedaluwarsa — ' . setting('site_name', 'LKP Yuwita'))
+@section('title', '419 — Halaman Kedaluwarsa — ' . setting('site_name', 'LPK Nakami Indonesia'))
 
 @section('content')
 

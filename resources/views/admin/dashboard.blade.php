@@ -11,12 +11,12 @@
 </div>
 
 {{-- Stat Widgets --}}
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
     {{-- Total Pendaftar --}}
-    <div class="bg-white rounded-xl border border-gray-200 p-5 hover:shadow-md transition-shadow">
+    <div class="bg-white rounded-xl border border-gray-200 p-5 hover:shadow-md transition-shadow group">
         <div class="flex items-center gap-4">
-            <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center shrink-0">
-                <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+            <div class="w-12 h-12 bg-gray-50 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-[#C0001E]/10 transition-colors">
+                <svg class="w-6 h-6 text-[#111111] group-hover:text-[#C0001E] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
             </div>
             <div>
                 <p class="text-2xl font-bold text-charcoal">{{ $stats['total_registrations'] }}</p>
@@ -25,24 +25,24 @@
         </div>
     </div>
 
-    {{-- Pendaftar Bulan Ini --}}
-    <div class="bg-white rounded-xl border border-gray-200 p-5 hover:shadow-md transition-shadow">
+    {{-- Lowongan Aktif --}}
+    <div class="bg-white rounded-xl border border-gray-200 p-5 hover:shadow-md transition-shadow group">
         <div class="flex items-center gap-4">
-            <div class="w-12 h-12 bg-green-50 rounded-xl flex items-center justify-center shrink-0">
-                <svg class="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+            <div class="w-12 h-12 bg-gray-50 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-[#C0001E]/10 transition-colors">
+                <svg class="w-6 h-6 text-[#111111] group-hover:text-[#C0001E] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
             </div>
             <div>
-                <p class="text-2xl font-bold text-charcoal">{{ $stats['monthly_registrations'] }}</p>
-                <p class="text-xs text-dark-gray">Pendaftar Bulan Ini</p>
+                <p class="text-2xl font-bold text-charcoal">{{ $stats['total_lowongan'] }}</p>
+                <p class="text-xs text-dark-gray">Lowongan Aktif</p>
             </div>
         </div>
     </div>
 
     {{-- Pending --}}
-    <div class="bg-white rounded-xl border border-gray-200 p-5 hover:shadow-md transition-shadow">
+    <div class="bg-white rounded-xl border border-gray-200 p-5 hover:shadow-md transition-shadow group">
         <div class="flex items-center gap-4">
-            <div class="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center shrink-0">
-                <svg class="w-6 h-6 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <div class="w-12 h-12 bg-gray-50 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-amber-50 transition-colors">
+                <svg class="w-6 h-6 text-[#111111] group-hover:text-amber-500 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
             </div>
             <div>
                 <p class="text-2xl font-bold text-charcoal">{{ $stats['pending_registrations'] }}</p>
@@ -52,40 +52,14 @@
     </div>
 
     {{-- Program Aktif --}}
-    <div class="bg-white rounded-xl border border-gray-200 p-5 hover:shadow-md transition-shadow">
+    <div class="bg-white rounded-xl border border-gray-200 p-5 hover:shadow-md transition-shadow group">
         <div class="flex items-center gap-4">
-            <div class="w-12 h-12 bg-purple-50 rounded-xl flex items-center justify-center shrink-0">
-                <svg class="w-6 h-6 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+            <div class="w-12 h-12 bg-gray-50 rounded-xl flex items-center justify-center shrink-0 group-hover:bg-[#C0001E]/10 transition-colors">
+                <svg class="w-6 h-6 text-[#111111] group-hover:text-[#C0001E] transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
             </div>
             <div>
                 <p class="text-2xl font-bold text-charcoal">{{ $stats['active_programs'] }}</p>
-                <p class="text-xs text-dark-gray">Program Aktif</p>
-            </div>
-        </div>
-    </div>
-
-    {{-- Artikel --}}
-    <div class="bg-white rounded-xl border border-gray-200 p-5 hover:shadow-md transition-shadow">
-        <div class="flex items-center gap-4">
-            <div class="w-12 h-12 bg-rose-50 rounded-xl flex items-center justify-center shrink-0">
-                <svg class="w-6 h-6 text-rose-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/></svg>
-            </div>
-            <div>
-                <p class="text-2xl font-bold text-charcoal">{{ $stats['total_posts'] }}</p>
-                <p class="text-xs text-dark-gray">Artikel Terbit</p>
-            </div>
-        </div>
-    </div>
-
-    {{-- Galeri --}}
-    <div class="bg-white rounded-xl border border-gray-200 p-5 hover:shadow-md transition-shadow">
-        <div class="flex items-center gap-4">
-            <div class="w-12 h-12 bg-cyan-50 rounded-xl flex items-center justify-center shrink-0">
-                <svg class="w-6 h-6 text-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-            </div>
-            <div>
-                <p class="text-2xl font-bold text-charcoal">{{ $stats['total_galleries'] }}</p>
-                <p class="text-xs text-dark-gray">Foto Galeri</p>
+                <p class="text-xs text-dark-gray">Program Utama</p>
             </div>
         </div>
     </div>
@@ -182,12 +156,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 datasets: [{
                     label: 'Pendaftaran',
                     data: @json($chartData),
-                    borderColor: '#C8907E',
-                    backgroundColor: 'rgba(200, 144, 126, 0.1)',
+                    borderColor: '#C0001E',
+                    backgroundColor: 'rgba(192, 0, 30, 0.1)',
                     borderWidth: 2,
                     fill: true,
                     tension: 0.4,
-                    pointBackgroundColor: '#C8907E',
+                    pointBackgroundColor: '#C0001E',
                     pointBorderColor: '#fff',
                     pointBorderWidth: 2,
                     pointRadius: 4,
@@ -216,7 +190,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const progCtx = document.getElementById('programChart');
     if (progCtx) {
         const distribution = @json($programDistribution);
-        const colors = ['#C8907E', '#E8C4B8', '#4A3728', '#6B5A4E', '#8B7355', '#A89279'];
+        const colors = ['#C0001E', '#111111', '#1E1E1E', '#6B7280', '#F9F5F2', '#E8001F'];
         new Chart(progCtx, {
             type: 'doughnut',
             data: {

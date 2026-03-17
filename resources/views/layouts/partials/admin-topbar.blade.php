@@ -11,7 +11,7 @@
     {{-- Right: User dropdown --}}
     <div class="flex items-center gap-3" x-data="{ open: false }">
         {{-- Visit site --}}
-        <a href="{{ url('/') }}" target="_blank" class="hidden sm:flex items-center gap-1.5 text-xs text-dark-gray/60 hover:text-rose-gold transition-colors">
+        <a href="{{ url('/') }}" target="_blank" class="hidden sm:flex items-center gap-1.5 text-xs text-dark-gray/60 hover:text-[#C0001E] transition-colors">
             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
             Lihat Website
         </a>
@@ -19,8 +19,8 @@
         {{-- User --}}
         <div class="relative">
             <button @click="open = !open" class="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-50 transition-colors">
-                <div class="w-8 h-8 bg-rose-gold/10 rounded-full flex items-center justify-center">
-                    <span class="text-rose-gold font-semibold text-xs">{{ strtoupper(substr(auth()->user()->name, 0, 1)) }}</span>
+                <div class="w-8 h-8 bg-[#C0001E]/10 rounded-full flex items-center justify-center">
+                    <span class="text-[#C0001E] font-semibold text-xs">{{ strtoupper(substr(auth()->user()->name, 0, 1)) }}</span>
                 </div>
                 <div class="hidden sm:block text-left">
                     <p class="text-sm font-medium text-charcoal">{{ auth()->user()->name }}</p>

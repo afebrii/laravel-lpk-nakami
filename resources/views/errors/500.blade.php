@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', '500 — Kesalahan Server Internal — ' . setting('site_name', 'LKP Yuwita'))
+@section('title', '500 — Kesalahan Server Internal — ' . setting('site_name', 'LPK Nakami Indonesia'))
 
 @section('content')
 

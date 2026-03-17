@@ -20,7 +20,7 @@
             @foreach($tabLabels as $tabKey => $tabLabel)
                 @if(isset($settings[$tabKey]))
                 <button @click="activeTab = '{{ $tabKey }}'"
-                        :class="activeTab === '{{ $tabKey }}' ? 'border-rose-gold text-rose-gold' : 'border-transparent text-dark-gray hover:text-charcoal'"
+                        :class="activeTab === '{{ $tabKey }}' ? 'border-[#C0001E] text-[#C0001E]' : 'border-transparent text-dark-gray hover:text-charcoal'"
                         class="px-4 py-3 text-sm font-medium border-b-2 transition-colors -mb-px">
                     {{ $tabLabel }}
                 </button>
@@ -44,15 +44,15 @@
 
                 @if($setting['type'] === 'text')
                     <input type="text" name="settings[{{ $setting['key'] }}]" value="{{ $setting['value'] }}"
-                           class="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-rose-gold/30">
+                           class="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#C0001E]/30">
 
                 @elseif($setting['type'] === 'textarea')
                     <textarea name="settings[{{ $setting['key'] }}]" rows="3"
-                              class="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-rose-gold/30">{{ $setting['value'] }}</textarea>
+                              class="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#C0001E]/30">{{ $setting['value'] }}</textarea>
 
                 @elseif($setting['type'] === 'number')
                     <input type="number" name="settings[{{ $setting['key'] }}]" value="{{ $setting['value'] }}"
-                           class="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-rose-gold/30">
+                           class="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#C0001E]/30">
 
                 @elseif($setting['type'] === 'image')
                     @if($setting['value'])
@@ -61,14 +61,14 @@
                         </div>
                     @endif
                     <input type="file" name="settings[{{ $setting['key'] }}]" accept="image/*"
-                           class="w-full text-sm text-dark-gray file:mr-3 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-rose-gold/10 file:text-rose-gold">
+                           class="w-full text-sm text-dark-gray file:mr-3 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-[#C0001E]/10 file:text-[#C0001E]">
                     <p class="text-xs text-dark-gray/50 mt-1">JPG/PNG, maksimal 2MB</p>
                 @endif
             </div>
             @endforeach
 
             <div class="pt-2">
-                <button type="submit" class="px-6 py-2.5 bg-rose-gold text-white text-sm font-semibold rounded-xl hover:bg-rose-gold-dark transition-colors">
+                <button type="submit" class="px-6 py-2.5 bg-[#C0001E] text-white text-sm font-semibold rounded-xl hover:bg-[#9E0018] transition-colors">
                     Simpan Pengaturan
                 </button>
             </div>
