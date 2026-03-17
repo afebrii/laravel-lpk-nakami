@@ -110,7 +110,11 @@
 {{-- ============================================= --}}
 {{-- SECTION 3: TENTANG SINGKAT --}}
 {{-- ============================================= --}}
-<section class="py-16 lg:py-24 bg-[#F9F5F2]">
+<section class="py-16 lg:py-24 bg-[#F9F5F2] relative overflow-hidden">
+    {{-- Kanji Accent --}}
+    <div class="absolute left-[-5%] top-[10%] text-[300px] leading-none font-jp text-white select-none pointer-events-none -z-0">
+        誠
+    </div>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             
@@ -343,6 +347,11 @@
     {{-- Decor --}}
     <div class="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#C0001E] via-[#111111] to-[#111111]"></div>
     <div class="nakami-divider absolute top-0 left-0 right-0"></div>
+    
+    {{-- Kanji Decor --}}
+    <div class="absolute left-[2%] bottom-[5%] text-[200px] leading-none font-jp text-white/5 select-none pointer-events-none -z-0">
+        心
+    </div>
 
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="text-center mb-16">
@@ -377,7 +386,11 @@
 {{-- ============================================= --}}
 {{-- SECTION 8: TESTIMONI --}}
 {{-- ============================================= --}}
-<section class="py-16 lg:py-24 bg-[#F9F5F2]">
+<section class="py-16 lg:py-24 bg-[#F9F5F2] relative overflow-hidden">
+    {{-- Kanji Decor --}}
+    <div class="absolute right-[-5%] top-[15%] text-[280px] leading-none font-jp text-white select-none pointer-events-none -z-0">
+        絆
+    </div>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
             <span class="badge-nakami mb-4">Ulasan Siswa</span>
@@ -455,6 +468,11 @@
             {{-- Decorative Pattern --}}
             <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%220%200%2040%2040%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M20%2020.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20h2V0h2v20h2V0h2v20h2V0h2v20h2V0h2v20h2v2H20v-1.5zM0%2020h2v20H0V20zm4%200h2v20H4V20zm4%200h2v20H8V20zm4%200h2v20h-2V20zm4%200h2v20h-2V20zm4%204h20v2H20v-2zm0%204h20v2H20v-2zm0%204h20v2H20v-2zm0%204h20v2H20v-2z%22%20fill%3D%22%23000000%22%20fill-opacity%3D%220.1%22%20fill-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E')] opacity-20 mix-blend-multiply"></div>
             
+            {{-- Kanji Decor --}}
+            <div class="absolute right-[-2%] top-[-10%] text-[250px] leading-none font-jp text-white/10 select-none pointer-events-none -z-0">
+                栄
+            </div>
+
             <div class="relative z-10">
                 <h2 class="font-heading text-3xl lg:text-5xl font-bold text-white mb-6 leading-tight">
                     {{ setting('home_cta_text', 'Mulai Perjalanan Anda ke Jepang Hari Ini!') }}
