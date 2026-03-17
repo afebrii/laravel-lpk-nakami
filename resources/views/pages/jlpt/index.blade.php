@@ -7,9 +7,13 @@
 
 {{-- HERO SECTION --}}
 <section class="relative bg-[#111111] overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/90 to-[#111111]/50 mix-blend-multiply z-0"></div>
-    <div class="absolute right-[-5%] top-[5%] text-[300px] leading-none font-jp text-white/5 select-none pointer-events-none z-0 hidden md:block">
-        語
+    {{-- Background & Overlay --}}
+    <div class="absolute inset-0">
+        @if(setting('site_about_image'))
+            <img src="{{ asset('media/' . setting('site_about_image')) }}" alt="Hero Background" class="w-full h-full object-cover opacity-30 mix-blend-luminosity">
+        @endif
+        <div class="absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/90 to-[#111111]/50 mix-blend-multiply"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-[#111111] via-[#111111]/80 to-transparent"></div>
     </div>
     <div class="nakami-divider absolute bottom-0 left-0 right-0 z-10"></div>
 

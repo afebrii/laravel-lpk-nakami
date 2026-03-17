@@ -7,7 +7,16 @@
 
 {{-- BREADCRUMB HEADER --}}
 <div class="bg-[#111111] pt-24 pb-12 overflow-hidden relative">
-    <div class="absolute right-[-2%] top-[10%] text-[200px] leading-none font-jp text-white/5 select-none pointer-events-none z-0 hidden md:block">
+    {{-- Background & Overlay --}}
+    <div class="absolute inset-0">
+        @if(setting('site_about_image'))
+            <img src="{{ asset('media/' . setting('site_about_image')) }}" alt="Hero Background" class="w-full h-full object-cover opacity-20 mix-blend-luminosity">
+        @endif
+        <div class="absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/90 to-[#111111]/50 mix-blend-multiply"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-[#111111] via-[#111111]/80 to-transparent"></div>
+    </div>
+    {{-- Kanji Watermark --}}
+    <div class="absolute right-[5%] top-[10%] text-[150px] leading-none font-jp text-white/5 select-none pointer-events-none z-0 hidden md:block">
         働
     </div>
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
