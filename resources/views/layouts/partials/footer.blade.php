@@ -82,8 +82,10 @@
                     <li><a href="{{ url('/') }}"          class="text-sm text-white/70 hover:text-[#E8001F] transition-colors">Beranda</a></li>
                     <li><a href="{{ url('/tentang') }}"   class="text-sm text-white/70 hover:text-[#E8001F] transition-colors">Tentang Kami</a></li>
                     <li><a href="{{ url('/lowongan') }}"   class="text-sm text-white/70 hover:text-[#E8001F] transition-colors">Lowongan Kerja</a></li>
+                    {{-- 
                     <li><a href="{{ url('/jepang-info') }}" class="text-sm text-white/70 hover:text-[#E8001F] transition-colors">Info Jepang</a></li>
                     <li><a href="{{ url('/jlpt') }}"        class="text-sm text-white/70 hover:text-[#E8001F] transition-colors">Materi JLPT</a></li>
+                    --}}
                     <li><a href="{{ url('/galeri') }}"      class="text-sm text-white/70 hover:text-[#E8001F] transition-colors">Galeri Kegiatan</a></li>
                     <li><a href="{{ url('/testimoni') }}"   class="text-sm text-white/70 hover:text-[#E8001F] transition-colors">Alumni / Senpai</a></li>
                     <li><a href="{{ url('/faq') }}"      class="text-sm text-white/70 hover:text-[#E8001F] transition-colors">Pusat Bantuan</a></li>

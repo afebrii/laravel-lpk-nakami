@@ -89,6 +89,7 @@
                     Lowongan
                 </a>
 
+                {{-- 
                 <a href="{{ url('/jepang-info') }}"
                    class="px-3 py-2 text-sm font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all {{ request()->is('jepang-info*') ? 'text-white bg-white/10' : '' }}">
                     Info Jepang
@@ -98,6 +99,7 @@
                    class="px-3 py-2 text-sm font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all {{ request()->is('jlpt*') ? 'text-white bg-white/10' : '' }}">
                     Materi JLPT
                 </a>
+                --}}
 
                 <a href="{{ url('/galeri') }}"
                    class="px-3 py-2 text-sm font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all {{ request()->is('galeri*') ? 'text-white bg-white/10' : '' }}">
@@ -173,6 +175,7 @@
                class="block px-4 py-2.5 text-sm font-medium rounded-lg transition-colors {{ request()->is('lowongan*') ? 'bg-[#C0001E] text-white' : 'text-white/80 hover:bg-white/10 hover:text-white' }}">
                 Lowongan Kerja
             </a>
+            {{-- 
             <a href="{{ url('/jepang-info') }}"
                class="block px-4 py-2.5 text-sm font-medium rounded-lg transition-colors {{ request()->is('jepang-info*') ? 'bg-[#C0001E] text-white' : 'text-white/80 hover:bg-white/10 hover:text-white' }}">
                 Info Jepang
@@ -181,6 +184,7 @@
                class="block px-4 py-2.5 text-sm font-medium rounded-lg transition-colors {{ request()->is('jlpt*') ? 'bg-[#C0001E] text-white' : 'text-white/80 hover:bg-white/10 hover:text-white' }}">
                 Materi JLPT
             </a>
+            --}}
             <a href="{{ url('/galeri') }}"
                class="block px-4 py-2.5 text-sm font-medium rounded-lg transition-colors {{ request()->is('galeri*') ? 'bg-[#C0001E] text-white' : 'text-white/80 hover:bg-white/10 hover:text-white' }}">
                 Galeri
