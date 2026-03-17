@@ -84,19 +84,19 @@
                     </div>
                 </div>
 
-                <a href="{{ url('/lowongan') }}"
-                   class="px-3 py-2 text-sm font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all {{ request()->is('lowongan*') ? 'text-white bg-white/10' : '' }}">
-                    Lowongan
+                <a href="{{ url('/galeri') }}"
+                   class="px-3 py-2 text-sm font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all {{ request()->is('galeri*') ? 'text-white bg-white/10' : '' }}">
+                    Galeri
+                </a>
+                
+                <a href="{{ url('/testimoni') }}"
+                   class="px-3 py-2 text-sm font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all {{ request()->is('testimoni*') ? 'text-white bg-white/10' : '' }}">
+                    Testimoni
                 </a>
 
-                <a href="{{ url('/jepang-info') }}"
-                   class="px-3 py-2 text-sm font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all {{ request()->is('jepang-info*') ? 'text-white bg-white/10' : '' }}">
-                    Info Jepang
-                </a>
-
-                <a href="{{ url('/jlpt') }}"
-                   class="px-3 py-2 text-sm font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all {{ request()->is('jlpt*') ? 'text-white bg-white/10' : '' }}">
-                    JLPT
+                <a href="{{ url('/faq') }}"
+                   class="px-3 py-2 text-sm font-medium text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all {{ request()->is('faq*') ? 'text-white bg-white/10' : '' }}">
+                    FAQ
                 </a>
 
                 <a href="{{ url('/tentang') }}"
@@ -154,17 +154,17 @@
                class="block px-4 py-2.5 text-sm font-medium rounded-lg transition-colors {{ request()->is('program*') ? 'bg-[#C0001E] text-white' : 'text-white/80 hover:bg-white/10 hover:text-white' }}">
                 Program
             </a>
-            <a href="{{ url('/lowongan') }}"
-               class="block px-4 py-2.5 text-sm font-medium rounded-lg transition-colors {{ request()->is('lowongan*') ? 'bg-[#C0001E] text-white' : 'text-white/80 hover:bg-white/10 hover:text-white' }}">
-                Lowongan
+            <a href="{{ url('/galeri') }}"
+               class="block px-4 py-2.5 text-sm font-medium rounded-lg transition-colors {{ request()->is('galeri*') ? 'bg-[#C0001E] text-white' : 'text-white/80 hover:bg-white/10 hover:text-white' }}">
+                Galeri
             </a>
-            <a href="{{ url('/jepang-info') }}"
-               class="block px-4 py-2.5 text-sm font-medium rounded-lg transition-colors {{ request()->is('jepang-info*') ? 'bg-[#C0001E] text-white' : 'text-white/80 hover:bg-white/10 hover:text-white' }}">
-                Info Jepang
+            <a href="{{ url('/testimoni') }}"
+               class="block px-4 py-2.5 text-sm font-medium rounded-lg transition-colors {{ request()->is('testimoni*') ? 'bg-[#C0001E] text-white' : 'text-white/80 hover:bg-white/10 hover:text-white' }}">
+                Testimoni
             </a>
-            <a href="{{ url('/jlpt') }}"
-               class="block px-4 py-2.5 text-sm font-medium rounded-lg transition-colors {{ request()->is('jlpt*') ? 'bg-[#C0001E] text-white' : 'text-white/80 hover:bg-white/10 hover:text-white' }}">
-                JLPT
+            <a href="{{ url('/faq') }}"
+               class="block px-4 py-2.5 text-sm font-medium rounded-lg transition-colors {{ request()->is('faq*') ? 'bg-[#C0001E] text-white' : 'text-white/80 hover:bg-white/10 hover:text-white' }}">
+                FAQ
             </a>
             <a href="{{ url('/tentang') }}"
                class="block px-4 py-2.5 text-sm font-medium rounded-lg transition-colors {{ request()->is('tentang*') ? 'bg-[#C0001E] text-white' : 'text-white/80 hover:bg-white/10 hover:text-white' }}">

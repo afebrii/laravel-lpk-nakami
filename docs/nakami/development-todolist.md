@@ -127,39 +127,46 @@
   - [ ] Visi & Misi
   - [ ] Legalitas & izin resmi (nomor izin, P3MI/sponsor) `[!] Konfirmasi klien`
   - [ ] Tim instruktur
-  - [ ] Mitra perusahaan Jepang `[!] Konfirmasi klien`
+### 2.4 Halaman Dalam (Inner Pages)
+- [x] **Halaman Program (`/program` & `/program/{slug}`):**
+  - [x] Desain ulang header image banner
+  - [x] Card program style Nakami
+  - [x] Di detail program, tampilkan rincian biaya, durasi, dll dari text-editor
+- [x] **Halaman Tentang Kami (`/tentang`):**
+  - [x] Profil LPK Nakami, Sejarah, Visi Misi
+  - [x] Tampilkan keunggulan lembaga dengan bahasa yang meyakinkan
+- [x] **Halaman Galeri (`/galeri`):**
+  - [x] Masonry atau grid biasa untuk dokumentasi pelatihan dan kegiatan di Jepang
+- [x] **Halaman Artikel/Blog (`/blog`):**
+  - [x] Desain minimalis list artikel (Thumbnail, Judul, Kategori, Tanggal)
+  - [x] Halaman baca yang rapi (Tipografi jelas, Share button)
 
-### 2.5 Halaman Program (`/program`)
-- [ ] Update `resources/views/pages/program/`:
-  - [ ] 4 program card detail: Ginou Jisshusei, Tokutei Ginou, Engineering, Nihongo Gakkou
-  - [ ] Per program: deskripsi, persyaratan, durasi, estimasi gaji/biaya, CTA daftar
-  - [ ] Tampilkan kanji masing-masing program sebagai elemen visual
-  - [ ] Update konten dari database (seeder data program baru)
-  - [ ] Sesuaikan `ProgramCategory` dan `Program` models/seeders
+### 2.7 Halaman Kontak & FAQ (`/kontak`, `/faq`)
+- [x] **Halaman Kontak (`/kontak`):**
+  - [x] Formulir: Nama, Email, WhatsApp, Tujuan (Informasi/Pendaftaran)
+  - [x] Info kontak dan peta dengan warna abu-merah gelap
+- [x] **Halaman FAQ (`/faq`):**
+  - [x] Update Accordion gaya Jepang minimalis
+  - [x] Konten FAQ difokuskan ke: "Syarat Kerja di Jepang", "Biaya Berapa", "Sistem LPK Bagaimana"
 
-### 2.6 Halaman Alumni & Testimoni (`/alumni`)
-- [ ] Update/buat halaman alumni:
-  - [ ] Galeri foto alumni yang sudah berangkat ke Jepang `[!] Butuh foto dari klien`
-  - [ ] Info: nama, kota penempatan, perusahaan, program
-  - [ ] Video testimoni (YouTube embed) `[!] Butuh link video dari klien`
-  - [ ] Update komponen galeri dengan identitas visual Nakami
-
-### 2.7 Halaman Pendaftaran (`/daftar`)
-- [ ] Update `resources/views/pages/daftar/`:
-  - [ ] Form pendaftaran: nama, email, WhatsApp, program pilihan, pendidikan terakhir
-  - [ ] Validasi form
-  - [ ] Notifikasi ke admin (email + WhatsApp)
-  - [ ] Update warna & styling form
+### 2.8 Halaman Pendaftaran (`/daftar`)
+- [x] **Halaman Formulir (`/daftar`):**
+  - [x] Pisahkan form "Pendaftaran Program" dan "Konsultasi Cepat"
+  - [x] UI form lebih clean (fokus pada input NIK, Nama, TL, Usia, TB/BB, Pendidikan)
+  - [x] Notifikasi pesan sukses setelah submit (sudah ada di layout, tinggal styling) form
   - [ ] Pesan sukses setelah submit
 
-### 2.8 Halaman Kontak (`/kontak`)
-- [ ] Update `resources/views/pages/kontak/`:
-  - [ ] Alamat: Citra Graha Residence Blok H26, Tasikmalaya 46153
   - [ ] WhatsApp: +62 819-3164-6314
   - [ ] Email: lpknakamiindonesia@gmail.com
   - [ ] Instagram: @lpknakami.id
   - [ ] Embed Google Maps (koordinat alamat Tasikmalaya)
   - [ ] Jam operasional
+
+### 2.6 Halaman Testimoni (`/testimoni`)
+- [x] **Halaman Daftar Testimoni:**
+  - [x] Ubah style UI ke hitam-merah Nakami.
+  - [x] Ubah filter teks dari Pelanggan/Alumni menjadi Kohai/Senpai.
+  - [x] Ganti banner CTA.
 
 ### 2.9 Halaman Blog/Berita (`/berita`)
 - [ ] Update styling halaman blog ke identitas Nakami

@@ -18,8 +18,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/program', [ProgramController::class, 'index'])->name('program.index');
 Route::get('/program/{slug}', [ProgramController::class, 'show'])->name('program.show');
 
-// Layanan Salon
-Route::get('/layanan', [ServiceController::class, 'index'])->name('layanan.index');
+// Layanan Salon (Dihapus karena ini adalah LPK Nakami, bukan Salon)
 
 // Galeri
 Route::get('/galeri', [GalleryController::class, 'index'])->name('galeri.index');
