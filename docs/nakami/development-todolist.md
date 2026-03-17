@@ -47,25 +47,25 @@
 ## FASE 2 — Redesign UI
 
 ### 2.1 Design System & Global Styles
-- [ ] Update `resources/css/app.css`:
-  - [ ] Definisikan CSS custom properties (variabel warna):
-    - [ ] `--color-primary: #C0001E` (Primary Red)
-    - [ ] `--color-primary-hover: #E8001F` (Red Vibrant)
-    - [ ] `--color-dark: #111111` (Deep Black)
-    - [ ] `--color-charcoal: #1E1E1E` (Charcoal)
-    - [ ] `--color-light: #F9F5F2` (Off White)
-    - [ ] `--color-gold: #FFD700` (Gold Accent)
-  - [ ] Import font Plus Jakarta Sans, Noto Serif JP, Inter
-  - [ ] Set typography system (heading/body/accent)
-  - [ ] Base global styles
-- [ ] Update `tailwind.config.js` / `vite.config.js` dengan color tokens baru
-- [ ] Jalankan `npm install && npm run dev` untuk kompilasi ulang assets
+- [x] Update `resources/css/app.css`:
+  - [x] Definisikan CSS custom properties (variabel warna):
+    - [x] `--color-primary: #C0001E` (Primary Red)
+    - [x] `--color-primary-hover: #E8001F` (Red Vibrant)
+    - [x] `--color-dark: #111111` (Deep Black)
+    - [x] `--color-charcoal: #1E1E1E` (Charcoal)
+    - [x] `--color-light: #F9F5F2` (Off White)
+    - [x] `--color-gold: #FFD700` (Gold Accent)
+  - [x] Import font Plus Jakarta Sans, Noto Serif JP, Inter
+  - [x] Set typography system (heading/body/accent)
+  - [x] Base global styles
+- [x] Update `tailwind.config.js` / `vite.config.js` dengan color tokens baru
+- [x] Jalankan `npm install && npm run dev` untuk kompilasi ulang assets
 
 ### 2.2 Layout & Komponen Global
-- [ ] Update `resources/views/layouts/app.blade.php`:
-  - [ ] Ganti `<title>` dan meta description ke LPK Nakami Indonesia
-  - [ ] Import font baru
-  - [ ] Load CSS/JS yang diperbarui
+- [x] Update `resources/views/layouts/app.blade.php`:
+  - [x] Ganti `<title>` dan meta description ke LPK Nakami Indonesia
+  - [x] Import font baru
+  - [x] Load CSS/JS yang diperbarui
 - [x] **Navbar** (`resources/views/components/navbar.blade.php`):
   - [x] Ganti logo LKP Yuwita → logo LPK Nakami
   - [x] Update warna: background `#111111`, aksen merah `#C0001E`
@@ -81,52 +81,52 @@
   - [x] Update Instagram: @lpknakami.id
   - [x] Multi-column footer: Logo & deskripsi | Menu | Program | Kontak
   - [x] Warna: background `#111111`, teks putih, aksen merah
-- [ ] **Tombol WhatsApp Floating**:
-  - [ ] Buat komponen `resources/views/components/wa-floating.blade.php`
-  - [ ] Icon WA + label "Konsultasi Gratis"
-  - [ ] Posisi: fixed bottom-right, z-index tinggi
-  - [ ] Link ke `https://wa.me/6281931646314`
-  - [ ] Include di layout utama agar muncul di semua halaman
+- [x] **Tombol WhatsApp Floating**:
+  - [x] Buat komponen `resources/views/components/wa-floating.blade.php`
+  - [x] Icon WA + label "Konsultasi Gratis"
+  - [x] Posisi: fixed bottom-right, z-index tinggi
+  - [x] Link ke `https://wa.me/6281931646314`
+  - [x] Include di layout utama agar muncul di semua halaman
 
 ### 2.3 Halaman Beranda (`/`)
-- [ ] Update `resources/views/pages/home.blade.php`:
-  - [ ] **Hero Section**:
-    - [ ] Background: gambar kegiatan pelatihan + overlay gelap `#111111`
-    - [ ] Headline utama: "Wujudkan Impianmu Bekerja di Jepang"
-    - [ ] Subheadline + tagline LPK Nakami
-    - [ ] CTA button: "Daftar Sekarang" (merah) + "Pelajari Program" (outline)
-    - [ ] Elemen dekoratif kanji/hiragana sebagai background aksen
-  - [ ] **Stats Counter Section**:
-    - [ ] Counter animasi: Jumlah Alumni, Tahun Berdiri, Tingkat Keberhasilan %, Mitra Perusahaan
-    - [ ] Background gelap charcoal `#1E1E1E`
-    - [ ] Implementasi animasi counter dengan Alpine.js / Intersection Observer
-  - [ ] **About Singkat Section**:
-    - [ ] Paragraf singkat tentang LPK Nakami
-    - [ ] Link "Selengkapnya →" ke `/tentang`
-  - [ ] **4 Program Highlight Section**:
-    - [ ] Card untuk: Ginou Jisshusei (技能実習), Tokutei Ginou (特定技能), Engineering (エンジニアリング), Nihongo Gakkou (日本語学校)
-    - [ ] Tampilkan kanji sebagai aksen card
-    - [ ] CTA per card: "Lihat Detail"
-  - [ ] **Alur Proses Section**:
-    - [ ] Numbered steps: Pendaftaran → Seleksi → Pelatihan → Keberangkatan
-    - [ ] Desain numbered process ala jayantara.org
-  - [ ] **Testimoni Section**:
-    - [ ] Grid card testimoni alumni
-    - [ ] Embed video YouTube (opsional)
-    - [ ] Rating bintang dengan warna gold `#FFD700`
-  - [ ] **FAQ Accordion Section**:
-    - [ ] Pertanyaan umum seputar program kerja Jepang
-    - [ ] Alpine.js accordion
-  - [ ] **CTA Pendaftaran Section**:
-    - [ ] Banner merah dengan CTA besar "Daftar Sekarang"
-    - [ ] Link ke `/daftar`
+- [x] Update `resources/views/pages/home.blade.php`:
+  - [x] **Hero Section**:
+    - [x] Background: gambar kegiatan pelatihan + overlay gelap `#111111`
+    - [x] Headline utama: "Wujudkan Impianmu Bekerja di Jepang"
+    - [x] Subheadline + tagline LPK Nakami
+    - [x] CTA button: "Daftar Sekarang" (merah) + "Pelajari Program" (outline)
+    - [x] Elemen dekoratif kanji/hiragana sebagai background aksen
+  - [x] **Stats Counter Section**:
+    - [x] Counter animasi: Jumlah Alumni, Tahun Berdiri, Tingkat Keberhasilan %, Mitra Perusahaan
+    - [x] Background gelap charcoal `#1E1E1E`
+    - [x] Implementasi animasi counter dengan Alpine.js / Intersection Observer
+  - [x] **About Singkat Section**:
+    - [x] Paragraf singkat tentang LPK Nakami
+    - [x] Link "Selengkapnya →" ke `/tentang`
+  - [x] **4 Program Highlight Section**:
+    - [x] Card untuk: Ginou Jisshusei (技能実習), Tokutei Ginou (特定技能), Engineering (エンジニアリング), Nihongo Gakkou (日本語学校)
+    - [x] Tampilkan kanji sebagai aksen card
+    - [x] CTA per card: "Lihat Detail"
+  - [x] **Alur Proses Section**:
+    - [x] Numbered steps: Pendaftaran → Seleksi → Pelatihan → Keberangkatan
+    - [x] Desain numbered process ala jayantara.org
+  - [x] **Testimoni Section**:
+    - [x] Grid card testimoni alumni
+    - [x] Embed video YouTube (opsional)
+    - [x] Rating bintang dengan warna gold `#FFD700`
+  - [x] **FAQ Accordion Section**:
+    - [x] Pertanyaan umum seputar program kerja Jepang
+    - [x] Alpine.js accordion
+  - [x] **CTA Pendaftaran Section**:
+    - [x] Banner merah dengan CTA besar "Daftar Sekarang"
+    - [x] Link ke `/daftar`
 
 ### 2.4 Halaman Tentang Kami (`/tentang`)
-- [ ] Update `resources/views/pages/tentang/`:
-  - [ ] Profil LPK Nakami Indonesia
-  - [ ] Visi & Misi
-  - [ ] Legalitas & izin resmi (nomor izin, P3MI/sponsor) `[!] Konfirmasi klien`
-  - [ ] Tim instruktur
+- [x] Update `resources/views/pages/tentang/`:
+  - [x] Profil LPK Nakami Indonesia
+  - [x] Visi & Misi
+  - [x] Legalitas & izin resmi (nomor izin, P3MI/sponsor) `[!] Konfirmasi klien`
+  - [x] Tim instruktur
 ### 2.4 Halaman Dalam (Inner Pages)
 - [x] **Halaman Program (`/program` & `/program/{slug}`):**
   - [x] Desain ulang header image banner
@@ -154,13 +154,9 @@
   - [x] Pisahkan form "Pendaftaran Program" dan "Konsultasi Cepat"
   - [x] UI form lebih clean (fokus pada input NIK, Nama, TL, Usia, TB/BB, Pendidikan)
   - [x] Notifikasi pesan sukses setelah submit (sudah ada di layout, tinggal styling) form
-  - [ ] Pesan sukses setelah submit
-
-  - [ ] WhatsApp: +62 819-3164-6314
-  - [ ] Email: lpknakamiindonesia@gmail.com
-  - [ ] Instagram: @lpknakami.id
-  - [ ] Embed Google Maps (koordinat alamat Tasikmalaya)
-  - [ ] Jam operasional
+  - [x] Pesan sukses setelah submit
+  - [x] Embed Google Maps (koordinat alamat Tasikmalaya)
+  - [x] Jam operasional
 
 ### 2.6 Halaman Testimoni (`/testimoni`)
 - [x] **Halaman Daftar Testimoni:**
@@ -169,8 +165,8 @@
   - [x] Ganti banner CTA.
 
 ### 2.9 Halaman Blog/Berita (`/berita`)
-- [ ] Update styling halaman blog ke identitas Nakami
-- [ ] Update category/tag sesuai topik Nakami (info Jepang, keberangkatan, update program)
+- [x] Update styling halaman blog ke identitas Nakami
+- [x] Update category/tag sesuai topik Nakami (info Jepang, keberangkatan, update program)
 
 ---
 
