@@ -1,7 +1,7 @@
 {{-- Sticky Navbar LPK Nakami --}}
 <nav x-data="{ mobileOpen: false, scrolled: false, activeDropdown: null }"
      x-init="window.addEventListener('scroll', () => { scrolled = window.scrollY > 20 })"
-     :class="scrolled ? 'bg-[#111111]/95 backdrop-blur-md shadow-lg shadow-black/30' : 'bg-[#111111]'"
+     :class="scrolled ? 'bg-[#111111]/95 backdrop-blur-md shadow-lg shadow-black/30' : 'bg-transparent'"
      class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16 lg:h-20">
@@ -219,5 +219,5 @@
     </div>
 </nav>
 
-{{-- Spacer for fixed navbar --}}
-<div class="h-16 lg:h-20"></div>
+
+{{-- Spacer removed to allow immersive heroes --}}

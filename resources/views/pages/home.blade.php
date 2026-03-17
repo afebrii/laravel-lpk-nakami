@@ -25,7 +25,7 @@
         夢
     </div>
 
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 xl:py-40">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 xl:py-48">
         <div class="max-w-3xl">
             {{-- Trust Badges --}}
             <div class="flex flex-wrap items-center gap-3 mb-8">

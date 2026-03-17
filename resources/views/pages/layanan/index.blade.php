@@ -17,7 +17,7 @@
         <div class="absolute inset-0 bg-gradient-to-r from-[#111111] via-[#111111]/80 to-transparent"></div>
     </div>
 
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16 lg:pt-40 lg:pb-24">
         @include('components.breadcrumb', ['items' => [
             ['label' => 'Beranda', 'url' => '/'],
             ['label' => 'Layanan Salon']

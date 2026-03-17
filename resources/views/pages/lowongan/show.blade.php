@@ -6,7 +6,7 @@
 @section('content')
 
 {{-- BREADCRUMB HEADER --}}
-<div class="bg-[#111111] pt-24 pb-12 overflow-hidden relative">
+<div class="bg-[#111111] pt-32 pb-12 lg:pt-40 overflow-hidden relative">
     {{-- Background & Overlay --}}
     <div class="absolute inset-0">
         @if(setting('site_about_image'))

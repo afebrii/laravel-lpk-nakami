@@ -28,7 +28,7 @@
 
     <div class="nakami-divider absolute bottom-0 left-0 right-0 z-10"></div>
 
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 z-10">
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16 lg:pt-44 lg:pb-24 z-10">
         @include('components.breadcrumb', ['items' => [
             ['label' => 'Beranda', 'url' => '/'],
             ['label' => 'Program Pelatihan', 'url' => '/program'],
