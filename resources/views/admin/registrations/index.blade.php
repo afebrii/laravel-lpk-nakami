@@ -13,7 +13,7 @@
             <div class="flex-1 min-w-[180px]">
                 <label class="block text-xs font-medium text-dark-gray mb-1">Cari</label>
                 <input type="text" name="search" value="{{ request('search') }}" placeholder="Nama, ref code, email..."
-                       class="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-rose-gold/30">
+                       class="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-#C0001E/30">
             </div>
             <div>
                 <label class="block text-xs font-medium text-dark-gray mb-1">Tipe</label>

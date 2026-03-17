@@ -13,11 +13,11 @@
             @endif
             <li>
                 @if(isset($item['url']) && $index < count($items) - 1)
-                    <a href="{{ url($item['url']) }}" class="text-dark-gray/70 hover:text-rose-gold transition-colors">
+                    <a href="{{ url($item['url']) }}" class="text-dark-gray/70 hover:text-[#C0001E] transition-colors">
                         {{ $item['label'] }}
                     </a>
                 @else
-                    <span class="text-rose-gold font-medium">{{ $item['label'] }}</span>
+                    <span class="text-[#C0001E] font-medium">{{ $item['label'] }}</span>
                 @endif
             </li>
         @endforeach

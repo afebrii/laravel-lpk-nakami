@@ -9,10 +9,10 @@
     <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
         <form action="{{ route('admin.contacts.index') }}" method="GET" class="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
             <div class="relative">
-                <input type="text" name="search" value="{{ request('search') }}" placeholder="Cari nama, email, subjek..." class="w-full sm:w-64 pl-10 pr-4 py-2 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-rose-gold/30">
+                <input type="text" name="search" value="{{ request('search') }}" placeholder="Cari nama, email, subjek..." class="w-full sm:w-64 pl-10 pr-4 py-2 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-#C0001E/30">
                 <svg class="w-4 h-4 text-gray-400 absolute left-3.5 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
             </div>
-            <select name="status" onchange="this.form.submit()" class="px-4 py-2 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-rose-gold/30">
+            <select name="status" onchange="this.form.submit()" class="px-4 py-2 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-#C0001E/30">
                 <option value="">Semua Status</option>
                 <option value="unread" {{ request('status') === 'unread' ? 'selected' : '' }}>Belum Dibaca</option>
                 <option value="read" {{ request('status') === 'read' ? 'selected' : '' }}>Sudah Dibaca</option>
@@ -34,7 +34,7 @@
                 </thead>
                 <tbody class="divide-y divide-gray-200 block sm:table-row-group">
                     @forelse($contacts as $contact)
-                    <tr class="hover:bg-gray-50/50 transition-colors block sm:table-row {{ !$contact->is_read ? 'bg-rose-gold/5 font-semibold text-charcoal' : 'text-dark-gray' }}">
+                    <tr class="hover:bg-gray-50/50 transition-colors block sm:table-row {{ !$contact->is_read ? 'bg-#C0001E/5 font-semibold text-charcoal' : 'text-dark-gray' }}">
                         {{-- Mobile header --}}
                         <td class="px-6 py-4 sm:hidden flex justify-between items-center bg-gray-50/80 border-b border-gray-100">
                             <span class="text-xs font-medium text-gray-500 uppercase">Detail Pengirim</span>
@@ -49,7 +49,7 @@
 
                         <td class="px-6 py-4 block sm:table-cell">
                             <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-full {{ !$contact->is_read ? 'bg-rose-gold text-white' : 'bg-gray-200 text-gray-500' }} flex items-center justify-center font-bold text-sm shrink-0">
+                                <div class="w-10 h-10 rounded-full {{ !$contact->is_read ? 'bg-#C0001E text-white' : 'bg-gray-200 text-gray-500' }} flex items-center justify-center font-bold text-sm shrink-0">
                                     {{ strtoupper(substr($contact->name, 0, 1)) }}
                                 </div>
                                 <div>
@@ -77,7 +77,7 @@
                         </td>
                         <td class="px-6 py-4 text-left sm:text-right block sm:table-cell">
                             <div class="flex items-center justify-end gap-2">
-                                <a href="{{ route('admin.contacts.show', $contact) }}" class="p-2 text-rose-gold hover:bg-rose-gold/10 rounded-lg transition-colors" title="Lihat/Baca Pesan">
+                                <a href="{{ route('admin.contacts.show', $contact) }}" class="p-2 text-#C0001E hover:bg-#C0001E/10 rounded-lg transition-colors" title="Lihat/Baca Pesan">
                                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
                                 </a>
                                 <button type="button" 

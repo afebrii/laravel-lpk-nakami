@@ -18,14 +18,14 @@
                 <div>
                     <label class="block text-sm font-medium text-charcoal mb-1">Nama Program *</label>
                     <input type="text" name="name" value="{{ old('name', $program->name ?? '') }}" required
-                           class="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-rose-gold/30">
+                           class="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-#C0001E/30">
                     @error('name') <p class="text-xs text-red-500 mt-1">{{ $message }}</p> @enderror
                 </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                         <label class="block text-sm font-medium text-charcoal mb-1">Kategori *</label>
-                        <select name="category_id" required class="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-rose-gold/30">
+                        <select name="category_id" required class="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-#C0001E/30">
                             <option value="">— Pilih —</option>
                             @foreach($categories as $cat)
                                 <option value="{{ $cat->id }}" {{ old('category_id', $program->category_id ?? '') == $cat->id ? 'selected' : '' }}>{{ $cat->name }} ({{ ucfirst($cat->type) }})</option>
@@ -34,7 +34,7 @@
                     </div>
                     <div>
                         <label class="block text-sm font-medium text-charcoal mb-1">Status *</label>
-                        <select name="status" required class="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-rose-gold/30">
+                        <select name="status" required class="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-#C0001E/30">
                             <option value="active" {{ old('status', $program->status ?? 'active') === 'active' ? 'selected' : '' }}>Aktif</option>
                             <option value="inactive" {{ old('status', $program->status ?? '') === 'inactive' ? 'selected' : '' }}>Nonaktif</option>
                             <option value="coming_soon" {{ old('status', $program->status ?? '') === 'coming_soon' ? 'selected' : '' }}>Segera Hadir</option>
@@ -44,7 +44,7 @@
 
                 <div>
                     <label class="block text-sm font-medium text-charcoal mb-1">Deskripsi Singkat *</label>
-                    <textarea name="short_description" rows="2" required class="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-rose-gold/30">{{ old('short_description', $program->short_description ?? '') }}</textarea>
+                    <textarea name="short_description" rows="2" required class="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-#C0001E/30">{{ old('short_description', $program->short_description ?? '') }}</textarea>
                 </div>
             </div>
 
@@ -78,11 +78,11 @@
                 <h3 class="font-heading text-sm font-bold text-charcoal">SEO Meta</h3>
                 <div>
                     <label class="block text-sm font-medium text-charcoal mb-1">Meta Title</label>
-                    <input type="text" name="meta_title" value="{{ old('meta_title', $program->meta_title ?? '') }}" class="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-rose-gold/30">
+                    <input type="text" name="meta_title" value="{{ old('meta_title', $program->meta_title ?? '') }}" class="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-#C0001E/30">
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-charcoal mb-1">Meta Description</label>
-                    <textarea name="meta_description" rows="2" class="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-rose-gold/30">{{ old('meta_description', $program->meta_description ?? '') }}</textarea>
+                    <textarea name="meta_description" rows="2" class="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-#C0001E/30">{{ old('meta_description', $program->meta_description ?? '') }}</textarea>
                 </div>
             </div>
         </div>
@@ -95,7 +95,7 @@
                 @if(isset($program) && $program->thumbnail)
                     <img src="{{ asset('storage/' . $program->thumbnail) }}" class="w-full aspect-video object-cover rounded-lg" alt="">
                 @endif
-                <input type="file" name="thumbnail" accept="image/*" class="w-full text-sm text-dark-gray file:mr-3 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-rose-gold/10 file:text-rose-gold hover:file:bg-rose-gold/20">
+                <input type="file" name="thumbnail" accept="image/*" class="w-full text-sm text-dark-gray file:mr-3 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-#C0001E/10 file:text-#C0001E hover:file:bg-#C0001E/20">
                 <p class="text-xs text-dark-gray/50">JPG/PNG, maks 2MB</p>
             </div>
 
@@ -106,39 +106,39 @@
                 <div>
                     <label class="block text-sm font-medium text-charcoal mb-1">Durasi</label>
                     <input type="text" name="duration" value="{{ old('duration', $program->duration ?? '') }}" placeholder="contoh: 3 Bulan"
-                           class="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-rose-gold/30">
+                           class="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-#C0001E/30">
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-charcoal mb-1">Jadwal</label>
                     <input type="text" name="schedule" value="{{ old('schedule', $program->schedule ?? '') }}" placeholder="contoh: Senin - Jumat"
-                           class="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-rose-gold/30">
+                           class="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-#C0001E/30">
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-charcoal mb-1">Kuota</label>
                     <input type="number" name="quota" value="{{ old('quota', $program->quota ?? '') }}" min="0"
-                           class="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-rose-gold/30">
+                           class="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-#C0001E/30">
                 </div>
                 <div>
                     <label class="block text-sm font-medium text-charcoal mb-1">Harga (Rp)</label>
                     <input type="number" name="price" value="{{ old('price', $program->price ?? '') }}" min="0" step="1000"
-                           class="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-rose-gold/30">
+                           class="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-#C0001E/30">
                 </div>
                 <label class="flex items-center gap-2 cursor-pointer">
                     <input type="hidden" name="is_free" value="0">
                     <input type="checkbox" name="is_free" value="1" {{ old('is_free', $program->is_free ?? false) ? 'checked' : '' }}
-                           class="w-4 h-4 rounded border-gray-300 text-rose-gold focus:ring-rose-gold/30">
+                           class="w-4 h-4 rounded border-gray-300 text-#C0001E focus:ring-#C0001E/30">
                     <span class="text-sm text-dark-gray">Program Gratis</span>
                 </label>
                 <div>
                     <label class="block text-sm font-medium text-charcoal mb-1">Urutan</label>
                     <input type="number" name="order" value="{{ old('order', $program->order ?? 0) }}" min="0"
-                           class="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-rose-gold/30">
+                           class="w-full px-4 py-2.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-#C0001E/30">
                 </div>
             </div>
 
             {{-- Actions --}}
             <div class="flex gap-3">
-                <button type="submit" class="flex-1 px-4 py-2.5 bg-rose-gold text-white text-sm font-semibold rounded-xl hover:bg-rose-gold-dark transition-colors">
+                <button type="submit" class="flex-1 px-4 py-2.5 bg-#C0001E text-white text-sm font-semibold rounded-xl hover:bg-#C0001E-dark transition-colors">
                     {{ isset($program) ? 'Simpan Perubahan' : 'Tambah Program' }}
                 </button>
                 <a href="{{ route('admin.programs.index') }}" class="px-4 py-2.5 border border-gray-200 text-sm rounded-xl hover:bg-gray-50 transition-colors">Batal</a>

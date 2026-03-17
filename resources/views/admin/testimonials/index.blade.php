@@ -7,7 +7,7 @@
 <div class="space-y-6">
     <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
         <p class="text-sm text-dark-gray">Total: <span class="font-semibold">{{ $testimonials->total() }}</span> testimoni</p>
-        <a href="{{ route('admin.testimonials.create') }}" class="inline-flex items-center gap-2 px-4 py-2.5 bg-rose-gold text-white text-sm font-semibold rounded-xl hover:bg-rose-gold-dark transition-colors">
+        <a href="{{ route('admin.testimonials.create') }}" class="inline-flex items-center gap-2 px-4 py-2.5 bg-#C0001E text-white text-sm font-semibold rounded-xl hover:bg-#C0001E-dark transition-colors">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
             Tambah Testimoni
         </a>
@@ -19,7 +19,7 @@
             <div class="flex-1 min-w-[180px]">
                 <label class="block text-xs font-medium text-dark-gray mb-1">Cari</label>
                 <input type="text" name="search" value="{{ request('search') }}" placeholder="Nama..."
-                       class="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-rose-gold/30">
+                       class="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-#C0001E/30">
             </div>
             <div>
                 <label class="block text-xs font-medium text-dark-gray mb-1">Tipe</label>

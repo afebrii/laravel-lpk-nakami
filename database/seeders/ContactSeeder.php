@@ -33,7 +33,7 @@ class ContactSeeder extends Seeder
                 'email' => 'dewi.lestari@example.com',
                 'phone' => '087711223344',
                 'subject' => 'Kerjasama Salon',
-                'message' => 'Selamat siang, apakah LKP Yuwita menerima tawaran kerjasama untuk penyaluran lulusan ke salon kami?',
+                'message' => 'Selamat siang, apakah LPK Nakami menerima tawaran kerjasama untuk penyaluran lulusan ke salon kami?',
                 'is_read' => true,
                 'created_at' => now()->subDays(3),
             ],

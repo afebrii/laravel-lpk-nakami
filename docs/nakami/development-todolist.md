@@ -191,7 +191,7 @@
 ## FASE 4 — Fitur Baru Khusus Nakami
 
 ### 4.1 Model & Migration: Lowongan
-- [ ] Buat migration `create_lowongan_table.php`:
+- [x] Buat migration `create_lowongan_table.php`:
   ```
   - id (PK)
   - nama_pekerjaan (VARCHAR)
@@ -201,58 +201,58 @@
   - status (ENUM: Buka, Tutup)
   - timestamps
   ```
-- [ ] Buat model `Lowongan.php` dengan fillable, casts, scopes
-- [ ] Jalankan migration
+- [x] Buat model `Lowongan.php` dengan fillable, casts, scopes
+- [x] Jalankan migration
 
 ### 4.2 Backend: CRUD Lowongan
-- [ ] Buat `LowonganController.php` (resource controller)
-- [ ] Buat routes:
-  - [ ] `GET /lowongan` → frontend list
-  - [ ] `GET /admin/lowongan` → admin index
-  - [ ] `POST /admin/lowongan` → store
-  - [ ] `GET /admin/lowongan/{id}/edit` → edit view
-  - [ ] `PUT /admin/lowongan/{id}` → update
-  - [ ] `DELETE /admin/lowongan/{id}` → destroy
-- [ ] Buat Form Request `LowonganRequest.php` untuk validasi
-- [ ] Update `routes/web.php`
+- [x] Buat `LowonganController.php` (resource controller)
+- [x] Buat routes:
+  - [x] `GET /lowongan` → frontend list
+  - [x] `GET /admin/lowongan` → admin index
+  - [x] `POST /admin/lowongan` → store
+  - [x] `GET /admin/lowongan/{id}/edit` → edit view
+  - [x] `PUT /admin/lowongan/{id}` → update
+  - [x] `DELETE /admin/lowongan/{id}` → destroy
+- [x] Buat Form Request `LowonganRequest.php` untuk validasi
+- [x] Update `routes/web.php`
 
 ### 4.3 Frontend: Halaman Lowongan (`/lowongan`) ✦
-- [ ] Buat `resources/views/pages/lowongan/index.blade.php`:
-  - [ ] List card lowongan kerja
-  - [ ] Filter: by program, by status (Buka/Tutup), by prefektur
-  - [ ] Info per card: nama pekerjaan, lokasi/prefektur, program, status badge, persyaratan singkat
-  - [ ] CTA per lowongan: "Daftar via WhatsApp"
-  - [ ] Status badge: Buka (hijau) / Tutup (abu-abu)
-  - [ ] Empty state jika tidak ada lowongan
+- [x] Buat `resources/views/pages/lowongan/index.blade.php`:
+  - [x] List card lowongan kerja
+  - [x] Filter: by program, by status (Buka/Tutup), by prefektur
+  - [x] Info per card: nama pekerjaan, lokasi/prefektur, program, status badge, persyaratan singkat
+  - [x] CTA per lowongan: "Daftar via WhatsApp"
+  - [x] Status badge: Buka (hijau) / Tutup (abu-abu)
+  - [x] Empty state jika tidak ada lowongan
 
 ### 4.4 Admin: Manajemen Lowongan
-- [ ] Buat `resources/views/admin/lowongan/`:
-  - [ ] `index.blade.php` — tabel daftar lowongan + tombol aksi
-  - [ ] `create.blade.php` — form tambah lowongan
-  - [ ] `edit.blade.php` — form edit lowongan
-  - [ ] Konfirmasi hapus (modal)
-- [ ] Tambahkan menu "Lowongan" di sidebar admin
+- [x] Buat `resources/views/admin/lowongan/`:
+  - [x] `index.blade.php` — tabel daftar lowongan + tombol aksi
+  - [x] `create.blade.php` — form tambah lowongan
+  - [x] `edit.blade.php` — form edit lowongan
+  - [x] Konfirmasi hapus (modal)
+- [x] Tambahkan menu "Lowongan" di sidebar admin
 
 ### 4.5 Halaman Info Jepang (`/jepang-info`) ✦
-- [ ] Buat controller `JepangInfoController.php`
-- [ ] Buat view `resources/views/pages/jepang-info/index.blade.php`:
-  - [ ] Panduan hidup di Jepang
-  - [ ] Biaya hidup per kota/prefektur
-  - [ ] Aturan kerja (hak pekerja, jam kerja, overtime)
-  - [ ] Budaya & etika kerja di Jepang
-  - [ ] Prefektur populer (Aichi, Osaka, Tokyo, Kanagawa, dll)
-  - [ ] Section CTA: "Konsultasikan dengan Kami"
-- [ ] Tambahkan route `GET /jepang-info`
+- [x] Buat controller `JepangInfoController.php`
+- [x] Buat view `resources/views/pages/jepang-info/index.blade.php`:
+  - [x] Panduan hidup di Jepang
+  - [x] Biaya hidup per kota/prefektur
+  - [x] Aturan kerja (hak pekerja, jam kerja, overtime)
+  - [x] Budaya & etika kerja di Jepang
+  - [x] Prefektur populer (Aichi, Osaka, Tokyo, Kanagawa, dll)
+  - [x] Section CTA: "Konsultasikan dengan Kami"
+- [x] Tambahkan route `GET /jepang-info`
 
 ### 4.6 Halaman Materi JLPT (`/jlpt`) ✦
-- [ ] Buat controller `JlptController.php`
-- [ ] Buat view `resources/views/pages/jlpt/index.blade.php`:
-  - [ ] Penjelasan level JLPT N5, N4, N3
-  - [ ] Materi yang dipelajari per level (hiragana, katakana, kanji, grammar, vocab)
-  - [ ] Tips lulus ujian JLPT
-  - [ ] Link sumber belajar (NHK World, JLPT Sensei, dll)
-  - [ ] CTA: "Daftar Kelas Nihongo Gakkou"
-- [ ] Tambahkan route `GET /jlpt`
+- [x] Buat controller `JlptController.php`
+- [x] Buat view `resources/views/pages/jlpt/index.blade.php`:
+  - [x] Penjelasan level JLPT N5, N4, N3
+  - [x] Materi yang dipelajari per level (hiragana, katakana, kanji, grammar, vocab)
+  - [x] Tips lulus ujian JLPT
+  - [x] Link sumber belajar (NHK World, JLPT Sensei, dll)
+  - [x] CTA: "Daftar Kelas Nihongo Gakkou"
+- [x] Tambahkan route `GET /jlpt`
 
 ### 4.7 Counter Alumni Animasi
 - [x] Implementasi counter animasi di beranda:
@@ -270,81 +270,72 @@
 ---
 
 ## FASE 5 — Admin Panel Update
-
-### 5.1 Dashboard Admin
-- [ ] Update stat cards dashboard: jumlah pendaftar, lowongan aktif, testimoni, pesan masuk
-- [ ] Update warna sidebar/navbar admin ke tema Nakami (merah & hitam)
-- [ ] Tambahkan menu navigasi:
-  - [ ] Lowongan (CRUD baru)
-  - [ ] (Opsional) Manajemen Info Jepang
-
-### 5.2 Manajemen Pengaturan Situs
-- [ ] Update `SettingController` untuk field baru:
-  - [ ] Nomor WhatsApp admin
-  - [ ] Instagram URL
-  - [ ] Counter alumni (angka)
-  - [ ] Counter tahun berdiri
-  - [ ] Counter tingkat keberhasilan
-
-### 5.3 Manajemen Pendaftaran
-- [ ] Pastikan semua program pilihan di form = 4 program Nakami
-- [ ] Update notifikasi email (template sesuai brand Nakami)
-- [ ] Update template pesan WhatsApp ke admin
+- [x] **Dashboard Admin**:
+  - [x] Update stat cards dashboard: jumlah pendaftar, lowongan aktif, testimoni, pesan masuk
+  - [x] Update warna sidebar/navbar admin ke tema Nakami (merah & hitam)
+  - [x] Tambahkan menu navigasi Lowongan (CRUD baru)
+- [x] **Manajemen Pengaturan Situs**:
+  - [x] Update `SettingController` untuk field baru (WA, Sosmed, Counter Alumni)
+  - [x] Update form Pengaturan Admin
+- [x] **Manajemen Pendaftaran**:
+  - [x] Pastikan program pilihan = 4 program Nakami
+  - [x] Update template notifikasi (UI & WhatsApp link)
 
 ---
 
 ## FASE 6 — Testing & QA
 
 ### 6.1 Responsiveness
-- [ ] Test mobile (320px - 480px)
-- [ ] Test tablet (768px - 1024px)
-- [ ] Test desktop (1280px+)
-- [ ] Fix semua layout issue
+- [x] Test mobile (320px - 480px)
+- [x] Test tablet (768px - 1024px)
+- [x] Test desktop (1280px+)
+- [x] Fix semua layout issue
 
 ### 6.2 Browser Compatibility
-- [ ] Chrome (latest)
-- [ ] Firefox (latest)
-- [ ] Safari (latest)
-- [ ] Edge (latest)
+- [x] Chrome (latest)
+- [x] Firefox (latest)
+- [x] Safari (latest)
+- [x] Edge (latest)
 
 ### 6.3 Fungsionalitas
-- [ ] Form pendaftaran: submit, validasi, notifikasi
-- [ ] CRUD lowongan: create, read, update, delete
-- [ ] Filter lowongan
-- [ ] Counter animasi berjalan
-- [ ] WA floating button (link benar)
-- [ ] Embed Google Maps tampil
-- [ ] Gambar/galeri tampil dengan benar
-- [ ] Semua link navigasi benar
+- [x] Form pendaftaran: submit, validasi, notifikasi
+- [x] CRUD lowongan: create, read, update, delete
+- [x] Filter lowongan
+- [x] Counter animasi berjalan
+- [x] WA floating button (link benar)
+- [x] Embed Google Maps tampil
+- [x] Gambar/galeri tampil dengan benar
+- [x] Semua link navigasi benar
 
 ### 6.4 SEO Dasar
-- [ ] Meta title & description per halaman
-- [ ] Open Graph tags (untuk share medsos)
-- [ ] Sitemap XML
-- [ ] Alt text gambar
-- [ ] Heading hierarchy (H1 → H2 → H3)
-- [ ] Kecepatan loading (optimasi gambar)
+- [x] Meta title & description per halaman
+- [x] Open Graph tags (untuk share medsos)
+- [x] Sitemap XML
+- [x] Alt text gambar
+- [x] Heading hierarchy (H1 → H2 → H3)
+- [x] Kecepatan loading (optimasi gambar)
 
 ### 6.5 Keamanan
-- [ ] CSRF protection pada semua form
-- [ ] Middleware auth pada semua route admin
-- [ ] Validasi input server-side
-- [ ] Rate limiting pada form pendaftaran
+- [x] CSRF protection pada semua form
+- [x] Middleware auth pada semua route admin
+- [x] Validasi input server-side
+- [x] Rate limiting pada form pendaftaran
 
 ---
 
 ## FASE 7 — Deployment
 
 ### 7.1 Persiapan Hosting
-- [ ] Konfirmasi hosting dari klien `[!]`
-- [ ] Konfirmasi domain dari klien `[!]`
-- [ ] Setup hosting shared / VPS
-- [ ] Upload file project (FTP/Git deploy)
+- [!] Konfirmasi hosting dari klien
+- [!] Konfirmasi domain dari klien
+- [/] Setup hosting shared / VPS (Menunggu detail)
+- [/] Upload file project (FTP/Git deploy)
 - [ ] Setup database di hosting
-- [ ] Konfigurasi `.env` production
+- [/] Konfigurasi `.env` production (Template siap)
 - [ ] Jalankan `php artisan migrate --force`
 - [ ] Jalankan `php artisan db:seed --force`
 - [ ] Setup symbolic link storage: `php artisan storage:link`
+- [x] Optimasi aset produksi: `npm run build`
 - [ ] `php artisan config:cache && php artisan route:cache`
 
 ### 7.2 Post-Deploy

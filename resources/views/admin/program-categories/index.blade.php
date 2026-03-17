@@ -7,7 +7,7 @@
 <div class="space-y-6">
     <div class="flex items-center justify-between">
         <p class="text-sm text-dark-gray">Total: <span class="font-semibold">{{ $categories->count() }}</span> kategori</p>
-        <a href="{{ route('admin.program-categories.create') }}" class="inline-flex items-center gap-2 px-4 py-2.5 bg-rose-gold text-white text-sm font-semibold rounded-xl hover:bg-rose-gold-dark transition-colors">
+        <a href="{{ route('admin.program-categories.create') }}" class="inline-flex items-center gap-2 px-4 py-2.5 bg-#C0001E text-white text-sm font-semibold rounded-xl hover:bg-#C0001E-dark transition-colors">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
             Tambah Kategori
         </a>

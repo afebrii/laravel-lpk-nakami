@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Admin — {{ setting('site_name', 'LKP Yuwita') }}</title>
+    <title>Login Admin — {{ setting('site_name', 'LPK Nakami Indonesia') }}</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="min-h-screen bg-gradient-to-br from-charcoal via-charcoal to-rose-gold-dark flex items-center justify-center p-4">
+<body class="min-h-screen bg-gradient-to-br from-charcoal via-charcoal to-#C0001E-dark flex items-center justify-center p-4">
 
     {{-- Background decor --}}
     <div class="fixed inset-0 pointer-events-none overflow-hidden">
-        <div class="absolute top-20 left-20 w-96 h-96 bg-rose-gold/5 rounded-full blur-3xl"></div>
+        <div class="absolute top-20 left-20 w-96 h-96 bg-#C0001E/5 rounded-full blur-3xl"></div>
         <div class="absolute bottom-20 right-20 w-80 h-80 bg-dusty-pink/5 rounded-full blur-3xl"></div>
     </div>
 
@@ -20,7 +20,7 @@
         <div class="bg-white rounded-2xl shadow-2xl shadow-black/20 overflow-hidden">
 
             {{-- Header --}}
-            <div class="bg-gradient-to-r from-charcoal to-rose-gold-dark px-8 py-8 text-center">
+            <div class="bg-gradient-to-r from-charcoal to-#C0001E-dark px-8 py-8 text-center">
                 <div class="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-4 backdrop-blur-sm">
                     <svg class="w-8 h-8 text-dusty-pink" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
@@ -63,8 +63,8 @@
                             <div class="relative">
                                 <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-dark-gray/40 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
                                 <input type="email" name="email" id="email" value="{{ old('email') }}" required autofocus
-                                       class="w-full pl-11 pr-4 py-3 bg-soft-cream/50 border border-medium-gray rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-rose-gold/30 focus:border-rose-gold transition-all"
-                                       placeholder="admin@lkp-yuwita.com">
+                                       class="w-full pl-11 pr-4 py-3 bg-soft-cream/50 border border-medium-gray rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-#C0001E/30 focus:border-#C0001E transition-all"
+                                       placeholder="admin@lpk-nakami.com">
                             </div>
                         </div>
 
@@ -74,7 +74,7 @@
                             <div class="relative">
                                 <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-dark-gray/40 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
                                 <input :type="showPassword ? 'text' : 'password'" name="password" id="password" required
-                                       class="w-full pl-11 pr-12 py-3 bg-soft-cream/50 border border-medium-gray rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-rose-gold/30 focus:border-rose-gold transition-all"
+                                       class="w-full pl-11 pr-12 py-3 bg-soft-cream/50 border border-medium-gray rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-#C0001E/30 focus:border-#C0001E transition-all"
                                        placeholder="••••••••">
                                 <button type="button" @click="showPassword = !showPassword"
                                         class="absolute right-4 top-1/2 -translate-y-1/2 text-dark-gray/40 hover:text-dark-gray transition-colors">
@@ -87,14 +87,14 @@
                         {{-- Remember --}}
                         <div class="flex items-center justify-between">
                             <label class="flex items-center gap-2 cursor-pointer">
-                                <input type="checkbox" name="remember" class="w-4 h-4 rounded border-medium-gray text-rose-gold focus:ring-rose-gold/30">
+                                <input type="checkbox" name="remember" class="w-4 h-4 rounded border-medium-gray text-#C0001E focus:ring-#C0001E/30">
                                 <span class="text-sm text-dark-gray">Ingat saya</span>
                             </label>
                         </div>
 
                         {{-- Submit --}}
                         <button type="submit"
-                                class="w-full flex items-center justify-center gap-2 px-6 py-3.5 bg-rose-gold text-white font-semibold rounded-xl hover:bg-rose-gold-dark transition-all duration-300 hover:shadow-lg hover:shadow-rose-gold/25 active:scale-[0.98]">
+                                class="w-full flex items-center justify-center gap-2 px-6 py-3.5 bg-#C0001E text-white font-semibold rounded-xl hover:bg-#C0001E-dark transition-all duration-300 hover:shadow-lg hover:shadow-#C0001E/25 active:scale-[0.98]">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"/></svg>
                             Masuk
                         </button>

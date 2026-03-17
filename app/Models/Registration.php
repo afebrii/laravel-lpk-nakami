@@ -42,12 +42,12 @@ class Registration extends Model
     }
 
     /**
-     * Generate ref code: YWT-YYYYMMDD-XXXXX
+     * Generate ref code: NKM-YYYYMMDD-XXXXX
      */
     public static function generateRefCode(): string
     {
         $date = now()->format('Ymd');
-        $lastReg = static::where('ref_code', 'like', "YWT-{$date}-%")
+        $lastReg = static::where('ref_code', 'like', "NKM-{$date}-%")
             ->orderByDesc('id')
             ->first();
 
@@ -58,7 +58,7 @@ class Registration extends Model
             $nextNumber = 1;
         }
 
-        return sprintf('YWT-%s-%05d', $date, $nextNumber);
+        return sprintf('NKM-%s-%05d', $date, $nextNumber);
     }
 
     public function scopePending($query)

@@ -81,7 +81,7 @@
                         <label class="block text-xs font-medium text-dark-gray mb-1">Catatan Admin</label>
                         <textarea name="admin_notes" rows="3" class="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm">{{ $registration->admin_notes }}</textarea>
                     </div>
-                    <button type="submit" class="w-full px-4 py-2 bg-rose-gold text-white text-sm font-semibold rounded-lg hover:bg-rose-gold-dark transition-colors">Update Status</button>
+                    <button type="submit" class="w-full px-4 py-2 bg-#C0001E text-white text-sm font-semibold rounded-lg hover:bg-#C0001E-dark transition-colors">Update Status</button>
                 </form>
             </div>
 

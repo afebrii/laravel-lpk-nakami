@@ -18,7 +18,7 @@
                 <div>
                     <label class="block text-sm font-medium text-charcoal mb-1">Judul Lowongan <span class="text-red-500">*</span></label>
                     <input type="text" name="judul" value="{{ old('judul', $lowongan->judul ?? '') }}" required
-                           class="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-rose-gold/30">
+                           class="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-#C0001E/30">
                     @error('judul') <p class="mt-1 text-xs text-red-500">{{ $message }}</p> @enderror
                 </div>
 
@@ -27,14 +27,14 @@
                     <div>
                         <label class="block text-sm font-medium text-charcoal mb-1">Lokasi (Prefektur) <span class="text-red-500">*</span></label>
                         <input type="text" name="lokasi" value="{{ old('lokasi', $lowongan->lokasi ?? '') }}" required placeholder="Contoh: Aichi / Tokyo"
-                               class="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-rose-gold/30">
+                               class="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-#C0001E/30">
                         @error('lokasi') <p class="mt-1 text-xs text-red-500">{{ $message }}</p> @enderror
                     </div>
 
                     {{-- Program --}}
                     <div>
                         <label class="block text-sm font-medium text-charcoal mb-1">Pilih Program <span class="text-red-500">*</span></label>
-                        <select name="program" required class="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-rose-gold/30">
+                        <select name="program" required class="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-#C0001E/30">
                             <option value="Ginou Jisshusei" {{ old('program', $lowongan->program ?? '') == 'Ginou Jisshusei' ? 'selected' : '' }}>Ginou Jisshusei (Pemagangan)</option>
                             <option value="Tokutei Ginou" {{ old('program', $lowongan->program ?? '') == 'Tokutei Ginou' ? 'selected' : '' }}>Tokutei Ginou (SSW)</option>
                             <option value="Engineering" {{ old('program', $lowongan->program ?? '') == 'Engineering' ? 'selected' : '' }}>Engineering</option>
@@ -47,7 +47,7 @@
                 <div>
                     <label class="block text-sm font-medium text-charcoal mb-1">Deskripsi Pekerjaan</label>
                     <textarea name="deskripsi_pekerjaan" rows="4" 
-                              class="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-rose-gold/30">{{ old('deskripsi_pekerjaan', $lowongan->deskripsi_pekerjaan ?? '') }}</textarea>
+                              class="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-#C0001E/30">{{ old('deskripsi_pekerjaan', $lowongan->deskripsi_pekerjaan ?? '') }}</textarea>
                     <p class="mt-1 text-xs text-dark-gray/60">Contoh: Bekerja di pabrik pengolahan makanan seafood dengan detail jam kerja, lembur, dsb.</p>
                 </div>
 
@@ -55,7 +55,7 @@
                 <div>
                     <label class="block text-sm font-medium text-charcoal mb-1">Persyaratan Tambahan</label>
                     <textarea name="persyaratan" rows="4" 
-                              class="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-rose-gold/30">{{ old('persyaratan', $lowongan->persyaratan ?? '') }}</textarea>
+                              class="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-#C0001E/30">{{ old('persyaratan', $lowongan->persyaratan ?? '') }}</textarea>
                     <p class="mt-1 text-xs text-dark-gray/60">Contoh: Tidak buta warna, Pria maksimal 30 tahun, JLPT N4, dsb.</p>
                 </div>
 
@@ -63,7 +63,7 @@
                     {{-- Status --}}
                     <div>
                         <label class="block text-sm font-medium text-charcoal mb-1">Status Lowongan <span class="text-red-500">*</span></label>
-                        <select name="status" required class="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-rose-gold/30">
+                        <select name="status" required class="w-full px-4 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-#C0001E/30">
                             <option value="Buka" {{ old('status', $lowongan->status ?? '') == 'Buka' ? 'selected' : '' }}>Buka</option>
                             <option value="Tutup" {{ old('status', $lowongan->status ?? '') == 'Tutup' ? 'selected' : '' }}>Tutup</option>
                         </select>
@@ -85,7 +85,7 @@
 
             {{-- Actions --}}
             <div class="mt-8 pt-5 border-t border-gray-100 flex items-center gap-3">
-                <button type="submit" class="px-6 py-2.5 bg-rose-gold text-white text-sm font-semibold rounded-lg hover:bg-rose-gold-dark transition-colors">
+                <button type="submit" class="px-6 py-2.5 bg-#C0001E text-white text-sm font-semibold rounded-lg hover:bg-#C0001E-dark transition-colors">
                     Simpan Lowongan
                 </button>
                 <a href="{{ route('admin.lowongan.index') }}" class="px-6 py-2.5 bg-gray-100 text-dark-gray text-sm font-medium rounded-lg hover:bg-gray-200 transition-colors">
